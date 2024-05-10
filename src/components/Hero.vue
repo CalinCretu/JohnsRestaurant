@@ -37,8 +37,8 @@ export default {
   <div class="container-lg">
     <Swiper :slides-per-view="8" :grabCursor="true" :loop="true"
       :autoplay="{ delay: 6000, disableOnInteraction: false, }" :modules="modules">
-      <SwiperSlide v-for="photo in photos">
-        <div>
+      <SwiperSlide v-for="photo in photos" :key="photo">
+        <div class="slide-wrapper">
           <img class="hero-image" :src="`public/${photo}`" alt="">
         </div>
       </SwiperSlide>
@@ -54,7 +54,21 @@ export default {
     z-index: 1;
   }
 
-  .hero-image {}
+  .slide-wrapper {
+    /* Set fixed width and height for uniform size */
+    width: 225px;
+    /* Adjust as needed */
+    height: 150px;
+    /* Adjust as needed */
+  }
+
+  .hero-image {
+    /* Make sure the image fills its container */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensure the image covers the container */
+  }
 
   .absolute {
     position: absolute;
