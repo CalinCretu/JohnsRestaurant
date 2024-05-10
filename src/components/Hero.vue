@@ -19,7 +19,14 @@ export default {
       modules: [Autoplay, Pagination, Navigation, EffectCreative],
       photos: [
         '/imgs/photos/Fotobackground.jpeg',
-        '/imgs/photos/Fotobackground.jpeg'
+        '/imgs/photos/Fotobackground.jpeg',
+        '/imgs/photos/Cheesecake.png',
+        '/imgs/photos/Gambero.jpg',
+        '/imgs/photos/Prosciutto.jpg',
+        '/imgs/photos/Ravioli.png',
+        '/imgs/photos/Salmone.jpg',
+        '/imgs/photos/Tagliata.jpg',
+        '/imgs/photos/Tortino.jpg',
       ],
     }
   }
@@ -28,18 +35,12 @@ export default {
 
 <template>
   <div class="container-lg">
-    <Swiper :autoplay="{ delay: 10000, disableOnInteraction: false, }" :speed="4000" :slides-per-view="1" :loop="true"
-      :effect="'creative'" :creativeEffect="{
-      prev: {
-        shadow: false,
-        translate: [0, 0, -400],
-      },
-      next: {
-        translate: ['100%', 0, 0],
-      },
-    }" :modules="modules">
+    <Swiper :slides-per-view="8" :grabCursor="true" :loop="true"
+      :autoplay="{ delay: 6000, disableOnInteraction: false, }" :modules="modules">
       <SwiperSlide v-for="photo in photos">
-        <img class="hero-image" :src="`public/${photo}`" alt="">
+        <div>
+          <img class="hero-image" :src="`public/${photo}`" alt="">
+        </div>
       </SwiperSlide>
     </Swiper>
   </div>
@@ -52,6 +53,8 @@ export default {
   Swiper {
     z-index: 1;
   }
+
+  .hero-image {}
 
   .absolute {
     position: absolute;

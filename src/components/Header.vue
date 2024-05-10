@@ -2,7 +2,7 @@
 import Dropdown from './Dropdown.vue';
 export default {
   components: {
-    Dropdown
+
   },
   name: "Header",
   data() {
