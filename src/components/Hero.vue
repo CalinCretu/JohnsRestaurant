@@ -57,17 +57,13 @@ export default {
   .slide-wrapper {
     /* Set fixed width and height for uniform size */
     width: 225px;
-    /* Adjust as needed */
     height: 150px;
-    /* Adjust as needed */
   }
 
   .hero-image {
-    /* Make sure the image fills its container */
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Ensure the image covers the container */
   }
 
   .absolute {

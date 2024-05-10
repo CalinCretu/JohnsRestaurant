@@ -2,19 +2,19 @@
 import Hero from './Hero.vue';
 import Cards from './Cards.vue';
 import NewMusicVideo from './NewMusicVideo.vue';
-import SenseTheJazz2 from './SenseTheJazz2.vue';
 import AlbumOutNow from './AlbumOutNow.vue';
 import Counter from './Counter.vue';
 import BestMusicBlog from './BestMusicBlog.vue';
 import Carousel from './Carousel.vue';
 import { store } from '../store';
+import Welcome from './Welcome.vue';
 export default {
   name: 'Main',
   components: {
     Hero,
     Cards,
     NewMusicVideo,
-    SenseTheJazz2,
+    Welcome,
     AlbumOutNow,
     Counter,
     BestMusicBlog,
@@ -30,16 +30,16 @@ export default {
 
 <template>
   <div>
-    <Hero />
+    <Welcome />
   </div>
   <div>
+    <Hero />
+  </div>
+  <div class="cards-div">
     <Cards />
   </div>
   <div>
     <NewMusicVideo />
-  </div>
-  <div>
-    <SenseTheJazz2 :cards="card" />
   </div>
   <div>
     <AlbumOutNow />
@@ -55,4 +55,8 @@ export default {
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.cards-div {
+  margin: 30px 0px
+}
+</style>

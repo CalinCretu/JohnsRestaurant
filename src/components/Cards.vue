@@ -11,82 +11,89 @@ export default {
   data() {
     return {
       store: store,
-      hero_cards: [
-        {
-          "image": "fa-solid fa-drum",
-          "title": "Menu",
-          "description": "Visita il nostro Menù"
-        },
-        {
-          "image": "fa-solid fa-compact-disc",
-          "title": "Lista dei Vini",
-          "description": "Visita la nostra lista dei Vini"
-        }
-      ],
     }
   }
 }
 </script>
 
 <template>
-  <div class="card-container">
+  <div class="container-lg">
     <ul class="cards">
-      <li class="card" v-for="hero_card in hero_cards" :key="hero_card.image">
-        <div>
-          <font-awesome-icon class="icon" :icon="hero_card.image" />
+      <li class="card-white">
+        <h3>
+          Il nostro menù
+        </h3>
+        <p>
+          Clicca qui per consultarlo
+        </p>
+      </li>
+      <li class="card-foto">
+        <div class="image-wrapper">
+          <img src="/public/imgs/photos/Tagliata.jpg" alt="">
         </div>
-        <div class="card-title">
-          {{ hero_card.title }}
+      </li>
+    </ul>
+    <ul class="cards">
+      <li class="card-transparent">
+        <div class="image-wrapper">
+          <img src="/public/imgs/photos/Tagliata.jpg" alt="">
         </div>
-        <div class="card-description">
-          {{ hero_card.description }}
-        </div>
+      </li>
+      <li class="card-white">
+        <h3>
+          La nostra lista dei vini
+        </h3>
+        <p>
+          Clicca qui
+        </p>
       </li>
     </ul>
   </div>
 </template>
 
-
 <style lang="scss" scoped>
-.card-container {
-
-  color: #EAAA00;
-  min-width: 1000px;
+.container-lg {
+  color: #b6ccd7;
   margin: 0 auto;
 
   .cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-align: center;
-    gap: 100px;
 
-    .card {
+    .card-white {
+      font-size: 35px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       background-color: white;
-      padding: 60px 50px;
-      border-radius: 50px;
 
-      .card-title {
-        text-transform: uppercase;
-        font-size: 40px;
-        margin: 30px 0px 15px 0px;
-      }
-
-      .card-description {
-        font-size: 20px;
-        color: #EAAA00;
-        text-transform: capitalize;
-      }
-
-      .icon {
-        font-size: 100px;
-        padding: 30px;
-        border: 1px solid transparent;
+      h3 {
+        color: black;
       }
     }
+
+    .card-foto {
+      color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #b6ccd7;
+    }
+  }
+
+  .image-wrapper {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+  }
+
+  .card-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 </style>

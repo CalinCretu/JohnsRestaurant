@@ -60,7 +60,7 @@ export default {
 
 <style lang="scss" scoped>
 .container-lg {
-  padding: 20px 30px;
+  padding: 10px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;

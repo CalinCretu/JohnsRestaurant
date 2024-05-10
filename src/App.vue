@@ -52,10 +52,14 @@ export default {
 <style lang="scss">
 @use './styles/general.scss';
 
+.header {
+  border-bottom: 1px solid white;
+}
+
 .header,
 .main,
 .footer,
 .rights {
-  background-color: #b6ccd7;
+  background-color: rgb(182, 204, 215);
 }
 </style>
