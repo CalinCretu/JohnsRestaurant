@@ -1,6 +1,6 @@
 <script>
 import Hero from './Hero.vue';
-import SenseTheJazz from './SenseTheJazz.vue';
+import Cards from './Cards.vue';
 import NewMusicVideo from './NewMusicVideo.vue';
 import SenseTheJazz2 from './SenseTheJazz2.vue';
 import AlbumOutNow from './AlbumOutNow.vue';
@@ -12,7 +12,7 @@ export default {
   name: 'Main',
   components: {
     Hero,
-    SenseTheJazz,
+    Cards,
     NewMusicVideo,
     SenseTheJazz2,
     AlbumOutNow,
@@ -33,7 +33,7 @@ export default {
     <Hero />
   </div>
   <div>
-    <SenseTheJazz />
+    <Cards />
   </div>
   <div>
     <NewMusicVideo />
