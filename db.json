@@ -1,0 +1,147 @@
+{
+  "hero_cards": [
+    {
+      "image": "fa-solid fa-drum",
+      "title": "Original Ideas",
+      "description": "Contrary Popular Belief, Lorem Ipsum Not Simply Ipsum Ransom Text"
+    },
+    {
+      "image": "fa-solid fa-compact-disc",
+      "title": "Music Studio",
+      "description": "Contrary Popular Belief, Lorem Ipsum Not Simply Ipsum Ransom Text"
+    },
+    {
+      "image": "fa-solid fa-headphones",
+      "title": "Acoustic Covers",
+      "description": "Contrary Popular Belief, Lorem Ipsum Not Simply Ipsum Ransom Text"
+    }
+  ],
+  "sense_the_jazz_2": [
+    {
+      "image": "/imgs/gallery1.jpg",
+      "title": "A roll and bang the floor",
+      "icons": [
+        {
+          "icon": "fa-brands fa-spotify"
+        },
+        {
+          "icon": "fa-brands fa-youtube"
+        },
+        {
+          "icon": "fa-solid fa-music"
+        },
+        {
+          "icon": "fa-solid fa-cloud"
+        },
+        {
+          "icon": "fa-brands fa-safari"
+        }
+      ]
+    },
+    {
+      "image": "/imgs/gallery2.jpg",
+      "title": "Your melody to our music",
+      "icons": [
+        {
+          "icon": "fa-brands fa-spotify"
+        },
+        {
+          "icon": "fa-brands fa-youtube"
+        },
+        {
+          "icon": "fa-solid fa-music"
+        },
+        {
+          "icon": "fa-solid fa-cloud"
+        },
+        {
+          "icon": "fa-brands fa-safari"
+        }
+      ]
+    },
+    {
+      "image": "/imgs/gallery3.jpg",
+      "title": "Touching heaven on ferquency",
+      "icons": [
+        {
+          "icon": "fa-brands fa-spotify"
+        },
+        {
+          "icon": "fa-brands fa-youtube"
+        },
+        {
+          "icon": "fa-solid fa-music"
+        },
+        {
+          "icon": "fa-solid fa-cloud"
+        },
+        {
+          "icon": "fa-brands fa-safari"
+        }
+      ]
+    },
+    {
+      "image": "/imgs/gallery4.jpg",
+      "title": "Music makes stronger beats",
+      "icons": [
+        {
+          "icon": "fa-brands fa-spotify"
+        },
+        {
+          "icon": "fa-brands fa-youtube"
+        },
+        {
+          "icon": "fa-solid fa-music"
+        },
+        {
+          "icon": "fa-solid fa-cloud"
+        },
+        {
+          "icon": "fa-brands fa-safari"
+        }
+      ]
+    },
+    {
+      "image": "/imgs/gallery5.jpg",
+      "title": "Suond is the spark of time",
+      "icons": [
+        {
+          "icon": "fa-brands fa-spotify"
+        },
+        {
+          "icon": "fa-brands fa-youtube"
+        },
+        {
+          "icon": "fa-solid fa-music"
+        },
+        {
+          "icon": "fa-solid fa-cloud"
+        },
+        {
+          "icon": "fa-brands fa-safari"
+        }
+      ]
+    },
+    {
+      "image": "/imgs/gallery6.jpg",
+      "title": "Make your night groovy",
+      "icons": [
+        {
+          "icon": "fa-brands fa-spotify"
+        },
+        {
+          "icon": "fa-brands fa-youtube"
+        },
+        {
+          "icon": "fa-solid fa-music"
+        },
+        {
+          "icon": "fa-solid fa-cloud"
+        },
+        {
+          "icon": "fa-brands fa-safari"
+        }
+      ]
+    }
+  ]
+}
