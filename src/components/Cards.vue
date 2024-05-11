@@ -77,6 +77,7 @@ export default {
     width: 100%;
     height: 500px;
     overflow: hidden;
+    margin-top: 15px;
   }
 }
 </style>

@@ -49,6 +49,7 @@ export default {
           <a :href="item.href">{{ item.text }}</a>
         </li>
       </ul>
+      <router-link :to="{ name: 'menu' }">Menu</router-link>
       <ul class="icons">
         <li>
           <a

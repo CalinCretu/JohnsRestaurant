@@ -5,7 +5,7 @@ import ContactsAndHours from './ContactsAndHours.vue';
 import { store } from '../store';
 import Welcome from './Welcome.vue';
 export default {
-  name: 'Main',
+  name: 'Home',
   components: {
     Hero,
     Cards,

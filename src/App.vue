@@ -1,6 +1,6 @@
 <script>
 import Header from './components/Header.vue';
-import Main from './components/Main.vue';
+import Home from './components/Home.vue';
 import Footer from './components/Footer.vue';
 import Rights from './components/Rights.vue';
 import axios from 'axios';
@@ -9,7 +9,7 @@ import { store } from './store';
 export default {
   components: {
     Header,
-    Main,
+    Home,
     Footer,
     Rights,
   },
@@ -40,8 +40,8 @@ export default {
     <Header />
   </div>
   <div class="content">
-    <div class="main">
-      <Main />
+    <div class="home">
+      <Home />
     </div>
     <div class="footer">
       <Footer />
@@ -74,7 +74,7 @@ export default {
 }
 
 .header,
-.main,
+.home,
 .footer,
 .calin {
   background-color: rgb(182, 204, 215);
