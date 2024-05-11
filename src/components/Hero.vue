@@ -27,7 +27,7 @@ export default {
         '/imgs/photos/Salmone.jpg',
         '/imgs/photos/Tagliata.jpg',
         '/imgs/photos/Tortino.jpg',
-      ],
+      ]
     }
   }
 }
@@ -37,7 +37,7 @@ export default {
   <div class="container-lg">
     <Swiper :slides-per-view="8" :grabCursor="true" :loop="true"
       :autoplay="{ delay: 6000, disableOnInteraction: false, }" :modules="modules">
-      <SwiperSlide v-for="photo in photos" :key="photo">
+      <SwiperSlide v-for=" photo  in  photos " :key="photo">
         <div class="slide-wrapper">
           <img class="hero-image" :src="`public/${photo}`" alt="">
         </div>

@@ -15,10 +15,6 @@ export default {
           href: '#'
         },
         {
-          text: 'About Us',
-          href: '#'
-        },
-        {
           text: 'Menu',
           icon: '/imgs/dropdown_icon.svg',
           href: '#'
@@ -27,16 +23,7 @@ export default {
           text: 'Lista dei Vini',
           href: '#'
         },
-        {
-          text: 'Gallery',
-          href: '#'
-        },
-        {
-          text: 'Contact Us',
-          href: '#'
-        },
       ],
-      icon: '/imgs/lens_icon.svg'
     }
   }
 }
@@ -49,9 +36,15 @@ export default {
         <img class="logo-image" :src="logo" alt="">
       </a>
     </div>
-    <nav>
+    <nav class="nav-bar">
       <ul class="nav-items">
-        <li class="item" v-for="(item, i) in nav" :key="i"><a :href="item.href">{{ item.text }}</a>
+        <li class="item" v-for="( item, i ) in  nav " :key="i"><a :href="item.href">{{ item.text }}</a>
+        </li>
+      </ul>
+      <ul class="icons">
+        <li><a href="https://www.instagram.com/johnsrestauranttodi/?hl=en"><font-awesome-icon
+              icon="fa-brands fa-instagram" /></a></li>
+        <li><a href="https://www.facebook.com/johnpatersonchef/"><font-awesome-icon icon="fa-brands fa-facebook" /></a>
         </li>
       </ul>
     </nav>
@@ -69,26 +62,43 @@ export default {
     max-width: 100px;
   }
 
-  .nav-items {
-    color: black;
-    text-transform: uppercase;
+  .nav-bar {
     display: flex;
-    align-items: center;
     gap: 20px;
-    font-size: 20px;
 
+    .icons {
+      display: flex;
+      gap: 20px;
+      font-size: 25px;
+      color: black;
 
-    .item {
+      li:hover {
+        color: white;
+      }
+    }
+
+    .nav-items {
+      color: black;
+      text-transform: uppercase;
       display: flex;
       align-items: center;
-      margin: 0 10px;
-      line-height: 1.5rem;
-    }
+      gap: 20px;
+      font-size: 25px;
 
-    .item:hover {
-      color: white;
 
+      .item {
+        display: flex;
+        align-items: center;
+        margin: 0 10px;
+        line-height: 1.5rem;
+      }
+
+      .item:hover {
+        color: white;
+
+      }
     }
   }
+
 }
 </style>

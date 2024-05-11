@@ -1,7 +1,7 @@
 <script>
 import Hero from './Hero.vue';
 import Cards from './Cards.vue';
-import NewMusicVideo from './NewMusicVideo.vue';
+import ContactsAndHours from './ContactsAndHours.vue';
 import AlbumOutNow from './AlbumOutNow.vue';
 import Counter from './Counter.vue';
 import BestMusicBlog from './BestMusicBlog.vue';
@@ -13,7 +13,7 @@ export default {
   components: {
     Hero,
     Cards,
-    NewMusicVideo,
+    ContactsAndHours,
     Welcome,
     AlbumOutNow,
     Counter,
@@ -33,13 +33,13 @@ export default {
     <Welcome />
   </div>
   <div>
+    <ContactsAndHours />
+  </div>
+  <div>
     <Hero />
   </div>
   <div class="cards-div">
     <Cards />
-  </div>
-  <div>
-    <NewMusicVideo />
   </div>
   <div>
     <AlbumOutNow />
