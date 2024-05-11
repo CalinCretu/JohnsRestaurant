@@ -18,8 +18,8 @@ export default {
       store: store,
       modules: [Autoplay, Pagination, Navigation, EffectCreative],
       photos: [
-        '/imgs/photos/Fotobackground.jpeg',
-        '/imgs/photos/Fotobackground.jpeg',
+        '/imgs/photos/Tagliata_2.jpg',
+        '/imgs/photos/Melone.jpg',
         '/imgs/photos/Cheesecake.png',
         '/imgs/photos/Gambero.jpg',
         '/imgs/photos/Prosciutto.jpg',

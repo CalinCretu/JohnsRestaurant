@@ -1,6 +1,14 @@
 <script>
 export default {
-  name: 'ContactsAndHours'
+  name: 'ContactsAndHours',
+  methods: {
+    makeCall(phoneNumber) {
+      window.location.href = phoneNumber;
+    },
+    sendEmail(emailAddress) {
+      window.location.href = emailAddress;
+    }
+  }
 }
 </script>
 
@@ -9,20 +17,38 @@ export default {
     <ul class="cards">
       <li class="contacts-card">
         <div class="title">
-          I NOSTRI CONTATTI
+          CONTATTI
         </div>
-        <p>
-          <a class="icon" href="tel: 340 8184775"><font-awesome-icon icon="phone" /></a>
-        <p>+(39) 340 8184775</p>
-        </p>
-        <p>
-          <a class="icon" href="tel: 075 8506684"><font-awesome-icon icon="phone" /></a>
-          +(39) 075 8506684
-        </p>
+        <div>
+          <div class="description" @click="makeCall('tel: 3408184775')">
+            <p>
+              <a class="icon" href="tel: 3408184775"><font-awesome-icon icon="phone" /></a>
+            </p>
+            <p>
+              +(39) 340 8184775
+            </p>
+          </div>
+          <div class="description" @click="makeCall('tel: 0758506684')">
+            <p>
+              <a class="icon" href="tel: 0758506684"><font-awesome-icon icon="phone" /></a>
+            </p>
+            <p>
+              +(39) 075 8506684
+            </p>
+          </div>
+          <div class="description" @click="sendEmail('mailto:jpatdot183@gmail.com')">
+            <p>
+              <a class="icon" href="mailto: jpatdot183@gmail.com"><font-awesome-icon icon="envelope" /></a>
+            </p>
+            <p>
+              jpatdot183@gmail.com
+            </p>
+          </div>
+        </div>
       </li>
       <li class="hours-card">
         <div class="title">
-          I NOSTRI ORARI
+          ORARI
         </div>
         <p>Lunedì giorno di chiusura</p>
         <p>
@@ -64,6 +90,15 @@ export default {
     .title {
       font-size: 25px;
       margin-bottom: 20px;
+    }
+
+    .description {
+      display: flex;
+      justify-content: space-between;
+      width: 220px;
+      margin: 10px 0px;
+      cursor: pointer;
+      font-size: 22px;
     }
 
     .contacts-card {

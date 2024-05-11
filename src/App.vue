@@ -17,35 +17,38 @@ export default {
   data() {
     return {
       store: store,
+      isHeaderSmall: false
     }
   },
-  created() {
-    axios.get('http://localhost:3000/hero_cards')
-      .then(res => {
-        const card = res.data
-        this.store.hero_card = card
-      }),
-      axios.get('http://localhost:3000/sense_the_jazz_2')
-        .then(res => {
-          const card = res.data
-          this.store.sense_the_jazz_2 = card
-        })
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      this.isHeaderSmall = window.scrollY > 0;
+    }
   }
+
 }
 </script>
 
 <template>
-  <div class="header">
+  <div class="header" :class="{ 'small': isHeaderSmall }">
     <Header />
   </div>
-  <div class="main">
-    <Main />
-  </div>
-  <div class="footer">
-    <Footer />
-  </div>
-  <div class="rights">
-    <Rights />
+  <div class="content">
+    <div class="main">
+      <Main />
+    </div>
+    <div class="footer">
+      <Footer />
+    </div>
+    <div class="calin">
+      <Rights />
+    </div>
   </div>
 </template>
 
@@ -53,13 +56,27 @@ export default {
 @use './styles/general.scss';
 
 .header {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  &.small {
+    box-shadow: 0px 0px 20px 5px white;
+  }
+}
+
+.content {
+  margin-top: 100px;
+  /* Assicura che il contenuto sotto l'header inizi dalla posizione corretta */
 }
 
 .header,
 .main,
 .footer,
-.rights {
+.calin {
   background-color: rgb(182, 204, 215);
 }
 </style>
