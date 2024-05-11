@@ -2,10 +2,6 @@
 import Hero from './Hero.vue';
 import Cards from './Cards.vue';
 import ContactsAndHours from './ContactsAndHours.vue';
-import AlbumOutNow from './AlbumOutNow.vue';
-import Counter from './Counter.vue';
-import BestMusicBlog from './BestMusicBlog.vue';
-import Carousel from './Carousel.vue';
 import { store } from '../store';
 import Welcome from './Welcome.vue';
 export default {
@@ -15,10 +11,6 @@ export default {
     Cards,
     ContactsAndHours,
     Welcome,
-    AlbumOutNow,
-    Counter,
-    BestMusicBlog,
-    Carousel,
   },
   data() {
     return {
@@ -41,22 +33,10 @@ export default {
   <div class="cards-div">
     <Cards />
   </div>
-  <div>
-    <AlbumOutNow />
-  </div>
-  <div>
-    <Counter />
-  </div>
-  <div>
-    <BestMusicBlog />
-  </div>
-  <div>
-    <Carousel />
-  </div>
 </template>
 
 <style lang="scss" scoped>
 .cards-div {
-  margin: 30px 0px
+  margin-top: 30px;
 }
 </style>

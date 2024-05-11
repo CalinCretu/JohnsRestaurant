@@ -57,6 +57,22 @@ export default {
         <p>12:30 am - 2:30 pm</p>
         <p>7:30 pm - 9:30 pm</p>
       </li>
+      <li class="location-card">
+        <div class="title">
+          Mappe
+        </div>
+        <p>
+          Puoi cliccare su questo pulsante per trovarci
+        </p>
+        <p>
+          <a
+            href="https://www.google.it/maps/place/John%E2%80%99s+Restaurant/@42.7834422,12.4249516,16.42z/data=!4m6!3m5!1s0x132ec190cb6c3913:0xab80f6745af94a36!8m2!3d42.7835275!4d12.4260127!16s%2Fg%2F11jvpn05d4?entry=ttu">
+            <button class="mappe-button">
+              Mappe
+            </button>
+          </a>
+        </p>
+      </li>
     </ul>
   </div>
 </template>
@@ -75,7 +91,7 @@ export default {
 
   .cards {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     font-size: 20px;
     width: 1000px;
 
@@ -96,7 +112,7 @@ export default {
       display: flex;
       justify-content: space-between;
       width: 220px;
-      margin: 10px 0px;
+      margin-bottom: 10px;
       cursor: pointer;
       font-size: 22px;
     }
@@ -107,14 +123,30 @@ export default {
       flex-direction: column;
       align-items: center;
       justify-content: start;
+
+      :hover {
+        color: white;
+      }
     }
 
     .hours-card {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
     }
+
+    .location-card {
+      border: none;
+    }
+  }
+
+  .mappe-button {
+    border: none;
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+
   }
 }
 </style>
