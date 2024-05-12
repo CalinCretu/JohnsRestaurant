@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-  <div class="container-md">
+  <div class="container-lg">
     <div class="title">
       John's Restaurant
     </div>
@@ -26,12 +26,12 @@ export default {
   </div>
 </template>
 
-<style lang="scss" scoped>
-.container-md {
-  padding: 20px 0px;
+<style lang="scss">
+.container-lg {
 
   .title {
     font-size: 90px;
+    padding-top: 60px;
   }
 
   .second-title {

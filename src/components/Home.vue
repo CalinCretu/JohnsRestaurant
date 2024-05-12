@@ -33,6 +33,7 @@ export default {
   <div class="cards-div">
     <Cards />
   </div>
+
 </template>
 
 <style lang="scss" scoped>

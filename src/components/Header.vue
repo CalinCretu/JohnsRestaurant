@@ -7,16 +7,15 @@ export default {
       nav: [
         {
           text: 'Home',
-          href: '#'
+          name: 'home'
         },
         {
           text: 'Menu',
-          icon: '/imgs/dropdown_icon.svg',
-          href: '#'
+          name: 'menu'
         },
         {
           text: 'Lista dei Vini',
-          href: '#'
+          name: 'vini'
         },
       ],
       isHeaderSmall: false
@@ -45,11 +44,10 @@ export default {
     </div>
     <nav class="nav-bar">
       <ul class="nav-items">
-        <li class="item" v-for="( item, i ) in  nav " :key="i">
-          <a :href="item.href">{{ item.text }}</a>
-        </li>
+        <li><router-link :to="{ name: 'home' }">Home</router-link></li>
+        <li><router-link :to="{ name: 'menu' }">Menu</router-link></li>
+        <li><router-link :to="{ name: 'vini' }">Lista dei vini</router-link></li>
       </ul>
-      <router-link :to="{ name: 'menu' }">Menu</router-link>
       <ul class="icons">
         <li>
           <a

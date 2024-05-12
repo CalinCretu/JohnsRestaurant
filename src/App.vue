@@ -40,15 +40,7 @@ export default {
     <Header />
   </div>
   <div class="content">
-    <div class="home">
-      <Home />
-    </div>
-    <div class="footer">
-      <Footer />
-    </div>
-    <div class="calin">
-      <Rights />
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -70,7 +62,7 @@ export default {
 
 .content {
   margin-top: 100px;
-  /* Assicura che il contenuto sotto l'header inizi dalla posizione corretta */
+  background-color: #b6ccd7;
 }
 
 .header,

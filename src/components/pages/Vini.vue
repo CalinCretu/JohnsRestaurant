@@ -8,14 +8,9 @@ export default {
 <template>
   <div class="container-lg">
     <div class="title">
-      Menu
+      Lista dei vini
     </div>
   </div>
-
 </template>
 
-<style lang="scss" scoped>
-.title {
-  font-size: 90px;
-}
-</style>
+<style lang="scss"></style>
