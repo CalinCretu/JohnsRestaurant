@@ -17,31 +17,37 @@ export default {
 </script>
 
 <template>
-  <div class="container-lg">
+  <div class="container-md">
     <ul class="cards">
 
       <li class="card-white">
-        <h3>
-          Il nostro menù
-        </h3>
-        <p>
-          Clicca qui per consultarlo
-        </p>
-        <div class="image-wrapper">
-          <img src="/public/imgs/photos/Tagliata.jpg" alt="">
-        </div>
+        <router-link :to="{ name: 'menu' }">
+          <h3>
+            Il nostro menù
+          </h3>
+          <p>
+            Clicca qui per consultarlo
+          </p>
+          <div class="image-wrapper">
+            <img src="/public/imgs/photos/Tagliata.jpg" alt="">
+          </div>
+        </router-link>
+
       </li>
 
       <li class="card-white">
-        <h3>
-          La nostra lista dei vini
-        </h3>
-        <p>
-          Clicca qui
-        </p>
-        <div class="image-wrapper">
-          <img src="/public/imgs/photos/Tagliata.jpg" alt="">
-        </div>
+        <router-link :to="{ name: 'vini' }">
+          <h3>
+            La nostra lista dei vini
+          </h3>
+          <p>
+            Clicca qui
+          </p>
+          <div class="image-wrapper">
+            <img src="/public/imgs/photos/Tagliata.jpg" alt="">
+          </div>
+        </router-link>
+
       </li>
 
     </ul>
@@ -49,7 +55,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.container-lg {
+.container-md {
   color: #b6ccd7;
   margin: 0 auto;
 
@@ -75,7 +81,7 @@ export default {
 
   .image-wrapper {
     width: 100%;
-    height: 500px;
+    height: 300px;
     overflow: hidden;
     margin-top: 15px;
   }

@@ -41,7 +41,7 @@ export default {
               <a class="icon" href="mailto: jpatdot183@gmail.com"><font-awesome-icon icon="envelope" /></a>
             </p>
             <p>
-              jpatdot183@gmail.com
+              johncheftodi@gmail.com
             </p>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default {
 
 <style lang="scss" scoped>
 .container-lg {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: center;
 
@@ -93,10 +93,10 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     font-size: 20px;
-    width: 1000px;
+    max-width: 1000px;
 
     .icon {
-      margin-right: 10px;
+      margin-right: 35px;
     }
 
     p {
@@ -146,7 +146,15 @@ export default {
     padding: 10px 20px;
     border-radius: 25px;
     cursor: pointer;
+  }
 
+  .mappe-button:hover {
+    color: white;
+    background-color: black;
+  }
+
+  .mappe-button:active {
+    transform: scale(0.9);
   }
 }
 </style>
