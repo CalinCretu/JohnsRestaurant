@@ -58,6 +58,7 @@ export default {
 .container-md {
   color: #b6ccd7;
   margin: 0 auto;
+  padding-bottom: 0px;
 
   .cards {
     display: grid;
@@ -75,6 +76,7 @@ export default {
 
       h3 {
         color: black;
+        padding-top: 10px;
       }
     }
   }

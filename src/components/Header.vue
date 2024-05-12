@@ -128,15 +128,15 @@ export default {
       gap: 20px;
       font-size: 25px;
 
+      :hover {
+        color: white;
+      }
+
       .item {
         display: flex;
         align-items: center;
         margin: 0 10px;
         line-height: 1.5rem;
-      }
-
-      .item:hover {
-        color: white;
       }
     }
   }
