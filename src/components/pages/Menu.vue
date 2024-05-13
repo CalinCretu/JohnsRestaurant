@@ -49,7 +49,8 @@ export default {
         <div class="eng">
           <h1>Welcome</h1>
           <p>
-            At the moment of ordering you are kindly requested to inform waiter or waitress if you have any allergies
+            At the moment of ordering you are kindly requested to inform any waiter or waitress if you have any
+            allergies
             and
             intolerance of any specific ingredients. We will provide you with a menu on request.
           </p>
@@ -148,6 +149,11 @@ export default {
 
     p {
       color: black;
+    }
+
+    .grazie {
+      padding-top: 20px;
+      font-size: 25px;
     }
   }
 
