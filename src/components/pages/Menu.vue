@@ -117,11 +117,11 @@ export default {
     color: black;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    box-shadow: 0px 25px 15px -20px white;
+    align-items: baseline;
+    box-shadow: 0px 22px 10px -20px white;
 
     .name-desc {
-      font-size: 18px;
+      font-size: 16px;
     }
 
     .price {
