@@ -60,8 +60,6 @@ export default {
       text-align: justify;
     }
 
-    .image-card {}
-
     .text-card p {
       margin-bottom: 15px;
     }
