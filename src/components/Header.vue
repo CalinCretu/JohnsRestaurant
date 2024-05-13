@@ -3,7 +3,7 @@ export default {
   name: "Header",
   data() {
     return {
-      logo: '/imgs/logos/Logo_small.png',
+      logo: '/imgs/logos/Logo_Johns.jpg',
       nav: [
         {
           text: 'Home',
@@ -80,12 +80,17 @@ export default {
 
     .logo {
       max-width: 50px;
+      border-radius: 50%;
     }
   }
 
   .logo {
     max-width: 100px;
     transition: all 0.3s ease;
+
+    .logo-image {
+      border-radius: 50%;
+    }
   }
 
   .nav-bar {
