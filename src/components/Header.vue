@@ -52,7 +52,9 @@ export default {
           <div class="modal-body">
             <nav class="nav-bar-modale" style="color: black;">
               <ul class="nav-items-modale">
-                <li><a type="button" class="btn-close" @click="closeModal">Chiudi</a></li>
+                <li>
+                  <a type="button" class="btn-close" @click="closeModal"><font-awesome-icon icon="circle-xmark" /></a>
+                </li>
                 <li @click="closeModal"><router-link :to="{ name: 'home' }">Home</router-link></li>
                 <li @click="closeModal"><router-link :to="{ name: 'menu' }">Menu</router-link></li>
                 <li @click="closeModal"><router-link :to="{ name: 'vini' }">Vini</router-link></li>
@@ -104,6 +106,9 @@ export default {
   align-items: center;
   transition: all 0.2s ease;
 
+
+
+
   .modal {
     margin: -10px -10px;
     display: none;
@@ -115,7 +120,7 @@ export default {
     overflow-x: hidden;
     overflow-y: auto;
     outline: 0;
-    transition: right 0.5s ease;
+    transform: translate(0px, 0px);
   }
 
   .modal.show {
@@ -154,15 +159,16 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        font-size: 20px;
-        gap: 10px;
+        font-size: 30px;
+        gap: 20px;
+
+        li {
+          &:hover {
+            color: white;
+          }
+        }
       }
     }
-  }
-
-  .slide-in {
-    transform: translateX(0);
-    transition: transform 0.5s ease;
   }
 
   &.small {
