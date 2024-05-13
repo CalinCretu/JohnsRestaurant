@@ -25,11 +25,11 @@ export default {
 </script>
 
 <template>
-  <div class="container-lg">
+  <div class="container-lg" v-if="viniData">
     <div class="title">
       Lista dei vini
     </div>
-    <div v-if="viniData">
+    <div>
       <ul class="container-sm">
 
         <li class="sections">
@@ -178,8 +178,13 @@ export default {
 
       </ul>
     </div>
-    <div v-else>
-      <p>Loading...</p>
+  </div>
+  <div v-else>
+    <div class="container-sm">
+      <div class="loading">
+        <p>Caricamento...</p>
+        <img src="/public/imgs/logos/Logo_Johns.jpg" alt="">
+      </div>
     </div>
   </div>
 </template>
@@ -252,6 +257,37 @@ export default {
         }
       }
     }
+  }
+}
+
+.container-sm {
+  height: 100vh;
+  padding-top: 60px;
+
+  .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+
+    img {
+      width: 300px;
+      border-radius: 50%;
+      animation: rotateClockwise 6s infinite linear;
+    }
+  }
+}
+
+@keyframes rotateClockwise {
+  from {
+    transform: rotate(0deg);
+
+  }
+
+  to {
+    transform: rotate(360deg);
+
   }
 }
 </style>
