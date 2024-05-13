@@ -14,7 +14,7 @@ export default {
     async fetchMenuData() {
       try {
         const response = await axios.get('https://johns-restaurant-todi-db.onrender.com/menu');
-        this.menuData = response.data[0]; // Assuming the structure of the response is similar to your previous JSON data
+        this.menuData = response.data[0];
       } catch (error) {
         console.error('Error fetching menu data:', error);
       }
