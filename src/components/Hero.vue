@@ -28,6 +28,12 @@ export default {
         '/imgs/photos/Salmone.jpg',
         '/imgs/photos/Tagliata.jpg',
         '/imgs/photos/Tortino.jpg',
+        '/imgs/photos/Cheesecake&TortaPerugina.png',
+        '/imgs/photos/TortinoDolceCuore.jpg',
+        '/imgs/photos/TortiniDolceCuore.jpg',
+        '/imgs/photos/Scoglio.jpg',
+        '/imgs/photos/RisottoBaccala.jpg',
+        '/imgs/photos/InsalataDiMare.png'
       ]
     }
   }

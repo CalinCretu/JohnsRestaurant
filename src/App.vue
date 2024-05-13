@@ -69,4 +69,10 @@ export default {
 .calin {
   background-color: rgb(182, 204, 215);
 }
+
+@media screen and (max-width: 768px) {
+  .content {
+    margin-top: 75px;
+  }
+}
 </style>

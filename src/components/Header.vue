@@ -18,7 +18,8 @@ export default {
           name: 'vini'
         },
       ],
-      isHeaderSmall: false
+      isHeaderSmall: false,
+      isModalOpen: false
     };
   },
   mounted() {
@@ -30,6 +31,12 @@ export default {
   methods: {
     handleScroll() {
       this.isHeaderSmall = window.scrollY > 0;
+    },
+    openModal() {
+      this.isModalOpen = true; // Apri la modale
+    },
+    closeModal() {
+      this.isModalOpen = false; // Chiudi la modale
     }
   }
 }
@@ -37,6 +44,25 @@ export default {
 
 <template>
   <div class="container-lg" :class="{ 'small': isHeaderSmall }">
+    <!--MODALE-->
+    <div class="modal" :class="{ 'show': isModalOpen }">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Contenuto della modale -->
+          <div class="modal-body">
+            <nav class="nav-bar-modale" style="color: black;">
+              <ul class="nav-items-modale">
+                <li><a type="button" class="btn-close" @click="closeModal">Chiudi</a></li>
+                <li @click="closeModal"><router-link :to="{ name: 'home' }">Home</router-link></li>
+                <li @click="closeModal"><router-link :to="{ name: 'menu' }">Menu</router-link></li>
+                <li @click="closeModal"><router-link :to="{ name: 'vini' }">Vini</router-link></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--MODALE-->
     <div class="logo">
       <router-link :to="{ name: 'home' }"><img class="logo-image" :src="logo" alt=""></router-link>
     </div>
@@ -44,26 +70,29 @@ export default {
       <ul class="nav-items">
         <li><router-link :to="{ name: 'home' }">Home</router-link></li>
         <li><router-link :to="{ name: 'menu' }">Menu</router-link></li>
-        <li><router-link :to="{ name: 'vini' }">Lista dei vini</router-link></li>
-      </ul>
-      <ul class="icons">
-        <li>
-          <a
-            href="https://www.google.it/maps/place/John%E2%80%99s+Restaurant/@42.7834422,12.4249516,16.42z/data=!4m6!3m5!1s0x132ec190cb6c3913:0xab80f6745af94a36!8m2!3d42.7835275!4d12.4260127!16s%2Fg%2F11jvpn05d4?entry=ttu"><font-awesome-icon
-              icon="location-dot" class="location-icon" />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/elena_johnpaterson/?hl=en"><font-awesome-icon
-              icon="fa-brands fa-instagram" />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/johnpatersonchef/"><font-awesome-icon icon="fa-brands fa-facebook" />
-          </a>
-        </li>
+        <li><router-link :to="{ name: 'vini' }">Vini</router-link></li>
       </ul>
     </nav>
+    <ul class="icons">
+      <li>
+        <a
+          href="https://www.google.it/maps/place/John%E2%80%99s+Restaurant/@42.7834422,12.4249516,16.42z/data=!4m6!3m5!1s0x132ec190cb6c3913:0xab80f6745af94a36!8m2!3d42.7835275!4d12.4260127!16s%2Fg%2F11jvpn05d4?entry=ttu"><font-awesome-icon
+            icon="location-dot" class="location-icon" />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/elena_johnpaterson/?hl=en"><font-awesome-icon
+            icon="fa-brands fa-instagram" />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.facebook.com/johnpatersonchef/"><font-awesome-icon icon="fa-brands fa-facebook" />
+        </a>
+      </li>
+    </ul>
+    <div class="burger" @click="openModal">
+      <font-awesome-icon icon="bars" />
+    </div>
   </div>
 </template>
 
@@ -73,14 +102,85 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
+
+  .modal {
+    margin: -10px -10px;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1050;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+    transition: right 0.5s ease;
+  }
+
+  .modal.show {
+    display: block;
+  }
+
+  .modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px;
+  }
+
+  .modal-content {
+    background-color: #b6ccd7;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+  }
+
+  .modal-header {
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .modal-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  .modal-body {
+    position: relative;
+    padding: 1rem;
+
+    .nav-bar-modale {
+      .nav-items-modale {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 20px;
+        gap: 10px;
+      }
+    }
+  }
+
+  .slide-in {
+    transform: translateX(0);
+    transition: transform 0.5s ease;
+  }
 
   &.small {
-    padding: 5px 0px;
+    padding: 5px 10px;
 
     .logo {
       max-width: 50px;
       border-radius: 50%;
+    }
+  }
+
+  .burger {
+    display: none;
+    color: black;
+    font-size: 30px;
+
+    :hover {
+      color: white;
     }
   }
 
@@ -93,34 +193,40 @@ export default {
     }
   }
 
+  .icons {
+    display: flex;
+    gap: 20px;
+    font-size: 30px;
+    color: black;
+
+    :hover {
+      color: white;
+    }
+
+    .location-icon {
+      animation: shake 0.5s infinite alternate; // Applica l'animazione CSS
+    }
+
+    @keyframes shake {
+      0% {
+        transform: translateX(0px) translateY(0px);
+      }
+
+      100% {
+        transform: translateX(0px) translateY(-3px); // Oscilla l'icona da sinistra a destra
+      }
+    }
+  }
+
   .nav-bar {
     display: flex;
     gap: 20px;
     transition: all 0.3s ease;
 
-    .icons {
-      display: flex;
-      gap: 20px;
-      font-size: 25px;
-      color: black;
 
-      .location-icon {
-        animation: shake 0.5s infinite alternate; // Applica l'animazione CSS
-      }
 
-      @keyframes shake {
-        0% {
-          transform: translateX(0px) translateY(0px);
-        }
-
-        100% {
-          transform: translateX(0px) translateY(-3px); // Oscilla l'icona da sinistra a destra
-        }
-      }
-
-      li:hover {
-        color: white;
-      }
+    li:hover {
+      color: white;
     }
 
     .nav-items {
@@ -141,6 +247,24 @@ export default {
         margin: 0 10px;
         line-height: 1.5rem;
       }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .container-lg.small {
+      padding: 10px 20px;
+    }
+
+    .nav-bar {
+      display: none;
+    }
+
+    .logo {
+      width: 50px;
+    }
+
+    .burger {
+      display: block;
     }
   }
 }

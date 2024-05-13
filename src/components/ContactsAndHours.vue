@@ -140,12 +140,30 @@ export default {
   }
 
   .mappe-button {
+    appearance: none;
+    outline: none;
     border: none;
-    font-size: 20px;
-    margin-top: 20px;
-    padding: 10px 20px;
-    border-radius: 25px;
     cursor: pointer;
+
+    padding: 15px 25px;
+    background-image: linear-gradient(to right, rgb(71, 71, 255), rgb(29, 206, 29));
+    border-radius: 8px;
+    margin-top: 20px;
+
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 700;
+
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+    transition: 0.2s ease-out;
+
+    &:hover {
+      box-shadow: 6px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    &:active {
+      box-shadow: none;
+    }
   }
 
   .mappe-button:hover {
@@ -154,7 +172,7 @@ export default {
   }
 
   .mappe-button:active {
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
 }
 </style>
