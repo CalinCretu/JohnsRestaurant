@@ -24,44 +24,73 @@ export default {
 </script>
 
 <template>
-  <div class="container-md">
+  <div class="container-lg">
     <div class="title">
       Menu
     </div>
     <div v-if="menuData">
-      <div class="menu">
-        <ul class="container-sm">
+      <ul class="container-sm">
+        <li class="sections">
           <h1 class="groups">Antipasti</h1>
-          <li class="dishes" v-for="antipasto in menuData.antipasti" :key="antipasto.name">
-            <div class="name-desc">
-              <h2>{{ antipasto.name }}</h2>
-              <p>{{ antipasto.eng_description }}</p>
-            </div>
-            <div class="price">
-              <p>{{ antipasto.price }} &euro;</p>
-            </div>
-          </li>
+        <li class="dishes" v-for="antipasto in menuData.antipasti" :key="antipasto.name">
+          <div class="name-desc">
+            <h2>{{ antipasto.name }}</h2>
+            <p>{{ antipasto.eng_description }}</p>
+          </div>
+          <div class="price">
+            <p>{{ antipasto.price }} &euro;</p>
+          </div>
+        </li>
+        </li>
+        <li class="sections">
           <h1 class="groups">Primi Piatti</h1>
-          <li class="dishes" v-for="primo in menuData.primi" :key="primo.name">
-            <div class="name-desc">
-              <h2>{{ primo.name }}</h2>
-              <p>{{ primo.eng_description }}</p>
-            </div>
-            <div class="price">
-              <p>{{ primo.price }} &euro;</p>
-            </div>
-          </li>
-          <li class="dishes" v-for="antipasto in menuData.antipasti" :key="antipasto.name">
-            <div class="name-desc">
-              <h2>{{ antipasto.name }}</h2>
-              <p>{{ antipasto.eng_description }}</p>
-            </div>
-            <div class="price">
-              <p>{{ antipasto.price }} &euro;</p>
-            </div>
-          </li>
-        </ul>
-      </div>
+        <li class="dishes" v-for="primo in menuData.primi" :key="primo.name">
+          <div class="name-desc">
+            <h2>{{ primo.name }}</h2>
+            <p>{{ primo.eng_description }}</p>
+          </div>
+          <div class="price">
+            <p>{{ primo.price }} &euro;</p>
+          </div>
+        </li>
+        </li>
+        <li class="sections">
+          <h1 class="groups">Secondi Piatti</h1>
+        <li class="dishes" v-for="secondo in menuData.secondi" :key="secondo.name">
+          <div class="name-desc">
+            <h2>{{ secondo.name }}</h2>
+            <p>{{ secondo.eng_description }}</p>
+          </div>
+          <div class="price">
+            <p>{{ secondo.price }} &euro;</p>
+          </div>
+        </li>
+        </li>
+        <li class="sections">
+          <h1 class="groups">Contorni</h1>
+        <li class="dishes" v-for="contorno in menuData.contorni" :key="contorno.name">
+          <div class="name-desc">
+            <h2>{{ contorno.name }}</h2>
+            <p>{{ contorno.eng_description }}</p>
+          </div>
+          <div class="price">
+            <p>{{ contorno.price }} &euro;</p>
+          </div>
+        </li>
+        </li>
+        <li class="sections">
+          <h1 class="groups">Dolci</h1>
+        <li class="dishes" v-for="dolce in menuData.dolci" :key="dolce.name">
+          <div class="name-desc">
+            <h2>{{ dolce.name }}</h2>
+            <p>{{ dolce.eng_description }}</p>
+          </div>
+          <div class="price">
+            <p>{{ dolce.price }} &euro;</p>
+          </div>
+        </li>
+        </li>
+      </ul>
       <!-- Aggiungi altri blocchi simili per primi, secondi, contorni e dolci -->
     </div>
     <div v-else>
@@ -71,7 +100,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.container-md {
+.container-lg {
   .title {
     font-size: 90px;
   }
@@ -89,7 +118,6 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // border-bottom: 1px solid white;
     box-shadow: 0px 25px 15px -20px white;
 
     .name-desc {
@@ -98,6 +126,16 @@ export default {
 
     .price {
       font-size: 20px;
+    }
+  }
+
+  .container-sm {
+    .sections {
+      margin: 20px 0px;
+
+      h1 {
+        padding: 10px 0px;
+      }
     }
   }
 }

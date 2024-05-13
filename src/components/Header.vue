@@ -38,9 +38,7 @@ export default {
 <template>
   <div class="container-lg" :class="{ 'small': isHeaderSmall }">
     <div class="logo">
-      <li>
-        <router-link :to="{ name: 'home' }"><img class="logo-image" :src="logo" alt=""></router-link>
-      </li>
+      <router-link :to="{ name: 'home' }"><img class="logo-image" :src="logo" alt=""></router-link>
     </div>
     <nav class="nav-bar">
       <ul class="nav-items">
