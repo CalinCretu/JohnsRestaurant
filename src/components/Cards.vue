@@ -29,7 +29,7 @@ export default {
             Clicca qui per consultarlo
           </p>
           <div class="image-wrapper">
-            <img src="/public/imgs/photos/Tagliata.jpg" alt="">
+            <img src="/public/imgs/photos/TagliataAlSangue.png" alt="">
           </div>
         </router-link>
 
@@ -44,7 +44,7 @@ export default {
             Clicca qui
           </p>
           <div class="image-wrapper">
-            <img src="/public/imgs/photos/Tagliata.jpg" alt="">
+            <img src="/public/imgs/photos/Vineria.png" alt="">
           </div>
         </router-link>
 
@@ -83,7 +83,7 @@ export default {
 
   .image-wrapper {
     width: 100%;
-    height: 300px;
+    height: 500px;
     overflow: hidden;
     margin-top: 15px;
   }

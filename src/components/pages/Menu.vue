@@ -24,7 +24,7 @@ export default {
 </script>
 
 <template>
-  <div class="container-lg">
+  <div class="container-lg" v-if="menuData">
     <div class="title">
       Menu
     </div>
@@ -67,7 +67,7 @@ export default {
       </div>
 
     </div>
-    <div v-if="menuData">
+    <div>
       <ul class="container-sm">
         <li class="sections">
           <h1 class="groups">Antipasti</h1>
@@ -132,8 +132,13 @@ export default {
       </ul>
       <!-- Aggiungi altri blocchi simili per primi, secondi, contorni e dolci -->
     </div>
-    <div v-else>
-      <p>Loading...</p>
+  </div>
+  <div v-else>
+    <div class="container-sm">
+      <div class="loading">
+        <p>Caricamento...</p>
+        <img src="/public/imgs/logos/Logo_Johns.jpg" alt="">
+      </div>
     </div>
   </div>
 </template>
@@ -193,6 +198,37 @@ export default {
         padding: 10px 0px;
       }
     }
+  }
+}
+
+.container-sm {
+  height: 100vh;
+  padding-top: 60px;
+
+  .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+
+    img {
+      width: 300px;
+      border-radius: 50%;
+      animation: rotateClockwise 6s infinite linear;
+    }
+  }
+}
+
+@keyframes rotateClockwise {
+  from {
+    transform: rotate(0deg);
+
+  }
+
+  to {
+    transform: rotate(360deg);
+
   }
 }
 </style>
