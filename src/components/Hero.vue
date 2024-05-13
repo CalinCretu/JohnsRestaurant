@@ -39,7 +39,7 @@ export default {
       :autoplay="{ delay: 6000, disableOnInteraction: false, }" :modules="modules">
       <SwiperSlide v-for=" photo  in  photos " :key="photo">
         <div class="slide-wrapper">
-          <img class="hero-image" :src="`public/${photo}`" alt="Immagine Piatto">
+          <img class="hero-image" :src="photo" alt="Immagine Piatto">
         </div>
       </SwiperSlide>
     </Swiper>
