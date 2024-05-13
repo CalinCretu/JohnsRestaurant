@@ -23,7 +23,7 @@ export default {
       <li class="card-white">
         <router-link :to="{ name: 'menu' }">
           <h3>
-            Il nostro menù
+            Menù
           </h3>
           <p>
             Clicca qui per consultarlo
@@ -38,7 +38,7 @@ export default {
       <li class="card-white">
         <router-link :to="{ name: 'vini' }">
           <h3>
-            La nostra lista dei vini
+            Carta dei vini
           </h3>
           <p>
             Clicca qui

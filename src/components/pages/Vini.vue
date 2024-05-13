@@ -196,6 +196,8 @@ export default {
   }
 
   .container-sm {
+    height: 100%;
+
     .sections {
       margin: 20px 0px;
 

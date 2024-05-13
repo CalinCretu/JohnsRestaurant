@@ -12,27 +12,29 @@ export default {
     <div class="cards">
       <div class="text-card">
         <p>
-          Ho iniziato a <b>cucinare</b> in Cumbria, vicino alla Scozia, nel 1980. È stato il posto perfetto per iniziare
-          la mia carriera con la cucina locale, caratterizzata da una forte identità, dove l'uso di erbe selvatiche e
-          spezie era comune, qualcosa che ancora oggi mi piace fare nei nostri piatti locali in Umbria.
+          Ho iniziato a <b>cucinare</b> nel 1980 in <b>Cumbria</b>, al confine con la Scozia. È stato il posto perfetto
+          per
+          iniziare
+          la mia carriera poiché la cucina locale è caratterizzata da una forte identità, mi ha insegnato l'uso di erbe
+          selvatiche
+          e spezie, cosa che ancora oggi amo fare nei nostri piatti locali in Umbria.
         </p>
         <p>
-          Dopo aver lavorato a Londra per quindici anni, un'opportunità che ha cambiato la vita mi ha mostrato la
-          possibilità di gestire una scuola di cucina in Umbria.
+          Dopo aver lavorato a Londra per quindici anni, un'opportunità che mi ha cambiato la vita mi ha permesso di
+          gestire una scuola di cucina in <b>Umbria</b>.
         </p>
         <p>
-          Era l'anno 2000 e da allora ho incontrato la mia adorabile moglie Elena e ho avuto l'opportunità di gestire
-          ristoranti di successo nella zona intorno a Todi, inclusa la mia Antica Osteria de la Valle (dal 2006 per 8
-          anni) e infine La Cantina del Mercataccio dal 2017.
+          Era l'anno 2000 ed insieme alla mia adorabile moglie Elena ho avuto l'opportunità di gestire
+          ristoranti di successo a <b>Todi</b>, inclusa la mia <b>Antica Osteria de la Valle</b> (per 8
+          anni) ed infine <b>La Cantina del Mercataccio</b> dal 2017.
         </p>
         <p>
-          Nove anni fa abbiamo iniziato la nostra avventura nel realizzare il nostro sogno di aprire il nostro
-          ristorante e scuola di cucina per condividere la mia conoscenza dei piatti e degli ingredienti locali. Siamo
-          situati nelle vicinanze di Todi (vicino all'uscita Todi/San Damiano della E45).
+          Nove anni fa abbiamo iniziato la nostra avventura nel realizzare il <b>sogno</b> di aprire il nostro
+          <b>ristorante</b> e scuola di cucina per condividere la mia conoscenza dei piatti e degli ingredienti locali.
         </p>
         <p>
-          Non vedo l'ora di dare il benvenuto ai nostri clienti e se è la vostra prima volta a trovarci, vorremmo
-          rendere la vostra esperienza qui un'occasione indimenticabile.
+          Non vedo l'ora di accogliere di nuovo i nostri clienti e, se è la vostra prima volta qui, desideriamo rendere
+          l' esperienza <b>indimenticabile</b>.
         </p>
       </div>
       <div class="image-card"><img src="/public/imgs/photos/RestaurantFoto.jpeg" alt="Restaurant_foto"></div>
