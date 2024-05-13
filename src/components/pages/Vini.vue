@@ -15,8 +15,9 @@ export default {
       try {
         const response = await axios.get('https://johns-restaurant-todi-db.onrender.com/vini');
         this.viniData = response.data[0];
+        console.log(this.viniData);
       } catch (error) {
-        console.error('Error fetching menu data:', error);
+        console.error('Error fetching vini data:', error);
       }
     }
   }
