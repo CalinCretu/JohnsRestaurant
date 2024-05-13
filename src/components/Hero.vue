@@ -23,6 +23,7 @@ export default {
         '/imgs/photos/Cheesecake.png',
         '/imgs/photos/Gambero.jpg',
         '/imgs/photos/Prosciutto.jpg',
+        '/imgs/photos/TagliataAlSangue.png',
         '/imgs/photos/Ravioli.png',
         '/imgs/photos/Salmone.jpg',
         '/imgs/photos/Tagliata.jpg',
