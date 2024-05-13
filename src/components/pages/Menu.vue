@@ -13,8 +13,8 @@ export default {
   methods: {
     async fetchMenuData() {
       try {
-        const response = await axios.get('db.json');
-        this.menuData = response.data.menu[0]; // Accedi al primo elemento dell'array "menu"
+        const response = await axios.get('https://johns-restaurant-todi-db.onrender.com/menu');
+        this.menuData = response.data[0]; // Assuming the structure of the response is similar to your previous JSON data
       } catch (error) {
         console.error('Error fetching menu data:', error);
       }
