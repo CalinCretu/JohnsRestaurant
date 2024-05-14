@@ -50,7 +50,7 @@ export default {
         <div class="title">
           ORARI
         </div>
-        <p>Lunedì giorno di chiusura</p>
+        <p>Lunedì Chiuso</p>
         <p>
           Martedì - Domenica
         </p>
