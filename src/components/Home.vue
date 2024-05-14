@@ -32,13 +32,17 @@ export default {
   <div>
     <Hero />
   </div>
-  <div class="cards-div">
+  <div class="paddingX">
     <Cards />
   </div>
-  <div>
+  <div class="paddingX">
     <OurStory />
   </div>
 
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.paddingX {
+  padding: 0px 10px;
+}
+</style>
