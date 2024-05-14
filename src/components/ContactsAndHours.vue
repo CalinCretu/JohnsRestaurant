@@ -184,8 +184,9 @@ export default {
     padding: 10px 20px;
 
     .cards {
-      font-size: 18px;
-      grid-template-columns: 1fr 1fr;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
       gap: 25px;
 
       .contacts-card {
