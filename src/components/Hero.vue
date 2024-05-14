@@ -15,6 +15,7 @@ export default {
   },
   data() {
     return {
+      slidesPerView: 8, // valore iniziale
       store: store,
       modules: [Autoplay, Pagination, Navigation, EffectCreative],
       photos: [
@@ -36,14 +37,34 @@ export default {
         '/imgs/photos/InsalataDiMare.png'
       ]
     }
+  },
+  mounted() {
+    // Listen to window resize event to update slides per view
+    window.addEventListener('resize', this.updateSlidesPerView);
+    // Initial update
+    this.updateSlidesPerView();
+  },
+  beforeDestroy() {
+    // Remove event listener when component is destroyed
+    window.removeEventListener('resize', this.updateSlidesPerView);
+  },
+  methods: {
+    updateSlidesPerView() {
+      // Adjust slides per view based on screen width
+      if (window.innerWidth <= 768) {
+        this.slidesPerView = 2;
+      } else {
+        this.slidesPerView = 8;
+      }
+    }
   }
 }
 </script>
 
 <template>
   <div class="container-lg">
-    <Swiper :slides-per-view="8" :grabCursor="true" :loop="true"
-      :autoplay="{ delay: 6000, disableOnInteraction: false, }" :modules="modules">
+    <Swiper :slides-per-view="slidesPerView" :grabCursor="true" :loop="true"
+      :autoplay="{ delay: 2000, disableOnInteraction: false, }" :modules="modules">
       <SwiperSlide v-for=" photo  in  photos " :key="photo">
         <div class="slide-wrapper">
           <img class="hero-image" :src="photo" alt="Immagine Piatto">
