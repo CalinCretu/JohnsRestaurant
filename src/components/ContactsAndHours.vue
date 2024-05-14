@@ -68,7 +68,7 @@ export default {
           <a
             href="https://www.google.it/maps/place/John%E2%80%99s+Restaurant/@42.7834422,12.4249516,16.42z/data=!4m6!3m5!1s0x132ec190cb6c3913:0xab80f6745af94a36!8m2!3d42.7835275!4d12.4260127!16s%2Fg%2F11jvpn05d4?entry=ttu">
             <button class="mappe-button">
-              Mappe
+              Maps
             </button>
           </a>
         </p>

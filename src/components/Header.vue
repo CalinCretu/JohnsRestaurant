@@ -52,8 +52,8 @@ export default {
           <div class="modal-body">
             <nav class="nav-bar-modale" style="color: black;">
               <ul class="nav-items-modale">
-                <li>
-                  <a type="button" class="btn-close" @click="closeModal"><font-awesome-icon icon="circle-xmark" /></a>
+                <li @click="closeModal" class="btn-close">
+                  <a type="button"><font-awesome-icon icon="circle-xmark" /></a>
                 </li>
                 <li @click="closeModal"><router-link :to="{ name: 'home' }">Home</router-link></li>
                 <li @click="closeModal"><router-link :to="{ name: 'menu' }">Menu</router-link></li>
@@ -106,9 +106,6 @@ export default {
   align-items: center;
   transition: all 0.2s ease;
 
-
-
-
   .modal {
     margin: -10px -10px;
     display: none;
@@ -140,16 +137,6 @@ export default {
     box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
   }
 
-  .modal-header {
-    padding: 1rem;
-    border-bottom: 1px solid #dee2e6;
-  }
-
-  .modal-title {
-    margin-bottom: 0;
-    line-height: 1.5;
-  }
-
   .modal-body {
     position: relative;
     padding: 1rem;
@@ -162,7 +149,21 @@ export default {
         font-size: 30px;
         gap: 20px;
 
-        li {
+        .btn-close {
+          border: none !important;
+        }
+
+        .btn-close:hover {
+          color: white;
+        }
+
+        li:not(:first-child) {
+          box-shadow: 0px 4px 5px -5px white;
+
+          &:active {
+            transform: scale(0.9);
+          }
+
           &:hover {
             color: white;
           }
@@ -193,6 +194,10 @@ export default {
   .logo {
     max-width: 100px;
     transition: all 0.3s ease;
+
+    &:active {
+      transform: scale(0.9);
+    }
 
     .logo-image {
       border-radius: 50%;
@@ -228,8 +233,6 @@ export default {
     display: flex;
     gap: 20px;
     transition: all 0.3s ease;
-
-
 
     li:hover {
       color: white;
