@@ -21,7 +21,7 @@ export default {
         </div>
         <div>
           <div class="description" @click="makeCall('tel: 3408184775')">
-            <p>
+            <p class="d-none">
               <a class="icon" href="tel: 3408184775"><font-awesome-icon icon="phone" /></a>
             </p>
             <p>
@@ -29,7 +29,7 @@ export default {
             </p>
           </div>
           <div class="description" @click="makeCall('tel: 0758506684')">
-            <p>
+            <p class="d-none">
               <a class="icon" href="tel: 0758506684"><font-awesome-icon icon="phone" /></a>
             </p>
             <p>
@@ -37,7 +37,7 @@ export default {
             </p>
           </div>
           <div class="description" @click="sendEmail('mailto:jpatdot183@gmail.com')">
-            <p>
+            <p class="d-none">
               <a class="icon" href="mailto: jpatdot183@gmail.com"><font-awesome-icon icon="envelope" /></a>
             </p>
             <p>
@@ -111,14 +111,13 @@ export default {
     .description {
       display: flex;
       justify-content: space-between;
-      width: 220px;
-      margin-bottom: 10px;
+      max-width: 220px;
+      margin-bottom: 5px;
       cursor: pointer;
       font-size: 22px;
     }
 
     .contacts-card {
-
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -173,6 +172,45 @@ export default {
 
   .mappe-button:active {
     transform: scale(0.95);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container-lg {
+    .d-none {
+      display: none;
+    }
+
+    padding: 10px 20px;
+
+    .cards {
+      font-size: 18px;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+
+      .contacts-card {
+        margin: 0px;
+        padding: 0px;
+
+      }
+
+      .location-card {
+        grid-column: span 2; // Center the third card under the first two
+        justify-self: center;
+        max-width: 200px;
+      }
+
+      .icon {
+        margin: 0px;
+      }
+
+      .description {
+        font-size: 18px;
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+
   }
 }
 </style>
