@@ -66,13 +66,13 @@ export default {
       </div>
 
     </div>
-    <div>
-      <ul class="container-sm">
+    <div class="container-sm">
+      <ul>
         <li class="sections">
           <h1 class="groups">Antipasti</h1>
         <li class="dishes" v-for="antipasto in menuData.antipasti" :key="antipasto.name">
           <div class="name-desc">
-            <h2>{{ antipasto.name }}</h2>
+            <h3>{{ antipasto.name }}</h3>
             <p>{{ antipasto.eng_description }}</p>
           </div>
           <div class="price">
@@ -84,7 +84,7 @@ export default {
           <h1 class="groups">Primi Piatti</h1>
         <li class="dishes" v-for="primo in menuData.primi" :key="primo.name">
           <div class="name-desc">
-            <h2>{{ primo.name }}</h2>
+            <h3>{{ primo.name }}</h3>
             <p>{{ primo.eng_description }}</p>
           </div>
           <div class="price">
@@ -96,7 +96,7 @@ export default {
           <h1 class="groups">Secondi Piatti</h1>
         <li class="dishes" v-for="secondo in menuData.secondi" :key="secondo.name">
           <div class="name-desc">
-            <h2>{{ secondo.name }}</h2>
+            <h3>{{ secondo.name }}</h3>
             <p>{{ secondo.eng_description }}</p>
           </div>
           <div class="price">
@@ -108,7 +108,7 @@ export default {
           <h1 class="groups">Contorni</h1>
         <li class="dishes" v-for="contorno in menuData.contorni" :key="contorno.name">
           <div class="name-desc">
-            <h2>{{ contorno.name }}</h2>
+            <h3>{{ contorno.name }}</h3>
             <p>{{ contorno.eng_description }}</p>
           </div>
           <div class="price">
@@ -120,7 +120,7 @@ export default {
           <h1 class="groups">Dolci</h1>
         <li class="dishes" v-for="dolce in menuData.dolci" :key="dolce.name">
           <div class="name-desc">
-            <h2>{{ dolce.name }}</h2>
+            <h3>{{ dolce.name }}</h3>
             <p>{{ dolce.eng_description }}</p>
           </div>
           <div class="price">
@@ -190,6 +190,7 @@ export default {
   }
 
   .container-sm {
+    max-width: 100%;
     height: 100%;
 
     .sections {
@@ -204,13 +205,14 @@ export default {
 
 .container-sm {
   height: 100vh;
-  padding-top: 60px;
+  padding: 30px 10px;
 
   .loading {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    padding-top: 50px;
+    max-width: 100vw;
     gap: 30px;
 
     img {
@@ -219,17 +221,41 @@ export default {
       animation: rotateClockwise 6s infinite linear;
     }
   }
-}
 
-@keyframes rotateClockwise {
-  from {
-    transform: rotate(0deg);
+  @keyframes rotateClockwise {
+    from {
+      transform: rotate(0deg);
 
+    }
+
+    to {
+      transform: rotate(360deg);
+
+    }
   }
 
-  to {
-    transform: rotate(360deg);
+  @media screen and (max-width: 768px) {
+    .dishes {
+      gap: 20px;
 
+      .name-desc {
+        font-size: 12px;
+      }
+
+      .price {
+        min-width: 40px;
+        font-size: 12px;
+      }
+    }
+
+    .loading {
+      padding-top: 50px;
+      max-width: 100vw;
+
+      img {
+        max-width: 150px;
+      }
+    }
   }
 }
 </style>
