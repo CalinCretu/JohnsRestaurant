@@ -272,22 +272,26 @@ export default {
         padding: 0px 10px;
         .glass-wines{
           gap: 20px;
-          .name-desc{
-            font-size: 14px;
-            .price{
-              min-width: 40px;
-              font-size: 14px;
-            }
+        .name-desc{
+          font-size: 13px;
+        }
+        .price{
+            min-width: 40px;
+            font-size: 18px;
           }
         }
         .wines{
           gap: 20px;
-          .name-desc{
-            font-size: 14px;
-            .price{
-              min-width: 40px;
-              font-size: 14px;
-            }
+        .wine-name{
+          gap: 20px;
+        }
+        .name-desc{
+          font-size: 14px;
+          flex-grow: 1;
+        }
+        .price{
+            min-width: 55px;
+            font-size: 18px;
           }
         }
       }
@@ -312,7 +316,16 @@ export default {
       animation: rotateClockwise 6s infinite linear;
     }
   }
+@media screen and (max-width: 768px){
+  .loading {
+      padding-top: 50px;
+      max-width: 100vw;
 
+      img {
+        max-width: 150px;
+      }
+    }
+}
   @keyframes rotateClockwise {
     from {
       transform: rotate(0deg);
