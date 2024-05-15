@@ -37,7 +37,7 @@ export default {
           l' esperienza <b>indimenticabile</b>.
         </p>
       </div>
-      <div class="image-card"><img src="/public/imgs/photos/RestaurantFoto.jpeg" alt="Restaurant_foto"></div>
+
     </div>
   </div>
 </template>
@@ -50,14 +50,12 @@ export default {
   font-size: 25px;
 
   .cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+
     font-size: 20px;
-    gap: 30px;
     margin-top: 30px;
 
     .text-card {
-      text-align: justify;
+      text-align: center;
     }
 
     .text-card p {
@@ -67,6 +65,24 @@ export default {
 
   .title {
     color: white;
+  }
+
+  @media screen and (max-width: 768px) {
+    .title {
+      font-size: 30px;
+    }
+
+    .container-md {
+      font-size: 18px;
+    }
+
+    .cards {
+
+      .text-card {
+        text-align: justify;
+        margin-bottom: 20px;
+      }
+    }
   }
 }
 </style>
