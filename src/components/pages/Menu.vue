@@ -201,6 +201,11 @@ export default {
       }
     }
   }
+  @media screen and (max-width: 768px) {
+    .title {
+      font-size: 60px;
+    }
+  }
 }
 
 .container-sm {
@@ -239,12 +244,12 @@ export default {
       gap: 20px;
 
       .name-desc {
-        font-size: 12px;
+        font-size: 16px;
       }
 
       .price {
-        min-width: 40px;
-        font-size: 12px;
+        min-width: 50px;
+        font-size: 16px;
       }
     }
 

@@ -26,7 +26,7 @@ export default {
 
 <template>
   <div class="container-lg" v-if="viniData">
-    <div class="title">
+    <div class="wine-title">
       Lista dei vini
     </div>
     <div>
@@ -191,8 +191,10 @@ export default {
 
 <style lang="scss" scoped>
 .container-lg {
-  .title {
-    font-size: 90px;
+  .wine-title {
+    font-size: 70px;
+    text-transform: uppercase;
+    font-weight: 500;
   }
 
   .container-sm {
@@ -260,6 +262,37 @@ export default {
       }
     }
   }
+  @media screen and (max-width: 768px) {
+    .wine-title {
+      font-size: 60px;
+    }
+    .container-sm{
+      max-width: 100vw;
+      .sections{
+        padding: 0px 10px;
+        .glass-wines{
+          gap: 20px;
+          .name-desc{
+            font-size: 14px;
+            .price{
+              min-width: 40px;
+              font-size: 14px;
+            }
+          }
+        }
+        .wines{
+          gap: 20px;
+          .name-desc{
+            font-size: 14px;
+            .price{
+              min-width: 40px;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .container-sm {
@@ -279,17 +312,19 @@ export default {
       animation: rotateClockwise 6s infinite linear;
     }
   }
+
+  @keyframes rotateClockwise {
+    from {
+      transform: rotate(0deg);
+  
+    }
+  
+    to {
+      transform: rotate(360deg);
+  
+    }
+  }
 }
 
-@keyframes rotateClockwise {
-  from {
-    transform: rotate(0deg);
 
-  }
-
-  to {
-    transform: rotate(360deg);
-
-  }
-}
 </style>
