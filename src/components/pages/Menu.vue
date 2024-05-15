@@ -43,7 +43,6 @@ export default {
           </h3>
           <p>
             La nostra cucina <b>non</b> può garantire al 100% l'assenza di glutine.
-            Welcome
           </p>
         </div>
         <div class="eng">

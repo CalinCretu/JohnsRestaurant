@@ -22,12 +22,14 @@ export default {
 
       <li class="card-white">
         <router-link :to="{ name: 'menu' }">
-          <h3>
-            Menù
-          </h3>
-          <p>
-            Clicca qui per consultarlo
-          </p>
+          <div class="card-white-header">
+            <h3>
+              Menù
+            </h3>
+            <p>
+              Clicca qui
+            </p>
+          </div>
           <div class="image-wrapper">
             <img src="/public/imgs/photos/TagliataAlSangue.png" alt="">
           </div>
@@ -37,19 +39,19 @@ export default {
 
       <li class="card-white">
         <router-link :to="{ name: 'vini' }">
-          <h3>
-            Carta dei vini
-          </h3>
-          <p>
-            Clicca qui
-          </p>
+          <div class="card-white-header">
+            <h3>
+              Carta dei Vini
+            </h3>
+            <p>
+              Clicca qui
+            </p>
+          </div>
           <div class="image-wrapper">
             <img src="/public/imgs/photos/Vineria.png" alt="">
           </div>
         </router-link>
-
       </li>
-
     </ul>
   </div>
 </template>
@@ -71,21 +73,62 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      background-color: white;
+      border-radius: 8px;
 
-      h3 {
-        color: black;
-        padding-top: 10px;
+      .card-white-header {
+        background-color: white;
+
+        h3 {
+          color: black;
+          padding-top: 10px;
+        }
+
+        p {
+          padding-bottom: 15px;
+        }
       }
     }
   }
 
-  .image-wrapper {
-    width: 100%;
+  .image-wrapper img {
+    aspect-ratio: 1/1;
     height: 500px;
     overflow: hidden;
-    margin-top: 15px;
+  }
+
+  @media screen and (max-width: 768px) {
+
+    /* Adjust max-width as needed */
+    .cards {
+
+      gap: 10px;
+
+      .image-wrapper img {
+        aspect-ratio: 1/1;
+        height: 200px;
+      }
+
+      .card-white {
+        padding-top: 20px;
+        font-size: 20px;
+
+        .card-white-header {
+          p {
+            padding-bottom: 5px;
+          }
+        }
+
+        &:nth-child(odd) {
+          transform: translateY(-50px);
+          /* Move odd cards up */
+        }
+
+        &:nth-child(even) {
+          transform: translateY(50px);
+          /* Move even cards down */
+        }
+      }
+    }
   }
 }
 </style>
