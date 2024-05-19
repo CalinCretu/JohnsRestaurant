@@ -83,7 +83,7 @@ export default {
         </a>
       </li>
       <li>
-        <a href="https://www.instagram.com/elena_johnpaterson/?hl=en"><font-awesome-icon
+        <a href="https://www.instagram.com/chef.johnpaterson/?hl=en"><font-awesome-icon
             icon="fa-brands fa-instagram" />
         </a>
       </li>
