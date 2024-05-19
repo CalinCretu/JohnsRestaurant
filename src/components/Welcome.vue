@@ -18,7 +18,7 @@ export default {
 <template>
   <div class="container-lg">
     <div class="hero-title">
-      <h1>John's Restaurant</h1>
+      <h1><i>John's Restaurant</i></h1>
     </div>
     <div class="second-title">
       Benvenuti
@@ -35,7 +35,6 @@ export default {
     align-items: end;
     justify-content: center;
     font-size: 50px;
-    text-transform: uppercase;
     font-weight: 500;
     background-image: url("/public/imgs/photos/PanoramaTodi.png");
     height: 400px;
