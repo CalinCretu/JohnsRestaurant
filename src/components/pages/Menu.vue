@@ -138,12 +138,12 @@ export default {
             eng_description: "Roasted vegetables",
             price: "6.00"
           },
-          {
-            name: "Panache di verdura di al timo",
-            description: "Mixed vegetable panache with thyme",
-            eng_description: "Mixed vegetable panache with thyme",
-            price: "6.00"
-          }
+          // {
+          //   name: "Panache di verdura di al timo",
+          //   description: "Mixed vegetable panache with thyme",
+          //   eng_description: "Mixed vegetable panache with thyme",
+          //   price: "6.00"
+          // }
         ],
         dolci: [
           {

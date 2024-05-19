@@ -22,7 +22,16 @@ const router = createRouter({
       name: 'vini',
       component: Vini,
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      // If savedPosition is available, return to that position
+      return savedPosition;
+    } else {
+      // Otherwise, scroll to the top of the page
+      return { top: 0 };
+    }
+  }
 })
 
 export { router };
