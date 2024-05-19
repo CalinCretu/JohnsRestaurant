@@ -53,7 +53,7 @@ export default {
             <nav class="nav-bar-modale" style="color: black;">
               <ul class="nav-items-modale">
                 <li @click="closeModal" class="btn-close">
-                  <a type="button"><font-awesome-icon icon="circle-xmark" /></a>
+                  <a type="button"><font-awesome-icon icon="xmark" /></a>
                 </li>
                 <li @click="closeModal"><router-link :to="{ name: 'home' }">Home</router-link></li>
                 <li @click="closeModal"><router-link :to="{ name: 'menu' }">Menu</router-link></li>
@@ -83,12 +83,23 @@ export default {
         </a>
       </li>
       <li>
-        <a href="https://www.instagram.com/chef.johnpaterson/?hl=en"><font-awesome-icon
-            icon="fa-brands fa-instagram" />
+        <a  href="https://www.instagram.com/chef.johnpaterson/?hl=en"><font-awesome-icon 
+                icon="fa-brands fa-instagram" style=
+                "color: white;  
+                background: #f09433; 
+                background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+                background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+                background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+                padding: 0px 1px;
+                border-radius: 8px;" />
         </a>
       </li>
       <li>
-        <a href="https://www.facebook.com/johnpatersonchef/"><font-awesome-icon icon="fa-brands fa-facebook" />
+        <a href="https://www.facebook.com/johnpatersonchef/"><font-awesome-icon 
+          style="color: #0000ff;
+          padding: 2px 3px;"
+          icon="fa-brands fa-square-facebook" />
         </a>
       </li>
     </ul>
