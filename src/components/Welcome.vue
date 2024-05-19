@@ -37,7 +37,7 @@ export default {
     font-size: 50px;
     font-weight: 500;
     background-image: url("/public/imgs/photos/PanoramaTodi.png");
-    height: 400px;
+    height: 300px;
     background-size: cover;
     background-position: top center;
 
