@@ -36,9 +36,9 @@ export default {
               +(39) 075 8506684
             </p>
           </div>
-          <div class="description" @click="sendEmail('mailto:jpatdot183@gmail.com')">
+          <div class="description" @click="sendEmail('mailto:johncheftodi@gmail.com')">
             <p class="d-none">
-              <a class="icon" href="mailto: jpatdot183@gmail.com"><font-awesome-icon icon="envelope" /></a>
+              <a class="icon" href="mailto: johncheftodi@gmail.com"><font-awesome-icon icon="envelope" /></a>
             </p>
             <p>
               johncheftodi@gmail.com
