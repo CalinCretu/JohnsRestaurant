@@ -19,8 +19,8 @@ export default {
             price: "16.00"
           },
           {
-            name: "Turbante di Angus Affumicato con insalata di Frutta e mozzarella di Bufala",
-            description: "Turban of smoked angus with a salad of fruit and buffalo mozzarella",
+            name: "Turbante di Bresaola con insalata di Frutta e mozzarella di Bufala",
+            description: "Turban of Bresaola with a salad of fruit and Bufala mozzarella",
             eng_description: "Turban of smoked angus with a salad of fruit and buffalo mozzarella",
             price: "16.00"
           },
