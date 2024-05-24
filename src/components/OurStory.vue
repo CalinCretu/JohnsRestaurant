@@ -1,43 +1,24 @@
 <script>
 export default {
   name: 'OurStory',
+  methods: {
+    toggleLanguage() {
+      const newLocale = this.$i18n.locale === 'it' ? 'en' : 'it';
+      this.$i18n.locale = newLocale;
+    }
+  }
 }
 </script>
 
 <template>
   <div class="container-md">
     <div class="title">
-      La nostra storia
+      {{ $t('storia.title') }}
     </div>
     <div class="cards">
       <div class="text-card">
-        <p>
-          Ho iniziato a <b>cucinare</b> nel 1980 in <b>Cumbria</b>, al confine con la Scozia. È stato il posto perfetto
-          per
-          iniziare
-          la mia carriera poiché la cucina locale è caratterizzata da una forte identità, mi ha insegnato l'uso di erbe
-          selvatiche
-          e spezie, cosa che ancora oggi amo fare nei nostri piatti locali in Umbria.
-        </p>
-        <p>
-          Dopo aver lavorato a Londra per quindici anni, un'opportunità che mi ha cambiato la vita mi ha permesso di
-          gestire una scuola di cucina in <b>Umbria</b>.
-        </p>
-        <p>
-          Era l'anno 2000 ed insieme alla mia adorabile moglie Elena ho avuto l'opportunità di gestire
-          ristoranti di successo a <b>Todi</b>, inclusa la mia <b>Antica Osteria de la Valle</b> (per 8
-          anni) ed infine <b>La Cantina del Mercataccio</b> dal 2017.
-        </p>
-        <p>
-          Nove anni fa abbiamo iniziato la nostra avventura nel realizzare il <b>sogno</b> di aprire il nostro
-          <b>ristorante</b> e scuola di cucina per condividere la mia conoscenza dei piatti e degli ingredienti locali.
-        </p>
-        <p>
-          Non vedo l'ora di accogliere di nuovo i nostri clienti e, se è la vostra prima volta qui, desideriamo rendere
-          l' esperienza <b>indimenticabile</b>.
-        </p>
+        <p v-html="$t('storia.paragraph')"></p>
       </div>
-
     </div>
   </div>
 </template>

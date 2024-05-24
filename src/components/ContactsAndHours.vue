@@ -2,6 +2,10 @@
 export default {
   name: 'ContactsAndHours',
   methods: {
+    toggleLanguage() {
+      const newLocale = this.$i18n.locale === 'it' ? 'en' : 'it';
+      this.$i18n.locale = newLocale;
+    },
     makeCall(phoneNumber) {
       window.location.href = phoneNumber;
     },
@@ -17,7 +21,7 @@ export default {
     <ul class="cards">
       <li class="contacts-card">
         <div class="title">
-          CONTATTI
+          {{ $t('contatti.title') }}
         </div>
         <div>
           <div class="description" @click="makeCall('tel: 3408184775')">
@@ -48,21 +52,21 @@ export default {
       </li>
       <li class="hours-card">
         <div class="title">
-          ORARI
+          {{ $t('orari.title') }}
         </div>
-        <p>Lunedì Chiuso</p>
+        <p>{{ $t('orari.paragraph') }}</p>
         <p>
-          Martedì - Domenica
+          {{ $t('orari.days') }}
         </p>
         <p>12:30 am - 2:30 pm</p>
         <p>7:30 pm - 9:30 pm</p>
       </li>
       <li class="location-card">
         <div class="title">
-          Mappe
+          {{ $t('mappe.title') }}
         </div>
         <p>
-          Puoi cliccare su questo pulsante per trovarci
+          {{ $t('mappe.paragraph') }}
         </p>
         <p>
           <a

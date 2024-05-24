@@ -12,6 +12,12 @@ export default {
       store: store,
     }
   },
+  methods:{
+    // toggleLanguage() {
+    //   const newLocale = this.$i18n.locale === 'it' ? 'en' : 'it';
+    //   this.$i18n.locale = newLocale;
+    // }
+  }
 }
 </script>
 
@@ -21,7 +27,7 @@ export default {
       <h1><i>John's Restaurant</i></h1>
     </div>
     <div class="second-title">
-      Benvenuti
+      {{$t('benvenuti.title')}}
     </div>
   </div>
 </template>

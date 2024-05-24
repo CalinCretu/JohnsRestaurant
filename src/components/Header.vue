@@ -29,6 +29,10 @@ export default {
     window.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
+    toggleLanguage() {
+      const newLocale = this.$i18n.locale === 'it' ? 'en' : 'it';
+      this.$i18n.locale = newLocale;
+    },
     handleScroll() {
       this.isHeaderSmall = window.scrollY > 0;
     },
@@ -83,9 +87,8 @@ export default {
         </a>
       </li>
       <li>
-        <a href="https://www.instagram.com/chef.johnpaterson/?hl=en"><font-awesome-icon 
-            icon="fa-brands fa-instagram" 
-            style= "color: white;  
+        <a href="https://www.instagram.com/chef.johnpaterson/?hl=en"><font-awesome-icon icon="fa-brands fa-instagram"
+            style="color: white;  
             background: #f09433; 
             background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
             background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
@@ -96,12 +99,23 @@ export default {
         </a>
       </li>
       <li>
-        <a href="https://www.facebook.com/johnpatersonchef/"><font-awesome-icon 
-          style="color: #0000ff;
-          padding: 0px 1px;"
-          icon="fa-brands fa-square-facebook" />
+        <a href="https://www.facebook.com/johnpatersonchef/"><font-awesome-icon style="color: #0000ff;
+          padding: 0px 1px;" icon="fa-brands fa-square-facebook" />
         </a>
       </li>
+      <!--PULSANTE LINGUA-->
+      <button class="lang-button" @click="toggleLanguage">
+        <span v-if="$i18n.locale === 'it'">
+          <!-- Italian flag icon -->
+          <img src="https://flagsapi.com/IT/shiny/32.png" alt="Italian Flag">
+
+        </span>
+        <span v-else>
+          <!-- English flag icon -->
+          <img src="https://flagsapi.com/GB/shiny/32.png" alt="English Flag">
+
+        </span>
+      </button>
     </ul>
     <div class="burger" @click="openModal">
       <font-awesome-icon icon="bars" />
@@ -221,6 +235,13 @@ export default {
     gap: 20px;
     font-size: 30px;
     color: black;
+
+    .lang-button {
+      border: none;
+      background-color: transparent;
+      margin-top: 6px;
+      cursor: pointer;
+    }
 
     :hover {
       color: white;

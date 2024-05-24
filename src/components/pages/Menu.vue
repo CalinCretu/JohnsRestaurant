@@ -191,34 +191,16 @@ export default {
     </div>
     <div class="container-md">
       <div>
-        <h1>Benvenuti</h1>
+        <h1>{{$t('menu.title')}}</h1>
         <div class="ita">
           <p>
-            Al momento dell'ordinazione si chiede alla gentile clientela di informare il cameriere sull'eventuale
-            presenza
-            di
-            allergie o intolleranze ad ingredienti specifici. Lo chef provvederà poi a fornirvi un menù specifico.
+            {{$t('menu.paragraph')}}
           </p>
           <h3>
-            Nel caso di Celiachia
+            {{$t('menu.secondTitle')}}
           </h3>
           <p>
-            La nostra cucina <b>non</b> può garantire al 100% l'assenza di glutine.
-          </p>
-        </div>
-        <div class="eng">
-          <h1>Welcome</h1>
-          <p>
-            At the moment of ordering you are kindly requested to inform any waiter or waitress if you have any
-            allergies
-            and
-            intolerance of any specific ingredients. We will provide you with a menu on request.
-          </p>
-          <h3>
-            in case of celiac disease
-          </h3>
-          <p>
-            We <b>cannot</b> guarantee 100% the absence of gluten.
+            {{$t('menu.secondParagraph')}}
           </p>
         </div>
         <p class="grazie">
