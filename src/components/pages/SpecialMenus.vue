@@ -64,7 +64,37 @@ export default {
     </div>
     <ul class="cards">
       <li class="image-wrapper">
+        <img src="/public/imgs/menus/Capodanno2024.png" alt="special-menus">
+      </li>
+      <li class="image-wrapper">
+        <img src="/public/imgs/menus/CapodannoCena2024.png" alt="special-menus">
+      </li>
+      <li class="image-wrapper">
+        <img src="/public/imgs/menus/MenuAsporto24Dic.png" alt="special-menus">
+      </li>
+      <li class="image-wrapper">
         <img src="/public/imgs/menus/MenuPasqua.png" alt="special-menus">
+      </li>
+      <li class="image-wrapper">
+        <img src="/public/imgs/menus/MenuSanValentino.png" alt="special-menus">
+      </li>
+      <li class="image-wrapper">
+        <img src="/public/imgs/menus/MenuVigilia.png" alt="special-menus">
+      </li>
+      <li class="image-wrapper">
+        <img src="/public/imgs/menus/PranzoNatale.png" alt="special-menus">
+      </li>
+      <li class="image-wrapper">
+        <img src="/public/imgs/menus/SanVale.png" alt="special-menus">
+      </li>
+      <li class="image-wrapper">
+        <img src="/public/imgs/menus/CenaCapodanno.png" alt="special-menus">
+      </li>
+      <li class="image-wrapper">
+        <img src="/public/imgs/menus/MenuAsporto31Dic.png" alt="special-menus">
+      </li>
+      <li class="image-wrapper">
+        <img src="/public/imgs/menus/MenuAsportoCapodanno.png" alt="special-menus">
       </li>
     </ul>
   </div>
