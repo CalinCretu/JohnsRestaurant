@@ -46,6 +46,12 @@ export default {
 <style lang="scss">
 @use './styles/general.scss';
 
+* {
+
+  font-family: "EB Garamond", serif;
+
+}
+
 .header {
   border-bottom: 1px solid #ffffff;
   position: fixed;

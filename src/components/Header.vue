@@ -236,7 +236,6 @@ export default {
     .lang-button {
       border: none;
       background-color: transparent;
-      margin-top: 6px;
       cursor: pointer;
     }
 
