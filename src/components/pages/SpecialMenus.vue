@@ -63,8 +63,8 @@ export default {
       </div>
     </div>
     <ul class="cards">
-      <li class="image-wrapper" v-for="card in cards" :key="card.img">
-        <img :src="card.img" alt="special-menus">
+      <li class="image-wrapper">
+        <img src="/public/imgs/menus/MenuPasqua.png" alt="special-menus">
       </li>
     </ul>
   </div>
