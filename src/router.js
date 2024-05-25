@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from './components/Home.vue';
 import Menu from './components/pages/Menu.vue';
 import Vini from './components/pages/Vini.vue';
+import SpecialMenus from './components/pages/SpecialMenus.vue';
 
 
 const router = createRouter({
@@ -21,6 +22,11 @@ const router = createRouter({
       path: '/vini',
       name: 'vini',
       component: Vini,
+    },
+    {
+      path: '/specialmenus',
+      name: 'specialmenus',
+      component: SpecialMenus,
     }
   ],
   scrollBehavior(to, from, savedPosition) {

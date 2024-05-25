@@ -36,6 +36,16 @@ const messages = {
       paragraph: " Al momento dell'ordinazione si chiede alla gentile clientela di informare il cameriere sull'eventuale presenza di allergie o intolleranze ad ingredienti specifici. Lo chef provvederà poi a fornirvi un menù specifico.",
       secondTitle: "Nel caso di Celiachia",
       secondParagraph: "La nostra cucina non può garantire al 100% l'assenza di glutine."
+    },
+    speciali: {
+      title: "Menù Speciali",
+      subtitle: "(Solo per eventi)",
+      paragraph: "Benvenuto, in questa pagina puoi trovare degli esempi di menù dai quali prendere spunto per i tuoi eventi speciali."
+    },
+    cards: {
+      menu: "Menù",
+      vini: "Carta dei Vini",
+      click: "Clicca qui"
     }
   },
   en: {
@@ -63,6 +73,16 @@ const messages = {
       paragraph: "At the moment of ordering you are kindly requested to inform any waiter or waitress if you have any allergies and intolerance of any specific ingredients. We will provide you with a menu on request.",
       secondTitle: "In case of celiac disease",
       secondParagraph: "We cannot guarantee 100% the absence of gluten."
+    },
+    speciali: {
+      title: "Special Menus",
+      subtitle: "(Only for events)",
+      paragraph: "Welcome, on this page you can find examples of menus from which to draw inspiration for your special events."
+    },
+    cards: {
+      menu: "Menu",
+      vini: "Wine List",
+      click: "Click Here"
     }
   }
 };

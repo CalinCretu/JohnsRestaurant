@@ -12,6 +12,12 @@ export default {
     return {
       store: store,
     }
+  },
+  methods: {
+    toggleLanguage() {
+      const newLocale = this.$i18n.locale === 'it' ? 'en' : 'it';
+      this.$i18n.locale = newLocale;
+    }
   }
 }
 </script>
@@ -19,32 +25,29 @@ export default {
 <template>
   <div class="container-md">
     <ul class="cards">
-
       <li class="card-white">
         <router-link :to="{ name: 'menu' }">
           <div class="card-white-header">
             <h3>
-              Menù
+              {{ $t('cards.menu') }}
             </h3>
             <p>
-              Clicca qui
+              {{ $t('cards.click') }}
             </p>
           </div>
           <div class="image-wrapper">
             <img src="/public/imgs/photos/TagliataAlSangue.png" alt="">
           </div>
         </router-link>
-
       </li>
-
       <li class="card-white">
         <router-link :to="{ name: 'vini' }">
           <div class="card-white-header">
             <h3>
-              Carta dei Vini
+              {{ $t('cards.vini') }}
             </h3>
             <p>
-              Clicca qui
+              {{ $t('cards.click') }}
             </p>
           </div>
           <div class="image-wrapper">
@@ -66,7 +69,6 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-align: center;
-    gap: 30px;
 
     .card-white {
       font-size: 35px;
@@ -92,7 +94,7 @@ export default {
 
   .image-wrapper img {
     aspect-ratio: 1/1;
-    height: 500px;
+    height: 450px;
     overflow: hidden;
   }
 
@@ -105,7 +107,7 @@ export default {
 
       .image-wrapper img {
         aspect-ratio: 1/1;
-        height: 200px;
+        height: 160px;
       }
 
       .card-white {
