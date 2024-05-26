@@ -104,10 +104,11 @@ export default {
     }
 
     p {
-      color: black;
+      color: var(--content-color);
     }
 
     .title {
+      color: var(--title-color);
       font-size: 25px;
       margin-bottom: 20px;
     }
@@ -128,7 +129,7 @@ export default {
       justify-content: start;
 
       :hover {
-        color: white;
+        color: black;
       }
     }
 
@@ -149,7 +150,7 @@ export default {
     cursor: pointer;
 
     padding: 15px 25px;
-    background-image: linear-gradient(to right, rgb(71, 71, 255), rgb(29, 206, 29));
+    background-color: var(--content-color);
     border-radius: 8px;
     margin-top: 20px;
 

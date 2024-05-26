@@ -61,7 +61,7 @@ export default {
 
 <style lang="scss" scoped>
 .container-md {
-  color: #b6ccd7;
+  color: var(--content-color);
   margin: 0 auto;
   padding-bottom: 0px;
 
@@ -81,7 +81,7 @@ export default {
         background-color: white;
 
         h3 {
-          color: black;
+          color: var(--title-color);
           padding-top: 10px;
         }
 

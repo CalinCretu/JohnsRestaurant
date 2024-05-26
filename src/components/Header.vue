@@ -153,7 +153,7 @@ export default {
   }
 
   .modal-content {
-    background-color: #b6ccd7;
+    background-color: var(--background-color);
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: .3rem;
     box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
@@ -176,18 +176,18 @@ export default {
         }
 
         .btn-close:hover {
-          color: white;
+          color: black;
         }
 
         li:not(:first-child) {
-          box-shadow: 0px 4px 5px -5px white;
+          box-shadow: 0px 4px 2px -5px black;
 
           &:active {
             transform: scale(0.9);
           }
 
           &:hover {
-            color: white;
+            color: black;
           }
         }
       }
@@ -205,11 +205,11 @@ export default {
 
   .burger {
     display: none;
-    color: black;
+    color: var(--title-color);
     font-size: 30px;
 
     :hover {
-      color: white;
+      color: black;
     }
   }
 
@@ -223,6 +223,7 @@ export default {
 
     .logo-image {
       border-radius: 50%;
+      border: 1px solid var(--title-color);
     }
   }
 
@@ -231,16 +232,20 @@ export default {
     justify-content: center;
     gap: 20px;
     font-size: 30px;
-    color: black;
+    color: var(--title-color);
 
     .lang-button {
+      position: fixed;
+      bottom: 2rem;
+      left: 1rem;
+      z-index: 100;
       border: none;
       background-color: transparent;
       cursor: pointer;
     }
 
     :hover {
-      color: white;
+      color: black;
     }
 
     .location-icon {
@@ -264,11 +269,11 @@ export default {
     transition: all 0.3s ease;
 
     li:hover {
-      color: white;
+      color: black;
     }
 
     .nav-items {
-      color: black;
+      color: var(--title-color);
       text-transform: uppercase;
       display: flex;
       align-items: center;
@@ -276,7 +281,7 @@ export default {
       font-size: 25px;
 
       :hover {
-        color: white;
+        color: black;
       }
 
       .item {

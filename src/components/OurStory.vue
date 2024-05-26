@@ -40,12 +40,13 @@ export default {
     }
 
     .text-card p {
+      color: var(--title-color);
       margin-bottom: 15px;
     }
   }
 
   .title {
-    color: white;
+    color: var(--title-color);
   }
 
   @media screen and (max-width: 768px) {

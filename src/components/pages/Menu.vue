@@ -185,29 +185,30 @@ export default {
 </script>
 
 <template>
+  <!--Titolo pagina-->
   <div class="container-lg" v-if="menuData">
     <div class="title">
       Menu
     </div>
     <div class="container-md">
       <div>
-        <h1>{{$t('menu.title')}}</h1>
+        <h1>{{ $t('menu.title') }}</h1>
         <div class="ita">
           <p>
-            {{$t('menu.paragraph')}}
+            {{ $t('menu.paragraph') }}
           </p>
           <h3>
-            {{$t('menu.secondTitle')}}
+            {{ $t('menu.secondTitle') }}
           </h3>
           <p>
-            {{$t('menu.secondParagraph')}}
+            {{ $t('menu.secondParagraph') }}
           </p>
         </div>
         <p class="grazie">
           Grazie, chef John Paterson
         </p>
       </div>
-
+      <!--Contenuto pagina-->
     </div>
     <div class="container-sm">
       <ul>
@@ -219,7 +220,7 @@ export default {
             <p>{{ antipasto.eng_description }}</p>
           </div>
           <div class="price">
-            <p>{{ antipasto.price }} &euro;</p>
+            {{ antipasto.price }} &euro;
           </div>
         </li>
         </li>
@@ -292,10 +293,16 @@ export default {
 
     .ita {
       padding-bottom: 30px;
+      color: var(--title-color);
+      ;
+    }
+
+    h1 {
+      color: var(--title-color);
     }
 
     p {
-      color: black;
+      color: var(--title-color);
     }
 
     .grazie {
@@ -305,7 +312,8 @@ export default {
   }
 
   .title {
-    font-size: 90px;
+    color: var(--title-color);
+    font-size: 60px;
   }
 
   .groups {
@@ -317,18 +325,19 @@ export default {
     padding: 5px 0px;
     text-transform: none;
     text-align: justify;
-    color: black;
+    color: var(--title-color);
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    box-shadow: 0px 22px 10px -20px white;
 
     .name-desc {
-      font-size: 16px;
+      color: var(--title-color);
+      font-size: 22px;
     }
 
     .price {
-      font-size: 20px;
+      color: var(--title-color);
+      font-size: 22px;
     }
   }
 
@@ -340,13 +349,10 @@ export default {
       margin: 20px 0px;
 
       h1 {
+        color: var(--title-color);
         padding: 10px 0px;
+        font-size: 30px;
       }
-    }
-  }
-  @media screen and (max-width: 768px) {
-    .title {
-      font-size: 60px;
     }
   }
 }
@@ -385,14 +391,20 @@ export default {
   @media screen and (max-width: 768px) {
     .dishes {
       gap: 20px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
 
       .name-desc {
-        font-size: 16px;
+        font-size: 22px;
       }
 
       .price {
-        min-width: 50px;
-        font-size: 16px;
+        text-align: center;
+        justify-content: center;
+        font-size: 22px;
+        color: var(--title-color);
       }
     }
 

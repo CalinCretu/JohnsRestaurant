@@ -46,6 +46,12 @@ export default {
 <style lang="scss">
 @use './styles/general.scss';
 
+:root {
+  --background-color: #F9F3DE;
+  --title-color: #333333;
+  --content-color: #666666;
+}
+
 * {
 
   font-family: "EB Garamond", serif;
@@ -53,7 +59,7 @@ export default {
 }
 
 .header {
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid var(--content-color);
   position: fixed;
   top: 0;
   left: 0;
@@ -61,25 +67,29 @@ export default {
   z-index: 1000;
 
   &.small {
-    box-shadow: 0px 0px 20px 5px white;
+    border-bottom: 1px solid var(--content-color);
   }
 }
 
 .content {
   margin-top: 100px;
-  background-color: #b6ccd7;
+  background-color: var(--background-color);
 }
 
 .header,
 .home,
 .footer,
 .calin {
-  background-color: rgb(182, 204, 215);
+  background-color: var(--background-color);
 }
 
 @media screen and (max-width: 768px) {
   .content {
     margin-top: 75px;
+  }
+
+  .header {
+    border: 0px;
   }
 }
 </style>

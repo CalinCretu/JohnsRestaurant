@@ -107,12 +107,13 @@ export default {
   .desc-title {
     margin: 20px;
     font-size: 22px;
-    color: white;
+    color: var(--title-color);
     text-transform: uppercase;
     text-align: center;
   }
 
   .desc-body {
+    color: var(--title-color);
     text-align: center;
     font-size: 20px;
   }
