@@ -147,7 +147,6 @@ export default {
     font-size: 60px;
     color: var(--title-color);
     margin-top: 60px;
-    font-weight: 500;
   }
 
   .card {
@@ -171,6 +170,11 @@ export default {
     .card_content {
       background-color: white;
       padding: 5px;
+    }
+
+    .card_text p {
+      margin: 10px 0px;
+      font-size: 18px;
     }
 
     .cards_item {

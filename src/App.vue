@@ -1,6 +1,7 @@
 <script>
 import Header from './components/Header.vue';
 import Home from './components/Home.vue';
+import Footer from './components/Footer.vue';
 
 import { createI18n } from 'vue-i18n';
 
@@ -11,6 +12,7 @@ export default {
   components: {
     Header,
     Home,
+    Footer,
 
   },
   name: 'App',
@@ -42,9 +44,9 @@ export default {
   <div class="content">
     <router-view></router-view>
   </div>
-  <!-- <div class="footer">
+  <div class="footer">
     <Footer />
-  </div> -->
+  </div>
 </template>
 
 <style lang="scss">

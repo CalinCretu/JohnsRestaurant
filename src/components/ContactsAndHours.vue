@@ -148,16 +148,13 @@ export default {
     outline: none;
     border: none;
     cursor: pointer;
-
     padding: 15px 25px;
     background-color: var(--content-color);
     border-radius: 8px;
     margin-top: 20px;
-
     color: #FFF;
     font-size: 18px;
     font-weight: 700;
-
     box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
     transition: 0.2s ease-out;
 
