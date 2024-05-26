@@ -417,7 +417,7 @@ export default {
 <template>
   <div class="container-lg" v-if="viniData">
     <div class="wine-title">
-      Lista dei vini
+      Lista dei Vini
     </div>
     <div>
       <ul class="container-sm">
@@ -584,7 +584,6 @@ export default {
   .wine-title {
     color: var(--title-color);
     font-size: 60px;
-    text-transform: uppercase;
     font-weight: 500;
   }
 

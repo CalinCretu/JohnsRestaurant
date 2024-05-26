@@ -188,7 +188,7 @@ export default {
   <!--Titolo pagina-->
   <div class="container-lg" v-if="menuData">
     <div class="title">
-      Menu
+      Menù
     </div>
     <div class="container-md">
       <div>
@@ -314,6 +314,7 @@ export default {
   .title {
     color: var(--title-color);
     font-size: 60px;
+    text-transform: none;
   }
 
   .groups {

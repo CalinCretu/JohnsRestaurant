@@ -146,7 +146,8 @@ export default {
   .school-title {
     font-size: 60px;
     color: var(--title-color);
-    margin-top: 20px;
+    margin-top: 60px;
+    font-weight: 500;
   }
 
   .card {

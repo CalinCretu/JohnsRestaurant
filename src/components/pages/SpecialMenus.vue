@@ -53,7 +53,7 @@ export default {
   <div class="container">
     <div class="description">
       <div class="desc-title">
-        <h1>{{ $t('speciali.title') }}</h1>
+        <h1 class="title">{{ $t('speciali.title') }}</h1>
         <p>{{ $t('speciali.subtitle') }}</p>
       </div>
       <div class="desc-body">
@@ -105,15 +105,18 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   padding: 10px;
 
   .desc-title {
     margin: 20px;
     font-size: 22px;
     color: var(--title-color);
-    text-transform: uppercase;
     text-align: center;
+
+    h1 {
+      font-weight: 500;
+      text-transform: none;
+    }
   }
 
   .desc-body {

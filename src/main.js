@@ -14,7 +14,7 @@ const messages = {
   it: {
     header: {
       home: "Home",
-      menu: "Menu",
+      menu: "Menù",
       vini: "Vini",
       speciali: "Speciali",
       scuola: "Scuola di Cucina"
