@@ -50,7 +50,7 @@ export default {
   --background-color: #F9F3DE;
   --title-color: #333333;
   --content-color: #666666;
-  --dark-bg-color: #d6ca9c;
+  --dark-bg-color: #e7e0c4;
 }
 
 * {
