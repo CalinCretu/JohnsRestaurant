@@ -32,7 +32,7 @@ const messages = {
     },
     mappe: {
       title: "Mappe",
-      paragraph: "Puoi cliccare su questo pulsante per trovarci"
+      paragraph: "Clicca qui per trovarci"
     },
     storia: {
       title: "La nostra Storia",
@@ -94,7 +94,7 @@ const messages = {
     },
     mappe: {
       title: "Maps",
-      paragraph: "You can click on this button to find us"
+      paragraph: "Click here to find us"
     },
     storia: {
       title: "Our Story",

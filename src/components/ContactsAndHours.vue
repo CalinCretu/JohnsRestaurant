@@ -98,6 +98,7 @@ export default {
     grid-template-columns: 1fr 1fr 1fr;
     font-size: 20px;
     max-width: 1000px;
+    gap: 60px;
 
     .icon {
       margin-right: 35px;
@@ -194,7 +195,6 @@ export default {
       .contacts-card {
         margin: 0px;
         padding: 0px;
-
       }
 
       .location-card {

@@ -15,9 +15,10 @@ export default {
     window.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
-    toggleLanguage() {
-      const newLocale = this.$i18n.locale === 'it' ? 'en' : 'it';
+    toggleLanguage(newLocale) {
+
       this.$i18n.locale = newLocale;
+
     },
     handleScroll() {
       this.isHeaderSmall = window.scrollY > 0;
@@ -89,17 +90,11 @@ export default {
         </a>
       </li>
       <!--PULSANTE LINGUA-->
-      <button class="lang-button" @click="toggleLanguage">
-        <span v-if="$i18n.locale === 'it'">
-          <!-- Italian flag icon -->
-          <img class="lang-icon" src="https://flagsapi.com/IT/shiny/32.png" alt="Italian Flag">
-
-        </span>
-        <span v-else>
-          <!-- English flag icon -->
-          <img class="lang-icon" src="https://flagsapi.com/GB/shiny/32.png" alt="English Flag">
-
-        </span>
+      <button class="lang-button-ita" @click="toggleLanguage('it')">
+        <img class="lang-icon" src="https://flagsapi.com/IT/shiny/32.png" alt="Italian Flag">
+      </button>
+      <button class="lang-button eng" @click="toggleLanguage('en')">
+        <img class="lang-icon" src="https://flagsapi.com/GB/shiny/32.png" alt="English Flag">
       </button>
     </ul>
     <div class="burger" @click="openModal">
@@ -224,8 +219,22 @@ export default {
 
     .lang-button {
       position: fixed;
-      bottom: 1rem;
-      left: 1rem;
+      bottom: 1.5rem;
+      left: 0.5rem;
+      z-index: 100;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+
+      .lang-icon {
+        width: 50px;
+      }
+    }
+
+    .lang-button-ita {
+      position: fixed;
+      bottom: 4.5rem;
+      left: 0.5rem;
       z-index: 100;
       border: none;
       background-color: transparent;

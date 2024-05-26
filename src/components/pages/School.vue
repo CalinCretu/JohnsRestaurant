@@ -1,12 +1,3 @@
-<!--
-    Scuola di cucina
-    Titolo -> Paragrafo -> Cards
-
-      3 tipologie di corsi:
-        9-12 min 2 persone 150 euro a testa
-        10-14 min 4 persone 200 euro a testa, ma con pranzo incluso
-        12:30-16:30 max 20 persone 100 euro a persona: Dimostrazione preparazione del pranzo e comprende: aprerivivo di benvenuto con antipasti, primo, secondo e dolce (vino incluso)
--->
 <script>
 export default {
 
