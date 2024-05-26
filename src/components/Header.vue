@@ -4,24 +4,6 @@ export default {
   data() {
     return {
       logo: '/imgs/logos/Logo_Johns.jpg',
-      nav: [
-        {
-          text: 'Home',
-          name: 'home'
-        },
-        {
-          text: 'Menu',
-          name: 'menu'
-        },
-        {
-          text: 'Lista dei Vini',
-          name: 'vini'
-        },
-        {
-          text: 'About Us',
-          name: 'aboutus'
-        }
-      ],
       isHeaderSmall: false,
       isModalOpen: false
     };
@@ -66,7 +48,8 @@ export default {
                 <li @click="closeModal"><router-link :to="{ name: 'home' }">Home</router-link></li>
                 <li @click="closeModal"><router-link :to="{ name: 'menu' }">Menu</router-link></li>
                 <li @click="closeModal"><router-link :to="{ name: 'vini' }">Vini</router-link></li>
-                <li @click="closeModal"><router-link :to="{ name: 'specialmenus' }">Speciali</router-link></li>
+                <li @click="closeModal"><router-link :to="{ name: 'specialmenus' }">Menù Speciali</router-link></li>
+                <li @click="closeModal"><router-link :to="{ name: 'school' }">Scuola di Cucina</router-link></li>
               </ul>
             </nav>
           </div>
@@ -83,6 +66,8 @@ export default {
         <li><router-link :to="{ name: 'menu' }">Menu</router-link></li>
         <li><router-link :to="{ name: 'vini' }">Vini</router-link></li>
         <li><router-link :to="{ name: 'specialmenus' }">Speciali</router-link></li>
+        <li><router-link :to="{ name: 'school' }">Scuola di Cucina</router-link></li>
+
       </ul>
     </nav>
     <ul class="icons">

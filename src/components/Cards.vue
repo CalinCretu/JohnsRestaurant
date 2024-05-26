@@ -71,7 +71,7 @@ export default {
     text-align: center;
 
     .shadow {
-      box-shadow: 0px 8px 15px 4px rgba(0, 0, 0, 0.73);
+      box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
 
     }
 

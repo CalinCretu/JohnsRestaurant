@@ -119,7 +119,8 @@ export default {
   .desc-body {
     color: var(--title-color);
     text-align: center;
-    font-size: 20px;
+    font-size: 22px;
+    margin-bottom: 20px;
   }
 
   .cards {

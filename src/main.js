@@ -40,12 +40,30 @@ const messages = {
     speciali: {
       title: "Menù Speciali",
       subtitle: "(Solo per eventi)",
-      paragraph: "Benvenuto, in questa pagina puoi trovare degli esempi di menù dai quali prendere spunto per i tuoi eventi speciali."
+      paragraph: "Benvenuto nella nostra sezione dedicata agli esempi di menù per eventi speciali! Qui potrai trovare ispirazione per creare il menu perfetto per qualsiasi occasione."
     },
     cards: {
       menu: "Menù",
       vini: "Vini",
       click: "Clicca qui"
+    },
+    school: {
+      school_title: "Scuola di Cucina",
+      school_para_1: "Scopri il gusto dell'Italia con noi! Lezioni di cucina esclusive con degustazioni dei piatti preparati insieme al nostro Chef John Paterson.",
+      school_para_2: "Puoi consultare le varie offerte che abbiamo a disposizione e chiamarci per avere altri dettagli o richieste.",
+      note_1: "Max 20 Persone",
+      note_2: "Max 2 persone",
+      note_3: "Min 4 persone",
+      price: "a persona",
+      card_title_1: "Giornata di Cucina",
+      card_title_2: "Corso di Cucina Esclusivo",
+      card_title_3: "Pranzo con Amici",
+      card_subtitle_1: "Per gruppi superiori a 8 Persone",
+      card_subtitle_2: "Per 1 o 2 persone",
+      card_subtitle_3: "Per minimo 4 persone",
+      card_text_1: "La nostra offerta include una dimostrazione di preparazione del pranzo, che comprende un aperitivo di benvenuto con antipasti, primo, secondo e dolce, il tutto accompagnato da vino.",
+      card_text_2: "Scopri il gusto del territorio con le nostre lezioni di cucina guidate dallo Chef John Paterson, che ti accompagnerà nella preparazione di deliziosi piatti locali.",
+      card_text_3: "Unitevi ai vostri amici e familiari per un'esperienza di cucina unica e divertente! Lo Chef John Paterson vi guiderà nella preparazione di un menu completo, condiviso e gustato insieme. Una giornata da ricordare!",
     }
   },
   en: {
@@ -77,12 +95,31 @@ const messages = {
     speciali: {
       title: "Special Menus",
       subtitle: "(Only for events)",
-      paragraph: "Welcome, on this page you can find examples of menus from which to draw inspiration for your special events."
+      paragraph: "Welcome to our page dedicated to sample menus for special events! Here you can find inspiration for creating the perfect menu for any occasion."
     },
     cards: {
       menu: "Menu",
       vini: "Wine List",
       click: "Click Here"
+    },
+    school: {
+      school_title: "Cooking School",
+      school_para_1: "Discover the flavors of Italy with us! Exclusive cooking lessons with tastings of the dishes prepared alongside our Chef John Paterson.",
+      school_para_2: "You can browse our various offers and call us for more details or requests.",
+      note_1: "Max 20 People",
+      note_2: "Max 2 People",
+      note_3: "Min 4 People",
+      price: "per person",
+      card_title_1: "Cooking Day",
+      card_title_2: "Exclusive Cooking Course",
+      card_title_3: "Lunch with Friends",
+      card_subtitle_1: "For groups of 8 or more",
+      card_subtitle_2: "For 1 or 2 people",
+      card_subtitle_3: "For a minimum of 4 people",
+      card_text_1: "Our offer includes a demonstration of lunch preparation, featuring a welcome aperitif with appetizers, first course, main course, and dessert, all paired with wine.",
+      card_text_2: "Discover the flavors of the region with our cooking lessons guided by Chef John Paterson, who will accompany you in preparing delicious local dishes.",
+      card_text_3: "Gather your friends and family for a unique and fun cooking experience! Chef John Paterson will guide you in preparing a complete menu, shared and savored together. A day to remember!"
+
     }
   }
 };
