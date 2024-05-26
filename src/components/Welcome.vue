@@ -69,6 +69,7 @@ export default {
       height: 300px;
       background-image: url("/public/imgs/photos/RestaurantFoto.jpeg");
       background-position: center;
+      padding: 0px 10px;
 
       h1 {
         text-shadow: black 0px 0px 10px;
