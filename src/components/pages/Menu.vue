@@ -289,7 +289,7 @@ export default {
 <style lang="scss" scoped>
 .container-lg {
   .container-md {
-    padding: 40px 0px;
+    padding: 40px 10px;
 
     .ita {
       padding-bottom: 30px;

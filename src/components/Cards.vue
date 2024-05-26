@@ -26,7 +26,7 @@ export default {
   <div class="container-md">
     <ul class="cards">
       <li class="card-white">
-        <router-link :to="{ name: 'menu' }">
+        <router-link class="shadow" :to="{ name: 'menu' }">
           <div class="card-white-header">
             <h3>
               {{ $t('cards.menu') }}
@@ -41,7 +41,7 @@ export default {
         </router-link>
       </li>
       <li class="card-white">
-        <router-link :to="{ name: 'vini' }">
+        <router-link class="shadow" :to="{ name: 'vini' }">
           <div class="card-white-header">
             <h3>
               {{ $t('cards.vini') }}
@@ -69,6 +69,11 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-align: center;
+
+    .shadow {
+      box-shadow: 0px 8px 15px 4px rgba(0, 0, 0, 0.73);
+
+    }
 
     .card-white {
       font-size: 35px;

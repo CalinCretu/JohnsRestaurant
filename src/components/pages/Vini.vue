@@ -422,7 +422,7 @@ export default {
     <div>
       <ul class="container-sm">
 
-        <li class="sections">
+        <li class="sections dark-bg">
           <h1 class="groups-title">Al Calice</h1>
         <li class="glass-wines" v-for="vinoAlCalice in viniData.al_calice" :key="vinoAlCalice.name">
           <div class="name-desc">
@@ -434,7 +434,7 @@ export default {
         </li>
         </li>
 
-        <li class="sections">
+        <li class="sections ">
           <h1 class="groups-title">
             Vini Rossi
           </h1>
@@ -461,7 +461,7 @@ export default {
           </template>
         </li>
 
-        <li class="sections">
+        <li class="sections dark-bg">
           <h1 class="groups-title">
             Vini Rosati
           </h1>
@@ -488,7 +488,7 @@ export default {
           </template>
         </li>
 
-        <li class="sections">
+        <li class="sections ">
           <h1 class="groups-title">
             Vini Bianchi
           </h1>
@@ -515,7 +515,7 @@ export default {
           </template>
         </li>
 
-        <li class="sections">
+        <li class="sections dark-bg">
           <h1 class="groups-title">
             Prosecco e Spumante
           </h1>
@@ -542,7 +542,7 @@ export default {
           </template>
         </li>
 
-        <li class="sections">
+        <li class="sections ">
           <h1 class="groups-title">Birre</h1>
         <li class="glass-wines" v-for="birra in viniData.birra" :key="birra.name">
           <div class="name-desc">
@@ -554,7 +554,7 @@ export default {
         </li>
         </li>
 
-        <li class="sections">
+        <li class="sections dark-bg">
           <h1 class="groups-title">Bevande</h1>
         <li class="glass-wines" v-for="bevande in viniData.bevande" :key="bevande.name">
           <div class="name-desc">
@@ -590,6 +590,10 @@ export default {
 
   .container-sm {
     height: 100%;
+
+    .dark-bg {
+      background-color: var(--dark-bg-color);
+    }
 
     .sections {
       margin: 20px 0px;
@@ -676,7 +680,7 @@ export default {
           }
 
           .price {
-            min-width: 40px;
+            min-width: 60px;
             font-size: 18px;
           }
         }
@@ -689,6 +693,7 @@ export default {
           }
 
           .name-desc {
+            text-align: left;
             font-size: 14px;
             flex-grow: 1;
           }
