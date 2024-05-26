@@ -1,6 +1,7 @@
 <script>
 import Header from './components/Header.vue';
 import Home from './components/Home.vue';
+
 import { createI18n } from 'vue-i18n';
 
 import axios from 'axios';
@@ -41,6 +42,9 @@ export default {
   <div class="content">
     <router-view></router-view>
   </div>
+  <!-- <div class="footer">
+    <Footer />
+  </div> -->
 </template>
 
 <style lang="scss">

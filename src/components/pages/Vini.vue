@@ -248,22 +248,22 @@ export default {
               {
                 "c_name": "Altùris",
                 "name": "Sauvignon",
-                "price": "22.00"
+                "price": "26.00"
               },
               {
                 "c_name": "Altùris",
                 "name": "Muller Thurgau",
-                "price": "22.00"
+                "price": "26.00"
               },
               {
                 "c_name": "Altùris",
                 "name": "Traminer Aromatico",
-                "price": "22.00"
+                "price": "26.00"
               },
               {
                 "c_name": "Altùris",
                 "name": "Ribolla Gialla",
-                "price": "22.00"
+                "price": "26.00"
               },
               {
                 "c_name": "Altùris",
