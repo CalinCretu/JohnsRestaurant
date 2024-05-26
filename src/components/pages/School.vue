@@ -146,6 +146,7 @@ export default {
   .school-title {
     font-size: 60px;
     color: var(--title-color);
+    margin-top: 20px;
   }
 
   .card {
@@ -171,13 +172,8 @@ export default {
       padding: 5px;
     }
 
-    .card_text p {
-      margin: 10px 0px;
-    }
-
     .cards_item {
       display: flex;
-
     }
 
     .card_image {
@@ -237,7 +233,6 @@ export default {
 }
 
 @media screen and (min-width: 768px) {
-
 
   .container {
     height: 100vh;
