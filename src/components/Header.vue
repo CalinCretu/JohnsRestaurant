@@ -104,12 +104,12 @@ export default {
       <button class="lang-button" @click="toggleLanguage">
         <span v-if="$i18n.locale === 'it'">
           <!-- Italian flag icon -->
-          <img src="https://flagsapi.com/IT/shiny/32.png" alt="Italian Flag">
+          <img class="lang-icon" src="https://flagsapi.com/IT/shiny/32.png" alt="Italian Flag">
 
         </span>
         <span v-else>
           <!-- English flag icon -->
-          <img src="https://flagsapi.com/GB/shiny/32.png" alt="English Flag">
+          <img class="lang-icon" src="https://flagsapi.com/GB/shiny/32.png" alt="English Flag">
 
         </span>
       </button>
@@ -242,6 +242,10 @@ export default {
       border: none;
       background-color: transparent;
       cursor: pointer;
+
+      .lang-icon {
+        width: 50px;
+      }
     }
 
     :hover {
