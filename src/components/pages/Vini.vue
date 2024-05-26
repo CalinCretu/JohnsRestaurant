@@ -694,7 +694,7 @@ export default {
           }
 
           .price {
-            min-width: 55px;
+            min-width: 60px;
             font-size: 18px;
           }
         }
