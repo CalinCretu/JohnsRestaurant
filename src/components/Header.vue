@@ -236,7 +236,7 @@ export default {
 
     .lang-button {
       position: fixed;
-      bottom: 2rem;
+      bottom: 1rem;
       left: 1rem;
       z-index: 100;
       border: none;
