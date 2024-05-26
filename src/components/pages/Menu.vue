@@ -224,7 +224,7 @@ export default {
           </div>
         </li>
         </li>
-        <li class="sections">
+        <li class="sections dark-bg">
           <h1 class="groups">Primi Piatti</h1>
         <li class="dishes" v-for="primo in menuData.primi" :key="primo.name">
           <div class="name-desc">
@@ -248,7 +248,7 @@ export default {
           </div>
         </li>
         </li>
-        <li class="sections">
+        <li class="sections dark-bg">
           <h1 class="groups">Contorni</h1>
         <li class="dishes" v-for="contorno in menuData.contorni" :key="contorno.name">
           <div class="name-desc">
@@ -345,8 +345,13 @@ export default {
     max-width: 100%;
     height: 100%;
 
+    .dark-bg {
+      background-color: var(--dark-bg-color);
+    }
+
     .sections {
       margin: 20px 0px;
+      padding: 30px 10px;
 
       h1 {
         color: var(--title-color);
@@ -359,7 +364,7 @@ export default {
 
 .container-sm {
   height: 100vh;
-  padding: 30px 10px;
+  // padding: 30px 10px;
 
   .loading {
     display: flex;

@@ -44,7 +44,7 @@ const messages = {
     },
     cards: {
       menu: "Menù",
-      vini: "Carta dei Vini",
+      vini: "Vini",
       click: "Clicca qui"
     }
   },

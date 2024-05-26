@@ -32,7 +32,7 @@ export default {
   <div>
     <Hero />
   </div>
-  <div class="paddingX">
+  <div class="paddingX cards">
     <Cards />
   </div>
   <div class="paddingX">
@@ -42,6 +42,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.cards {
+  background-color: var((--dark-bg-color));
+}
+
 .paddingX {
   padding: 0px 10px;
 }

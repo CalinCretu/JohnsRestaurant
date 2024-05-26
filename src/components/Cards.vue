@@ -63,7 +63,7 @@ export default {
 .container-md {
   color: var(--content-color);
   margin: 0 auto;
-  padding-bottom: 0px;
+
 
   .cards {
     display: grid;
