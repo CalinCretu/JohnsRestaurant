@@ -102,6 +102,10 @@ export default {
 
 <style lang="scss" scoped>
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   padding: 10px;
 
   .desc-title {
@@ -124,6 +128,7 @@ export default {
     display: grid;
     grid-template-columns: 1fr;
     gap: 15px;
+    max-width: 1200px;
 
 
     .image-wrapper>* {
@@ -135,7 +140,7 @@ export default {
   @media screen and (min-width: 768px) {
     .cards {
       margin: 30px 20px;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 30px;
     }
   }
