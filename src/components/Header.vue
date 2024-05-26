@@ -45,11 +45,13 @@ export default {
                 <li @click="closeModal" class="btn-close">
                   <a type="button"><font-awesome-icon icon="xmark" /></a>
                 </li>
-                <li @click="closeModal"><router-link :to="{ name: 'home' }">Home</router-link></li>
-                <li @click="closeModal"><router-link :to="{ name: 'menu' }">Menu</router-link></li>
-                <li @click="closeModal"><router-link :to="{ name: 'vini' }">Vini</router-link></li>
-                <li @click="closeModal"><router-link :to="{ name: 'specialmenus' }">Menù Speciali</router-link></li>
-                <li @click="closeModal"><router-link :to="{ name: 'school' }">Scuola di Cucina</router-link></li>
+                <li @click="closeModal"><router-link :to="{ name: 'home' }">{{ $t('header.home') }}</router-link></li>
+                <li @click="closeModal"><router-link :to="{ name: 'menu' }">{{ $t('header.menu') }}</router-link></li>
+                <li @click="closeModal"><router-link :to="{ name: 'vini' }">{{ $t('header.vini') }}</router-link></li>
+                <li @click="closeModal"><router-link :to="{ name: 'specialmenus' }">{{ $t('header.speciali')
+                    }}</router-link></li>
+                <li @click="closeModal"><router-link :to="{ name: 'school' }">{{ $t('header.scuola') }}</router-link>
+                </li>
               </ul>
             </nav>
           </div>
@@ -62,11 +64,12 @@ export default {
     </div>
     <nav class="nav-bar">
       <ul class="nav-items">
-        <li><router-link :to="{ name: 'home' }">Home</router-link></li>
-        <li><router-link :to="{ name: 'menu' }">Menu</router-link></li>
-        <li><router-link :to="{ name: 'vini' }">Vini</router-link></li>
-        <li><router-link :to="{ name: 'specialmenus' }">Speciali</router-link></li>
-        <li><router-link :to="{ name: 'school' }">Scuola di Cucina</router-link></li>
+        <li><router-link :to="{ name: 'home' }">{{ $t('header.home') }}</router-link></li>
+        <li><router-link :to="{ name: 'menu' }">{{ $t('header.menu') }}</router-link></li>
+        <li><router-link :to="{ name: 'vini' }">{{ $t('header.vini') }}</router-link></li>
+        <li><router-link :to="{ name: 'specialmenus' }">{{ $t('header.speciali')
+            }}</router-link></li>
+        <li><router-link :to="{ name: 'school' }">{{ $t('header.scuola') }}</router-link></li>
 
       </ul>
     </nav>

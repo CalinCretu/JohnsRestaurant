@@ -12,6 +12,13 @@ library.add(faUserSecret, faUser, faHeart, faOpencart, faExpand, faCircleXmark, 
 
 const messages = {
   it: {
+    header: {
+      home: "Home",
+      menu: "Menu",
+      vini: "Vini",
+      speciali: "Speciali",
+      scuola: "Scuola di Cucina"
+    },
     benvenuti: {
       title: "Benvenuti"
     },
@@ -67,6 +74,13 @@ const messages = {
     }
   },
   en: {
+    header: {
+      home: "Home",
+      menu: "Menu",
+      vini: "Wines",
+      speciali: "Special",
+      scuola: "Cooking School"
+    },
     benvenuti: {
       title: "Welcome"
     },
