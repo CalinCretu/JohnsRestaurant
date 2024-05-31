@@ -68,11 +68,9 @@ export default {
   .cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    text-align: center;
 
     .shadow {
       box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
-
     }
 
     .card-white {
@@ -80,7 +78,6 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
-      border-radius: 8px;
 
       .card-white-header {
         background-color: white;
@@ -99,15 +96,15 @@ export default {
 
   .image-wrapper img {
     aspect-ratio: 1/1;
-    height: 450px;
-    overflow: hidden;
+    height: 460px;
+    object-fit: cover;
+    margin-bottom: -10px;
   }
 
   @media screen and (max-width: 768px) {
 
     /* Adjust max-width as needed */
     .cards {
-
       gap: 10px;
 
       .image-wrapper img {

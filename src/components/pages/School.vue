@@ -231,7 +231,7 @@ export default {
 @media screen and (min-width: 768px) {
 
   .container {
-    height: 100vh;
+
     font-size: 18px;
 
     .school-paragraph {
