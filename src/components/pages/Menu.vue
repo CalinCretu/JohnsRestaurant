@@ -302,12 +302,12 @@ export default {
     }
 
     p {
+      text-transform: none;
       color: var(--title-color);
     }
 
     .grazie {
-      padding-top: 20px;
-      font-size: 25px;
+      font-size: 22px;
     }
   }
 
