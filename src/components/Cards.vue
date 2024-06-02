@@ -89,6 +89,7 @@ export default {
 
         p {
           padding-bottom: 15px;
+          font-size: 1.2rem;
         }
       }
     }
@@ -119,6 +120,7 @@ export default {
         .card-white-header {
           p {
             padding-bottom: 5px;
+            font-size: 0.8rem;
           }
         }
 

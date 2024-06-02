@@ -15,10 +15,9 @@ export default {
     window.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
-    toggleLanguage(newLocale) {
-
+    toggleLanguage() {
+      const newLocale = this.$i18n.locale === 'it' ? 'en' : 'it';
       this.$i18n.locale = newLocale;
-
     },
     handleScroll() {
       this.isHeaderSmall = window.scrollY > 0;
@@ -36,29 +35,31 @@ export default {
 <template>
   <div class="container-lg" :class="{ 'small': isHeaderSmall }">
     <!--MODALE-->
-    <div class="modal" :class="{ 'show': isModalOpen }">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <!-- Contenuto della modale -->
-          <div class="modal-body">
-            <nav class="nav-bar-modale" style="color: black;">
-              <ul class="nav-items-modale">
-                <li @click="closeModal" class="btn-close">
-                  <a type="button"><font-awesome-icon icon="xmark" /></a>
-                </li>
-                <li @click="closeModal"><router-link :to="{ name: 'home' }">{{ $t('header.home') }}</router-link></li>
-                <li @click="closeModal"><router-link :to="{ name: 'menu' }">{{ $t('header.menu') }}</router-link></li>
-                <li @click="closeModal"><router-link :to="{ name: 'vini' }">{{ $t('header.vini') }}</router-link></li>
-                <li @click="closeModal"><router-link :to="{ name: 'specialmenus' }">{{ $t('header.speciali')
-                    }}</router-link></li>
-                <li @click="closeModal"><router-link :to="{ name: 'school' }">{{ $t('header.scuola') }}</router-link>
-                </li>
-              </ul>
-            </nav>
+    <transition name="fade" appear>
+      <div class="modal" :class="{ 'show': isModalOpen }">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Contenuto della modale -->
+            <div class="modal-body">
+              <nav class="nav-bar-modale" style="color: black;">
+                <ul class="nav-items-modale">
+                  <li @click="closeModal" class="btn-close">
+                    <a type="button"><font-awesome-icon icon="xmark" /></a>
+                  </li>
+                  <li @click="closeModal"><router-link :to="{ name: 'home' }">{{ $t('header.home') }}</router-link></li>
+                  <li @click="closeModal"><router-link :to="{ name: 'menu' }">{{ $t('header.menu') }}</router-link></li>
+                  <li @click="closeModal"><router-link :to="{ name: 'vini' }">{{ $t('header.vini') }}</router-link></li>
+                  <li @click="closeModal"><router-link :to="{ name: 'specialmenus' }">{{ $t('header.speciali')
+                      }}</router-link></li>
+                  <li @click="closeModal"><router-link :to="{ name: 'school' }">{{ $t('header.scuola') }}</router-link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </transition>
     <!--MODALE-->
     <div class="logo">
       <router-link :to="{ name: 'home' }"><img class="logo-image" :src="logo" alt=""></router-link>
@@ -71,7 +72,6 @@ export default {
         <li><router-link :to="{ name: 'specialmenus' }">{{ $t('header.speciali')
             }}</router-link></li>
         <li><router-link :to="{ name: 'school' }">{{ $t('header.scuola') }}</router-link></li>
-
       </ul>
     </nav>
     <ul class="icons">
@@ -89,13 +89,19 @@ export default {
         <a href="https://www.facebook.com/johnpatersonchef/"><font-awesome-icon icon="fa-brands fa-square-facebook" />
         </a>
       </li>
-      <!--PULSANTE LINGUA-->
-      <button class="lang-button-ita" @click="toggleLanguage('it')">
-        <img class="lang-icon" src="https://flagsapi.com/IT/shiny/32.png" alt="Italian Flag">
-      </button>
-      <button class="lang-button eng" @click="toggleLanguage('en')">
-        <img class="lang-icon" src="https://flagsapi.com/GB/shiny/32.png" alt="English Flag">
-      </button>
+      <li class="lang">
+        <!--PULSANTE LINGUA-->
+        <button class="lang-button" @click="toggleLanguage">
+          <span v-if="$i18n.locale === 'it'">
+            <!-- Italian -->
+            ITA
+          </span>
+          <span v-else>
+            <!-- English -->
+            ENG
+          </span>
+        </button>
+      </li>
     </ul>
     <div class="burger" @click="openModal">
       <font-awesome-icon icon="bars" />
@@ -116,17 +122,18 @@ export default {
     display: none;
     position: fixed;
     top: 0;
-    right: 0;
     z-index: 1050;
     height: 100%;
+    width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
     outline: 0;
-    transform: translate(0px, 0px);
   }
 
   .modal.show {
     display: block;
+    transform: translate(0px, 10%);
+    opacity: 1;
   }
 
   .modal-dialog {
@@ -217,33 +224,19 @@ export default {
     font-size: 30px;
     color: var(--title-color);
 
-    .lang-button {
-      position: fixed;
-      bottom: 1.5rem;
-      left: 0.5rem;
-      z-index: 100;
-      border: none;
-      background-color: transparent;
-      cursor: pointer;
+    .lang {
+      display: flex;
+      align-items: center;
 
-      .lang-icon {
-        width: 50px;
+      .lang-button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        width: 30px;
+        font-size: 1.4rem;
       }
     }
 
-    .lang-button-ita {
-      position: fixed;
-      bottom: 4.5rem;
-      left: 0.5rem;
-      z-index: 100;
-      border: none;
-      background-color: transparent;
-      cursor: pointer;
-
-      .lang-icon {
-        width: 50px;
-      }
-    }
 
     :hover {
       color: black;

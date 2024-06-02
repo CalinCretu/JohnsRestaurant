@@ -205,7 +205,7 @@ export default {
           </p>
         </div>
         <p class="grazie">
-          Grazie, chef John Paterson
+          Grazie, Chef John Paterson
         </p>
       </div>
       <!--Contenuto pagina-->
@@ -272,8 +272,10 @@ export default {
           </div>
         </li>
         </li>
+        <li class="vini-button">
+          <p><router-link :to="{ name: 'vini' }">{{ $t('header.vini') }}</router-link></p>
+        </li>
       </ul>
-      <!-- Aggiungi altri blocchi simili per primi, secondi, contorni e dolci -->
     </div>
   </div>
   <div v-else>
@@ -304,10 +306,35 @@ export default {
     p {
       text-transform: none;
       color: var(--title-color);
+      font-size: 1.5rem;
     }
 
     .grazie {
       font-size: 22px;
+    }
+  }
+
+  .vini-button {
+    color: var(--title-color);
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    transition: 0.3s ease;
+
+    p {
+      background-color: var(--dark-bg-color);
+      width: 120px;
+      border: 1px solid var(--title-color);
+      border-radius: 8px;
+
+      &:hover {
+        box-shadow: 6px 6px rgba(0, 0, 0, 0.6);
+      }
+
+      &:active {
+        box-shadow: none;
+      }
     }
   }
 
@@ -385,16 +412,18 @@ export default {
   @keyframes rotateClockwise {
     from {
       transform: rotate(0deg);
-
     }
 
     to {
       transform: rotate(360deg);
-
     }
   }
 
   @media screen and (max-width: 768px) {
+    .vini-button {
+      padding-top: 20px;
+    }
+
     .dishes {
       gap: 20px;
       display: flex;
