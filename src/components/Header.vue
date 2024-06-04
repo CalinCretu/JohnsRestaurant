@@ -43,15 +43,22 @@ export default {
             <div class="modal-body">
               <nav class="nav-bar-modale" style="color: black;">
                 <ul class="nav-items-modale">
+                  <li @click="closeModal"><router-link :to="{ name: 'home' }">{{ $t('header.home') }}</router-link></li>
+                  <router-link :to="{ name: 'menu' }">
+                    <li @click="closeModal">{{ $t('header.menu') }}</li>
+                  </router-link>
+                  <router-link :to="{ name: 'vini' }">
+                    <li @click="closeModal">{{ $t('header.vini') }}</li>
+                  </router-link>
+                  <router-link :to="{ name: 'specialmenus' }">
+                    <li @click="closeModal">{{ $t('header.speciali') }}</li>
+                  </router-link>
+                  <router-link :to="{ name: 'school' }">
+                    <li @click="closeModal">{{ $t('header.scuola_button') }}
+                    </li>
+                  </router-link>
                   <li @click="closeModal" class="btn-close">
                     <a type="button"><font-awesome-icon icon="xmark" /></a>
-                  </li>
-                  <li @click="closeModal"><router-link :to="{ name: 'home' }">{{ $t('header.home') }}</router-link></li>
-                  <li @click="closeModal"><router-link :to="{ name: 'menu' }">{{ $t('header.menu') }}</router-link></li>
-                  <li @click="closeModal"><router-link :to="{ name: 'vini' }">{{ $t('header.vini') }}</router-link></li>
-                  <li @click="closeModal"><router-link :to="{ name: 'specialmenus' }">{{ $t('header.speciali')
-                      }}</router-link></li>
-                  <li @click="closeModal"><router-link :to="{ name: 'school' }">{{ $t('header.scuola') }}</router-link>
                   </li>
                 </ul>
               </nav>
@@ -155,22 +162,23 @@ export default {
 
     .nav-bar-modale {
       .nav-items-modale {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
         font-size: 30px;
-        gap: 20px;
+        gap: 10px;
 
-        .btn-close {
-          border: none !important;
+        li {
+          align-self: center;
+          border-radius: 10px;
+          aspect-ratio: 1/1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--dark-bg-color);
         }
 
-        .btn-close:hover {
-          color: black;
-        }
-
-        li:not(:first-child) {
-          box-shadow: 0px 4px 2px -5px black;
+        li {
+          box-shadow: 0 10px 20px -7px rgba(0, 0, 0, 0.25);
 
           &:active {
             transform: scale(0.9);

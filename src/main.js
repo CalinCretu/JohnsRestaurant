@@ -17,7 +17,8 @@ const messages = {
       menu: "Menù",
       vini: "Vini",
       speciali: "Speciali",
-      scuola: "Scuola di Cucina"
+      scuola: "Scuola di Cucina",
+      scuola_button: "Scuola",
     },
     benvenuti: {
       title: "Benvenuti"
@@ -79,7 +80,8 @@ const messages = {
       menu: "Menu",
       vini: "Wines",
       speciali: "Special",
-      scuola: "Cooking School"
+      scuola: "Cooking School",
+      scuola_button: "School",
     },
     benvenuti: {
       title: "Welcome"
