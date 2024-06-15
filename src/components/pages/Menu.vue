@@ -63,9 +63,9 @@ export default {
             price: "16.00"
           },
           {
-            name: "Gnocchi al pesto di ortica, borragine e crespigno",
-            description: "Gnocchi with pesto of wild greens (nettles and borrage)",
-            eng_description: "Gnocchi with pesto of wild greens (nettles and borrage)",
+            name: "Gnocchi al Pomodoro fresco e Basilico",
+            description: "Gnocchi with fresh Tomato and Basil",
+            eng_description: "Gnocchi with fresh Tomato and Basil",
             price: "15.00"
           }
         ],
