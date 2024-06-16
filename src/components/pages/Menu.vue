@@ -107,7 +107,7 @@ export default {
             price: "22.00"
           },
           {
-            name: "Faraona ripiena di cicoria ,scamorza e funghi porcini",
+            name: "Faraona ripiena di cicoria, scamorza e funghi porcini",
             description: "Guinea fowl with smoked cheese porcini mushrooms and cicory",
             eng_description: "Guinea fowl with smoked cheese porcini mushrooms and chicory",
             price: "18.00"
