@@ -7,7 +7,7 @@ export default {
       menuData: {
         antipasti: [
           {
-            name: "Antipasto Misto della Valle",
+            name: "Antipasto Misto della Valle (salumi locali, bruschette e formaggi)",
             description: "Salumi locali, bruschette e formaggi",
             eng_description: "Local mixed Appetizer (local cured meat, bruschetta and mixed cheese)",
             price: "16.00"
@@ -106,12 +106,12 @@ export default {
             eng_description: "Saltcod with olives, capers, potatoes and chickpeas",
             price: "22.00"
           },
-          {
-            name: "Faraona ripiena di cicoria, scamorza e funghi porcini",
-            description: "Guinea fowl with smoked cheese porcini mushrooms and cicory",
-            eng_description: "Guinea fowl with smoked cheese porcini mushrooms and chicory",
-            price: "18.00"
-          }
+          // {
+          //   name: "Faraona ripiena di cicoria, scamorza e funghi porcini",
+          //   description: "Guinea fowl with smoked cheese porcini mushrooms and cicory",
+          //   eng_description: "Guinea fowl with smoked cheese porcini mushrooms and chicory",
+          //   price: "18.00"
+          // }
         ],
         contorni: [
           {
