@@ -186,7 +186,7 @@ export default {
 
 <template>
   <!--Titolo pagina-->
-  <div class="container-lg" v-if="menuData">
+  <div class="container-lg container-print" v-if="menuData">
     <div class="title">
       Menù
     </div>
@@ -214,66 +214,66 @@ export default {
       <ul>
         <li class="sections">
           <h1 class="groups">Antipasti</h1>
-        <li class="dishes" v-for="antipasto in menuData.antipasti" :key="antipasto.name">
-          <div class="name-desc">
+        <li class="dishes dishes-print" v-for="antipasto in menuData.antipasti" :key="antipasto.name">
+          <div class="name-desc name-desc-print">
             <h3>{{ antipasto.name }}</h3>
             <p>{{ antipasto.eng_description }}</p>
           </div>
-          <div class="price">
+          <div class="price price-print">
             {{ antipasto.price }} &euro;
           </div>
         </li>
         </li>
         <li class="sections dark-bg">
           <h1 class="groups">Primi Piatti</h1>
-        <li class="dishes" v-for="primo in menuData.primi" :key="primo.name">
-          <div class="name-desc">
+        <li class="dishes dishes-print" v-for="primo in menuData.primi" :key="primo.name">
+          <div class="name-desc name-desc-print">
             <h3>{{ primo.name }}</h3>
             <p>{{ primo.eng_description }}</p>
           </div>
-          <div class="price">
-            <p>{{ primo.price }} &euro;</p>
+          <div class="price price-print">
+            {{ primo.price }} &euro;
           </div>
         </li>
         </li>
         <li class="sections">
           <h1 class="groups">Secondi Piatti</h1>
-        <li class="dishes" v-for="secondo in menuData.secondi" :key="secondo.name">
-          <div class="name-desc">
+        <li class="dishes dishes-print" v-for="secondo in menuData.secondi" :key="secondo.name">
+          <div class="name-desc name-desc-print">
             <h3>{{ secondo.name }}</h3>
             <p>{{ secondo.eng_description }}</p>
           </div>
-          <div class="price">
-            <p>{{ secondo.price }} &euro;</p>
+          <div class="price price-print">
+            {{ secondo.price }} &euro;
           </div>
         </li>
         </li>
         <li class="sections dark-bg">
           <h1 class="groups">Contorni</h1>
-        <li class="dishes" v-for="contorno in menuData.contorni" :key="contorno.name">
-          <div class="name-desc">
+        <li class="dishes dishes-print" v-for="contorno in menuData.contorni" :key="contorno.name">
+          <div class="name-desc name-desc-print">
             <h3>{{ contorno.name }}</h3>
             <p>{{ contorno.eng_description }}</p>
           </div>
-          <div class="price">
-            <p>{{ contorno.price }} &euro;</p>
+          <div class="price price-print">
+            {{ contorno.price }} &euro;
           </div>
         </li>
         </li>
         <li class="sections">
           <h1 class="groups">Dolci</h1>
-        <li class="dishes" v-for="dolce in menuData.dolci" :key="dolce.name">
-          <div class="name-desc">
+        <li class="dishes dishes-print" v-for="dolce in menuData.dolci" :key="dolce.name">
+          <div class="name-desc name-desc-print">
             <h3>{{ dolce.name }}</h3>
             <p>{{ dolce.eng_description }}</p>
           </div>
-          <div class="price">
-            <p>{{ dolce.price }} &euro;</p>
+          <div class="price price-print">
+            {{ dolce.price }} &euro;
           </div>
         </li>
         </li>
-        <li class="vini-button">
-          <p><router-link :to="{ name: 'vini' }">{{ $t('header.vini') }}</router-link></p>
+        <li class="vini-button no-print">
+          <p class="no-print"><router-link :to="{ name: 'vini' }">{{ $t('header.vini') }}</router-link></p>
         </li>
       </ul>
     </div>
@@ -451,6 +451,30 @@ export default {
         max-width: 150px;
       }
     }
+  }
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+
+  .container-print {
+    margin-top: -60px;
+  }
+
+  .dishes-print {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+  }
+
+  .name-desc-print {
+    flex-grow: 1;
+  }
+
+  .price-print {
+    white-space: nowrap
   }
 }
 </style>

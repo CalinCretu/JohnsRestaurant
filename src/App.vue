@@ -38,13 +38,13 @@ export default {
 </script>
 
 <template>
-  <div class="header" :class="{ 'small': isHeaderSmall }">
+  <div class="header no-print" :class="{ 'small': isHeaderSmall }">
     <Header />
   </div>
   <div class="content">
     <router-view></router-view>
   </div>
-  <div class="footer">
+  <div class="footer no-print">
     <Footer />
   </div>
 </template>
@@ -97,6 +97,12 @@ export default {
 
   .header {
     border: 0px;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none;
   }
 }
 </style>
