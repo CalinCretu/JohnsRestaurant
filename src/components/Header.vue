@@ -21,24 +21,33 @@ export default {
     },
     handleScroll() {
       this.isHeaderSmall = window.scrollY > 0;
+      if (this.isModalOpen) {
+        this.closeModal();
+      }
     },
     openModal() {
       this.isModalOpen = true; // Apri la modale
     },
     closeModal() {
       this.isModalOpen = false; // Chiudi la modale
+    },
+    closeModalOutsideClick(event) {
+      // Chiudi la modale solo se il click è al di fuori della modale
+      if (event.target.classList.contains('modal')) {
+        this.closeModal();
+      }
     }
   }
 }
 </script>
 
 <template>
-  <div class="container-lg" :class="{ 'small': isHeaderSmall }">
+  <div @click="closeModalOutsideClick" class="container-lg" :class="{ 'small': isHeaderSmall }">
     <!--MODALE-->
     <transition name="fade" appear>
       <div class="modal" :class="{ 'show': isModalOpen }">
         <div class="modal-dialog">
-          <div class="modal-content">
+          <div class="modal-content" @click.stop>
             <!-- Contenuto della modale -->
             <div class="modal-body">
               <nav class="nav-bar-modale" style="color: black;">

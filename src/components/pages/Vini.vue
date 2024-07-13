@@ -632,13 +632,10 @@ export default {
         align-items: center;
 
         .cantina {
-          font-size: 28px;
+          font-size: 30px;
           font-weight: bolder;
           padding-top: 20px;
           color: var(--title-color);
-        }
-
-        .cantina {
           border-bottom: 1px solid var(--content-color);
         }
 
