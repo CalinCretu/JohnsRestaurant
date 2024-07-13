@@ -13,17 +13,35 @@ export default {
             price: "16.00"
           },
           {
-            name: "Insalata di Polpo, Ceci e Olive Taggiasche",
-            description: "Octopus, Chickpeas and Taggiasche Olives",
-            eng_description: "Octopus, Chickpeas and Taggiasche Olives",
+            name: "Insalata di prosciutto croccante, melone e mozzarella di bufala con aceto balsamico invecchiato",
+            description: "Salumi locali, bruschette e formaggi",
+            eng_description: "Salad of crispy local ham, melon, and buffalo mozzarella dressed in aged balsamic vinegar",
             price: "16.00"
           },
           {
-            name: "Turbante di Bresaola con insalata di Frutta e mozzarella di Bufala",
-            description: "Turban of Bresaola with a salad of fruit and Bufala mozzarella",
-            eng_description: "Turban of smoked angus with a salad of fruit and buffalo mozzarella",
+            name: "Pecorino al forno con miele e noci, capocollo e pane croccante, tartare di pesca",
+            description: "Salumi locali, bruschette e formaggi",
+            eng_description: "Baked sheep’s cheese with local honey and walnuts, capocollo croutons, and peach tartare",
             price: "16.00"
           },
+          {
+            name: "Bruschetta di gamberoni al cognac e pomodorini arrosto",
+            description: "Salumi locali, bruschette e formaggi",
+            eng_description: "Toasted bread with king prawns cooked in cognac, cream, roasted cherry tomatoes, and basil",
+            price: "16.00"
+          },
+          // {
+          //   name: "Insalata di Polpo, Ceci e Olive Taggiasche",
+          //   description: "Octopus, Chickpeas and Taggiasche Olives",
+          //   eng_description: "Octopus, Chickpeas and Taggiasche Olives",
+          //   price: "16.00"
+          // },
+          // {
+          //   name: "Turbante di Bresaola con insalata di Frutta e mozzarella di Bufala",
+          //   description: "Turban of Bresaola with a salad of fruit and Bufala mozzarella",
+          //   eng_description: "Turban of smoked angus with a salad of fruit and buffalo mozzarella",
+          //   price: "16.00"
+          // },
           {
             name: "Involtino di Salmone affumicato con Peperoni in agrodolce e Salsa Tonnata",
             description: "Smoked Salmon Roll with sweet and sour Peppers and Tuna fish sauce",
@@ -45,41 +63,47 @@ export default {
             price: "18.00"
           },
           {
-            name: "Tagliolini al tartufo",
+            name: "Tagliolini al Tartufo Nero di Norcia",
             description: "Tagliolini with local black truffles",
             eng_description: "Tagliolini with local black truffles",
             price: "18.00"
           },
           {
-            name: "Strangozzi con salsicce e funghi Porcini",
-            description: "Strangozzi with sausages and Porcini mushrooms",
-            eng_description: "Strangozzi with sausages and Porcini mushrooms",
+            name: "Tagliolini con Verdure Piccanti",
+            description: "Tagliolini with local black truffles",
+            eng_description: "Tagliolini with spicy Vegetables",
+            price: "18.00"
+          },
+          {
+            name: "Strangozzi con Funghi Porcini e Pomodorini",
+            description: "Strangozzi with Porcini mushrooms and Cherry Tomatoes",
+            eng_description: "Strangozzi with Porcini mushrooms and Cherry Tomatoes",
             price: "16.00"
           },
           {
-            name: "Tagliatelle con Gamberetti e Verdure piccanti",
+            name: "Tagliatelle con Gamberetti e Zucchine in Salsa Rosa",
             description: "Tagliatelle with Prawns and Spicy Vegetables",
-            eng_description: "Tagliatelle with Prawns and Spicy Vegetables",
+            eng_description: "Tagliatelle with Prawns and Zucchini in Pink Sauce",
             price: "16.00"
           },
-          {
-            name: "Gnocchi al Pomodoro fresco e Basilico",
-            description: "Gnocchi with fresh Tomato and Basil",
-            eng_description: "Gnocchi with fresh Tomato and Basil",
-            price: "15.00"
-          }
+          // {
+          //   name: "Gnocchi al Pomodoro fresco e Basilico",
+          //   description: "Gnocchi with fresh Tomato and Basil",
+          //   eng_description: "Gnocchi with fresh Tomato and Basil",
+          //   price: "15.00"
+          // }
         ],
         secondi: [
           {
-            name: "Tagliata di vitello con Rucola, Olio di Ginepro e Rosmarino",
+            name: "Tagliata di Manzo con Rucola, Olio di Ginepro e Rosmarino",
             description: "Sliced veal Steak with Juniper Oil, Rocket salad and Rosemary",
             eng_description: "Sliced veal Steak with Juniper Oil, Rocket salad and Rosemary",
             price: "22.00"
           },
           {
-            name: "Filetto di manzo Irlandese alla griglia con Tartufo",
+            name: "Filetto di Vitello al Tartufo Nero di Norcia",
             description: "Grilled Fillet of Irish beef with Black Truffles",
-            eng_description: "Grilled Fillet of Irish beef with Black Truffles",
+            eng_description: "Grilled Veal Fillet with local Black Truffle",
             price: "28.00"
           },
           {
@@ -101,9 +125,15 @@ export default {
             price: "20.00"
           },
           {
-            name: "Baccalà con olive taggiasche, capperi, patate e ceci",
+            name: "Salmone arrosto con salsa verde",
+            description: "Sliced veal Steak with Juniper Oil, Rocket salad and Rosemary",
+            eng_description: "Salmon steak with salsa verde",
+            price: "22.00"
+          },
+          {
+            name: "Baccalà impanato con crema di pomodori secchi",
             description: "Saltcod with olives, capers, potatoes and chickpeas",
-            eng_description: "Saltcod with olives, capers, potatoes and chickpeas",
+            eng_description: "Breaded Cod with Sun-Dried Tomato Cream",
             price: "22.00"
           },
           // {
@@ -158,10 +188,22 @@ export default {
             eng_description: "Flourless fondant chocolate cake",
             price: "7.00"
           },
+          // {
+          //   name: "Panna cotta alla menta con la salsa di coccolato fondente",
+          //   description: "Mint panna cotta with chocolate sauce",
+          //   eng_description: "Mint panna cotta with chocolate sauce",
+          //   price: "7.00"
+          // },
           {
-            name: "Panna cotta alla menta con la salsa di coccolato fondente",
+            name: "Panna cotta alla Vaniglia con frutti di bosco cotti al Vino Rosso",
             description: "Mint panna cotta with chocolate sauce",
-            eng_description: "Mint panna cotta with chocolate sauce",
+            eng_description: "Vanilla Panna Cotta with Berries Cooked in Red Wine",
+            price: "7.00"
+          },
+          {
+            name: "Semifreddo al limone e fragole con anguria ghiacciata",
+            description: "Mint panna cotta with chocolate sauce",
+            eng_description: "Lemon and strawberry semifreddo with iced watermelon",
             price: "7.00"
           }
         ]
@@ -357,6 +399,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    gap: 2.5rem;
 
     .name-desc {
       color: var(--title-color);
@@ -366,6 +409,7 @@ export default {
     .price {
       color: var(--title-color);
       font-size: 22px;
+      white-space: nowrap
     }
   }
 
