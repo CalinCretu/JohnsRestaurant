@@ -251,6 +251,11 @@ export default {
               },
               {
                 "c_name": "Antinori",
+                "name": "Scalabrone",
+                "price": "35.00"
+              },
+              {
+                "c_name": "Antinori",
                 "name": "Rosè Franciacorta",
                 "price": "50.00"
               },
@@ -303,11 +308,6 @@ export default {
               {
                 "c_name": "Antinori",
                 "name": "Vermentino Bolgheri",
-                "price": "35.00"
-              },
-              {
-                "c_name": "Antinori",
-                "name": "Scalabrone",
                 "price": "35.00"
               },
               {
