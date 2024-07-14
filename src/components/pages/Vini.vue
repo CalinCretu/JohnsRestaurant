@@ -5,53 +5,113 @@ export default {
   data() {
     return {
       viniData: {
-        "al_calice": [
-          {
-            "name": "Colle di Fontivecchie Umbria Rosso",
-            "price": " 6.00"
-          },
-          {
-            "name": "Colle di Fontivecchie Grechetto",
-            "price": " 6.00"
-          }
-        ],
+        // "al_calice": [
+        //   {
+        //     "name": "Colle di Fontivecchie Umbria Rosso",
+        //     "price": "6.00"
+        //   },
+        //   {
+        //     "name": "Colle di Fontivecchie Grechetto",
+        //     "price": "6.00"
+        //   }
+        // ],
         "vini_rossi": [
           {
             "cantina_1": [
               {
-                "c_name": "Terre dei Capitani",
-                "name": "Colle di Fontivecchie Umbria Rosso",
-                "price": " 18.00"
+                "c_name": "Madrevite",
+                "name": "C'Osa Gamay del Trasimeno DOC",
+                "price": "45.00"
+              },
+              {
+                "c_name": "Antinori",
+                "name": "Pinot Nero della Sala 2021",
+                "price": "100.00"
+              },
+              {
+                "c_name": "Antinori",
+                "name": "Pian delle Vigne 2019",
+                "price": "90.00"
+              },
+              {
+                "c_name": "Antinori",
+                "name": "Achelo 2022",
+                "price": "40.00"
+              },
+              {
+                "c_name": "Antinori",
+                "name": "Pèppoli 2022",
+                "price": "40.00"
+              },
+              {
+                "c_name": "Antinori",
+                "name": "Villa Antinori Chainti Classico 2021",
+                "price": "50.00"
+              },
+              {
+                "c_name": "Antinori",
+                "name": "Villa Antinori Toscana",
+                "price": "30.00"
               },
               {
                 "c_name": "Terre dei Capitani",
                 "name": "Montefalco Sagrantino DOCG",
-                "price": " 40.00"
+                "price": "40.00"
               },
               {
-                "c_name": "Terre dei Capitani",
-                "name": "Montefalco Rosso Riserva DOC",
-                "price": " 35.00"
+                "c_name": "Tenuta di Nozzole",
+                "name": "Nozzole Chianti Classico DOCG 2021",
+                "price": "4.00"
               },
               {
-                "c_name": "Terre dei Capitani",
-                "name": "Montefalco Rosso",
-                "price": " 30.00"
+                "c_name": "Ceretto",
+                "name": "Barolo DOCG 2019",
+                "price": "100.00"
+              },
+              {
+                "c_name": "Ceretto",
+                "name": "Barbaresco DOCG 2020",
+                "price": "90.00"
+              },
+              {
+                "c_name": "Nicolis",
+                "name": "Amarone della Valpolicella DOC Classico 'Ambrosan' 2015",
+                "price": "90.00"
+              },
+              {
+                "c_name": "Gilfenstein",
+                "name": "Pinot Noir Vassal A.A. DOC 2020",
+                "price": "40.00"
+              },
+              {
+                "c_name": "Val di Suga",
+                "name": "Brunello di Montalcino Riserva 2013",
+                "price": "80.00"
+              },
+              {
+                "c_name": "Argentiera",
+                "name": "Bolgheri Villa Donoratico 2019 DOCG",
+                "price": "60.00"
+              },
+              {
+                "c_name": "Campo al Mare",
+                "name": "Bolgheri Rosso",
+                "price": "40.00"
               },
               {
                 "c_name": "Tenuta Campo al Mare",
                 "name": "Baia al Vento",
-                "price": " 60.00"
+                "price": "60.00"
               },
               {
                 "c_name": "Cantina Tudernum ",
                 "name": "Fidenzio Montefalco Sagrantino DOCG",
-                "price": " 40.00"
+                "price": "40.00"
               },
               {
-                "c_name": "Perticaia",
-                "name": "Montefalco Rosso Riserva",
-                "price": "45.00"
+                "c_name": "Cantina Tudernum ",
+                "name": "Rojano Todi Rosso Superiore DOC 2020",
+                "price": "27.00"
               },
               {
                 "c_name": "Agricola Mevante",
@@ -64,34 +124,14 @@ export default {
                 "price": "40.00"
               },
               {
-                "c_name": "Tenuta Placidi",
-                "name": "Jagus",
-                "price": "45.00"
-              },
-              {
-                "c_name": "Tenuta Placidi",
-                "name": "Alias",
-                "price": "30.00"
-              },
-              {
-                "c_name": "Fattoria di Milziade Antano",
-                "name": "Montefalco Rosso Riserva DOC",
-                "price": "45.00"
-              },
-              {
-                "c_name": "Fattoria di Milziade Antano",
-                "name": "Montefalco Sagrantino DOCG",
-                "price": "50.00"
-              },
-              {
                 "c_name": "Argillae",
                 "name": "Sinuoso Umbria Rosso",
-                "price": "25.00"
+                "price": "30.00"
               },
               {
                 "c_name": "Argillae",
                 "name": "Sinuoso 375 ml",
-                "price": "10.00"
+                "price": "15.00"
               },
               {
                 "c_name": "Donnafugata",
@@ -109,13 +149,18 @@ export default {
                 "price": "30.00"
               },
               {
-                "c_name": "Scacciadiavoli",
-                "name": "Montefalco Sagrantino",
+                "c_name": "Peppucci",
+                "name": "L'Altro Io",
+                "price": "45.00"
+              },
+              {
+                "c_name": "Peppucci",
+                "name": "Giovanni 2016",
                 "price": "40.00"
               },
               {
                 "c_name": "Peppucci",
-                "name": "Giovanni",
+                "name": "Petroro 4",
                 "price": "30.00"
               },
               {
@@ -205,6 +250,16 @@ export default {
                 "price": "25.00"
               },
               {
+                "c_name": "Antinori",
+                "name": "Rosè Franciacorta",
+                "price": "50.00"
+              },
+              {
+                "c_name": "Argillae",
+                "name": "Rosetum",
+                "price": "25.00"
+              },
+              {
                 "c_name": "Zazzera",
                 "name": "Serperosa",
                 "price": "20.00"
@@ -216,9 +271,54 @@ export default {
           {
             "cantina_1": [
               {
-                "c_name": "Terre dei Capitani",
-                "name": "Colle di Fontivecchie Umbria Grechetto",
-                "price": "18.00"
+                "c_name": "Palazzone",
+                "name": "Campo del Guardiano Orvieto Classico Superiore DOC",
+                "price": "40.00"
+              },
+              {
+                "c_name": "Palazzone",
+                "name": "Terre Vineate Orvieto Classico Superiore DOC",
+                "price": "25.00"
+              },
+              {
+                "c_name": "Antinori",
+                "name": "Cervaro della Sala",
+                "price": "90.00"
+              },
+              {
+                "c_name": "Antinori",
+                "name": "Bramìto",
+                "price": "45.00"
+              },
+              {
+                "c_name": "Antinori",
+                "name": "Conte della Vipera",
+                "price": "50.00"
+              },
+              {
+                "c_name": "Antinori",
+                "name": "San Giovanni della Sala",
+                "price": "35.00"
+              },
+              {
+                "c_name": "Antinori",
+                "name": "Vermentino Bolgheri",
+                "price": "35.00"
+              },
+              {
+                "c_name": "Antinori",
+                "name": "Scalabrone",
+                "price": "35.00"
+              },
+              {
+                "c_name": "Di Meo",
+                "name": "Fiano di Avellino DOCG",
+                "price": "40.00"
+              },
+              {
+                "c_name": "Tenuta Santori",
+                "name": "Pecorino",
+                "price": "22.00"
               },
               {
                 "c_name": "Agricola San Faustino",
@@ -281,11 +381,6 @@ export default {
                 "price": "30.00"
               },
               {
-                "c_name": "Terre Margaritelli",
-                "name": "Greco di Renabianca",
-                "price": "30.00"
-              },
-              {
                 "c_name": "Argillae",
                 "name": "Orvieto Classico DOC Superiore",
                 "price": "30.00"
@@ -293,7 +388,7 @@ export default {
               {
                 "c_name": "Argillae",
                 "name": "Orvieto Classico 275 ml",
-                "price": "10.00"
+                "price": "15.00"
               },
               {
                 "c_name": "Casale del Giglio",
@@ -304,11 +399,6 @@ export default {
                 "c_name": "Zazzera",
                 "name": "Barbadoro",
                 "price": "25.00"
-              },
-              {
-                "c_name": "Donnafugata",
-                "name": "Passiperduti",
-                "price": "30.00"
               },
               {
                 "c_name": "Campo al Mare",
@@ -322,8 +412,18 @@ export default {
               },
               {
                 "c_name": "Tudernum",
-                "name": "Collenobile",
+                "name": "Colle Nobile Grechetto di Todi Superiore DOC",
                 "price": "30.00"
+              },
+              {
+                "c_name": "Tudernum",
+                "name": "TS.396 Trebbiano",
+                "price": "22.00"
+              },
+              {
+                "c_name": "Tudernum",
+                "name": "Le Lucrezie IGT",
+                "price": "20.00"
               },
               {
                 "c_name": "Tudernum",
@@ -347,6 +447,26 @@ export default {
                 "price": "20.00"
               },
               {
+                "c_name": "Antinori",
+                "name": "Cuvèe Royale",
+                "price": "40.00"
+              },
+              {
+                "c_name": "Argillae",
+                "name": "Centopercento Spumante Brut",
+                "price": "25.00"
+              },
+              {
+                "c_name": "Trabocco",
+                "name": "Pecorino Spumante Abruzzo DOC",
+                "price": "40.00"
+              },
+              {
+                "c_name": "Trabocco",
+                "name": "Rosè Abruzzo Spumante DOC",
+                "price": "20.00"
+              },
+              {
                 "c_name": "Tenuta Saragano",
                 "name": "Segreto di famiglia Spumante Brut",
                 "price": "25.00"
@@ -357,41 +477,45 @@ export default {
         "birra": [
           {
             "name": "Birra Grande 66 cl",
-            "price": " 7.00"
+            "price": "7.00"
           },
           {
             "name": "Birra Piccola 33 cl",
-            "price": " 4.00"
+            "price": "4.00"
+          },
+          {
+            "name": "Birra Artigianale delle Monache (Belgian Blonde) 33 cl",
+            "price": "7.00"
           }
         ],
         "bevande": [
           {
             "name": "Coca-Cola 33 cl",
-            "price": " 3.50"
+            "price": "3.50"
           },
           {
             "name": "Coca-Cola zero 33 cl",
-            "price": " 3.50"
+            "price": "3.50"
           },
           {
             "name": "Fanta 33 cl",
-            "price": " 3.50"
+            "price": "3.50"
           },
           {
             "name": "Sprite 33 cl",
-            "price": " 3.50"
+            "price": "3.50"
           },
           {
             "name": "Amari",
-            "price": " 3.50"
+            "price": "3.50"
           },
           {
             "name": "Grappa",
-            "price": " 3.50"
+            "price": "3.50"
           },
           {
             "name": "Whiskey e Distillati",
-            "price": " 6.00"
+            "price": "6.00"
           }
         ]
       }
@@ -422,7 +546,7 @@ export default {
     <div>
       <ul class="container-sm">
 
-        <li class="sections dark-bg">
+        <!-- <li class="sections dark-bg">
           <h1 class="groups-title">Al Calice</h1>
         <li class="glass-wines" v-for="vinoAlCalice in viniData.al_calice" :key="vinoAlCalice.name">
           <div class="name-desc">
@@ -432,7 +556,7 @@ export default {
             <p>{{ vinoAlCalice.price }} &euro;</p>
           </div>
         </li>
-        </li>
+        </li> -->
 
         <li class="sections ">
           <h1 class="groups-title">

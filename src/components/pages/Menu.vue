@@ -54,25 +54,25 @@ export default {
             name: "La nostra cacio e pepe con tartufo",
             description: "World Famous “Tagliolini cacio e pepe” black truffles, black pepper, sheep’s cheese",
             eng_description: "World Famous “Tagliolini cacio e pepe” black truffles, black pepper, sheep’s cheese",
-            price: "18.00"
+            price: "19.00"
           },
           {
             name: "Cuori ripieni di Burrata al tartufo di Norcia e Parmigiano Reggiano",
             description: "Heart shaped ravioli filled with burrata cheese in a cream truffle and parmesan sauce",
             eng_description: "Heart shaped ravioli filled with burrata cheese in a cream truffle and parmesan sauce",
-            price: "18.00"
+            price: "19.00"
           },
           {
             name: "Tagliolini al Tartufo Nero di Norcia",
             description: "Tagliolini with local black truffles",
             eng_description: "Tagliolini with local black truffles",
-            price: "18.00"
+            price: "19.00"
           },
           {
             name: "Tagliolini con Verdure Piccanti",
             description: "Tagliolini with local black truffles",
             eng_description: "Tagliolini with spicy Vegetables",
-            price: "18.00"
+            price: "14.00"
           },
           {
             name: "Strangozzi con Funghi Porcini e Pomodorini",
@@ -98,7 +98,7 @@ export default {
             name: "Tagliata di Manzo con Rucola, Olio di Ginepro e Rosmarino",
             description: "Sliced veal Steak with Juniper Oil, Rocket salad and Rosemary",
             eng_description: "Sliced veal Steak with Juniper Oil, Rocket salad and Rosemary",
-            price: "22.00"
+            price: "24.00"
           },
           {
             name: "Filetto di Vitello al Tartufo Nero di Norcia",
@@ -232,7 +232,7 @@ export default {
     <div class="title">
       Menù
     </div>
-    <div class="container-md">
+    <div class="container-md welcome-print">
       <div>
         <h1>{{ $t('menu.title') }}</h1>
         <div class="ita">
@@ -503,8 +503,12 @@ export default {
     display: none;
   }
 
+  .welcome-print {
+    margin: 60px 0px;
+  }
+
   .container-print {
-    margin-top: -60px;
+    margin-top: -20%;
   }
 
   .dishes-print {
