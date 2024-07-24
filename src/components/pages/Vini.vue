@@ -459,7 +459,7 @@ export default {
               {
                 "c_name": "Trabocco",
                 "name": "Pecorino Spumante Abruzzo DOC",
-                "price": "40.00"
+                "price": "20.00"
               },
               {
                 "c_name": "Trabocco",
