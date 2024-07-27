@@ -15,7 +15,7 @@ export default {
   methods: {
     submitReservation() {
       const message = `Buongiorno! Vorrei prenotare un tavolo presso il vostro ristorante. Ecco i dettagli:\n\nNome: ${this.reservation.name}\nTelefono: ${this.reservation.phone}\nData: ${this.reservation.date}\nOra: ${this.reservation.time}\nNumero di Persone: ${this.reservation.guests}\n\nGrazie!`;
-      const whatsappUrl = `https://api.whatsapp.com/send?phone=3408184775&text=${encodeURIComponent(message)}`;
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=393408184775&text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, '_blank');
       this.messageVisible = true;
     },
