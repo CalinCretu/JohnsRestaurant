@@ -5,8 +5,8 @@ export default {
       reservation: {
         name: '',
         phone: '',
-        date: '',
-        time: '',
+        date: new Date().toISOString().substr(0, 10), // Set default date to today
+        time: new Date().toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }), // Set default time to current time
         guests: '',
       },
       messageVisible: false
@@ -44,10 +44,10 @@ export default {
               <input type="tel" placeholder="Telefono" v-model="reservation.phone" @input="validateNumber" required>
             </p>
             <p>
-              <input type="date" placeholder="Data" v-model="reservation.date" required>
+              <input id="date" type="date" v-model="reservation.date" required>
             </p>
             <p>
-              <input type="time" placeholder="Ora" v-model="reservation.time" required>
+              <input id="time" type="time" v-model="reservation.time" required>
             </p>
             <p>
               <input type="number" placeholder="Numero di Persone" v-model="reservation.guests" @input="validateNumber"
