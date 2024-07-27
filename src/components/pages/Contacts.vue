@@ -109,11 +109,18 @@ input[type="date"],
 input[type="time"],
 input[type="number"] {
   width: 100%;
-  padding: 10px;
-  margin: 5px 0 10px 0;
+  padding: 15px;
+  /* Increased padding */
+  margin: 5px 0 15px 0;
+  /* Increased bottom margin */
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 16px;
+  /* Increased font size */
+  min-width: 300px;
+  /* Ensures a minimum width */
+  box-sizing: border-box;
 }
 
 button[type="submit"] {
