@@ -4,6 +4,7 @@ import Menu from './components/pages/Menu.vue';
 import Vini from './components/pages/Vini.vue';
 import SpecialMenus from './components/pages/SpecialMenus.vue';
 import School from './components/pages/School.vue';
+import Contacts from "./components/pages/Contacts.vue";
 
 
 const router = createRouter({
@@ -33,6 +34,11 @@ const router = createRouter({
       path: '/school',
       name: 'school',
       component: School,
+    },
+    {
+      path: '/contacts',
+      name: 'contacts',
+      component: Contacts,
     }
   ],
   scrollBehavior(to, from, savedPosition) {

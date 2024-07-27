@@ -12,6 +12,9 @@ library.add(faUserSecret, faUser, faHeart, faOpencart, faExpand, faCircleXmark, 
 
 const messages = {
   it: {
+    buttons: {
+      prenotazioni: "Prenota Ora"
+    },
     header: {
       home: "Home",
       menu: "Menù",
@@ -75,6 +78,9 @@ const messages = {
     }
   },
   en: {
+    buttons: {
+      prenotazioni: "Book Now"
+    },
     header: {
       home: "Home",
       menu: "Menu",

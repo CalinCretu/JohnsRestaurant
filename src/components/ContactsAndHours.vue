@@ -19,6 +19,12 @@ export default {
 <template>
   <div class="container-lg">
     <ul class="cards">
+      <li>
+        <div>
+          <router-link :to="{ name: 'contacts' }"><button class="mappe-button">{{ $t('buttons.prenotazioni')
+              }}</button></router-link>
+        </div>
+      </li>
       <li class="contacts-card">
         <div class="title">
           {{ $t('contatti.title') }}
@@ -95,7 +101,7 @@ export default {
 
   .cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     font-size: 20px;
     max-width: 1000px;
     gap: 60px;
