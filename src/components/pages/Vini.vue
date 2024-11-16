@@ -61,7 +61,7 @@ export default {
               {
                 "c_name": "Tenuta di Nozzole",
                 "name": "Nozzole Chianti Classico DOCG 2021",
-                "price": "4.00"
+                "price": "40.00"
               },
               {
                 "c_name": "Ceretto",
