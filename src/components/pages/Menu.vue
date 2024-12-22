@@ -10,26 +10,44 @@ export default {
             name: "Antipasto Misto della Valle (salumi locali, bruschette e formaggi)",
             description: "Salumi locali, bruschette e formaggi",
             eng_description: "Local mixed Appetizer (local cured meat, bruschetta and mixed cheese)",
+            price: "18.00"
+          },
+          {
+            name: "Tris di Mare",
+            description: "Alici marinate, salmone alle arance, insalata di mare",
+            eng_description: "Seafood trio (marinated anchovies, orange-flavored salmon, seafood salad)",
+            price: "18.00"
+          },
+          {
+            name: "Crostone di Radicchio Arrosto con Scamorza Affumicata e Prosciutto di Patanegra e Aceto Balsamico",
+            description: "Radicchio arrosto con scamorza affumicata, prosciutto di Patanegra e aceto balsamico",
+            eng_description: "Roasted radicchio crostone with smoked scamorza, Patanegra ham and balsamic vinegar",
             price: "16.00"
           },
           {
-            name: "Insalata di prosciutto croccante, melone e mozzarella di bufala con aceto balsamico invecchiato",
-            description: "Salumi locali, bruschette e formaggi",
-            eng_description: "Salad of crispy local ham, melon, and buffalo mozzarella dressed in aged balsamic vinegar",
+            name: "Carpaccio di Angus al Limone, Rucola e Grana",
+            description: "Carpaccio di angus con limone, rucola e formaggio grana",
+            eng_description: "Angus carpaccio with lemon, arugula and Grana cheese",
             price: "16.00"
           },
-          {
-            name: "Pecorino al forno con miele e noci, capocollo e pane croccante, tartare di pesca",
-            description: "Salumi locali, bruschette e formaggi",
-            eng_description: "Baked sheep’s cheese with local honey and walnuts, capocollo croutons, and peach tartare",
-            price: "16.00"
-          },
-          {
-            name: "Bruschetta di gamberoni al cognac e pomodorini arrosto",
-            description: "Salumi locali, bruschette e formaggi",
-            eng_description: "Toasted bread with king prawns cooked in cognac, cream, roasted cherry tomatoes, and basil",
-            price: "16.00"
-          },
+          // {
+          //   name: "Insalata di prosciutto croccante, melone e mozzarella di bufala con aceto balsamico invecchiato",
+          //   description: "Salumi locali, bruschette e formaggi",
+          //   eng_description: "Salad of crispy local ham, melon, and buffalo mozzarella dressed in aged balsamic vinegar",
+          //   price: "16.00"
+          // },
+          // {
+          //   name: "Pecorino al forno con miele e noci, capocollo e pane croccante, tartare di pesca",
+          //   description: "Salumi locali, bruschette e formaggi",
+          //   eng_description: "Baked sheep’s cheese with local honey and walnuts, capocollo croutons, and peach tartare",
+          //   price: "16.00"
+          // },
+          // {
+          //   name: "Bruschetta di gamberoni al cognac e pomodorini arrosto",
+          //   description: "Salumi locali, bruschette e formaggi",
+          //   eng_description: "Toasted bread with king prawns cooked in cognac, cream, roasted cherry tomatoes, and basil",
+          //   price: "16.00"
+          // },
           // {
           //   name: "Insalata di Polpo, Ceci e Olive Taggiasche",
           //   description: "Octopus, Chickpeas and Taggiasche Olives",
@@ -69,23 +87,41 @@ export default {
             price: "19.00"
           },
           {
-            name: "Tagliolini con Verdure Piccanti",
-            description: "Tagliolini with local black truffles",
-            eng_description: "Tagliolini with spicy Vegetables",
-            price: "14.00"
-          },
-          {
-            name: "Strangozzi con Funghi Porcini e Pomodorini",
-            description: "Strangozzi with Porcini mushrooms and Cherry Tomatoes",
-            eng_description: "Strangozzi with Porcini mushrooms and Cherry Tomatoes",
+            name: "Strangozzi con Porcini e Salsicce Locali",
+            description: "Strangozzi with local sausages and Porcini mushrooms",
+            eng_description: "Strangozzi with local sausages and Porcini mushrooms",
             price: "16.00"
           },
           {
-            name: "Tagliatelle con Gamberetti e Zucchine in Salsa Rosa",
-            description: "Tagliatelle with Prawns and Spicy Vegetables",
-            eng_description: "Tagliatelle with Prawns and Zucchini in Pink Sauce",
+            name: "Tagliatelle con Gamberetti, Zucchine e Salsa Rosa",
+            description: "Tagliatelle with prawns, zucchini and Salsa Rosa",
+            eng_description: "Tagliatelle with prawns, zucchini and Salsa Rosa",
             price: "16.00"
           },
+          {
+            name: "Gnocchi al Ragù di Cinghiale",
+            description: "Gnocchi with wild boar ragù",
+            eng_description: "Gnocchi with wild boar ragù",
+            price: "16.00"
+          }
+          // {
+          //   name: "Tagliolini con Verdure Piccanti",
+          //   description: "Tagliolini with local black truffles",
+          //   eng_description: "Tagliolini with spicy Vegetables",
+          //   price: "14.00"
+          // },
+          // {
+          //   name: "Strangozzi con Funghi Porcini e Pomodorini",
+          //   description: "Strangozzi with Porcini mushrooms and Cherry Tomatoes",
+          //   eng_description: "Strangozzi with Porcini mushrooms and Cherry Tomatoes",
+          //   price: "16.00"
+          // },
+          // {
+          //   name: "Tagliatelle con Gamberetti e Zucchine in Salsa Rosa",
+          //   description: "Tagliatelle with Prawns and Spicy Vegetables",
+          //   eng_description: "Tagliatelle with Prawns and Zucchini in Pink Sauce",
+          //   price: "16.00"
+          // },
           // {
           //   name: "Gnocchi al Pomodoro fresco e Basilico",
           //   description: "Gnocchi with fresh Tomato and Basil",
@@ -100,42 +136,60 @@ export default {
             eng_description: "Sliced veal Steak with Juniper Oil, Rocket salad and Rosemary",
             price: "24.00"
           },
-          {
-            name: "Filetto di Vitello al Tartufo Nero di Norcia",
-            description: "Grilled Fillet of Irish beef with Black Truffles",
-            eng_description: "Grilled Veal Fillet with local Black Truffle",
-            price: "28.00"
-          },
+          // {
+          //   name: "Filetto di Vitello al Tartufo Nero di Norcia",
+          //   description: "Grilled Fillet of Irish beef with Black Truffles",
+          //   eng_description: "Grilled Veal Fillet with local Black Truffle",
+          //   price: "28.00"
+          // },
           {
             name: "Filetto di Maiale con rucola e gorgonzola",
             description: "Fillet of pork with gorgonzola and rocket salad",
             eng_description: "Fillet of pork with gorgonzola and rocket salad",
             price: "18.00"
           },
-          {
-            name: "Scottadito di Agnello",
-            description: "Grilled lamb chops marinated in rosemary and thyme",
-            eng_description: "Grilled lamb chops marinated in rosemary and thyme",
-            price: "20.00"
-          },
+          // {
+          //   name: "Scottadito di Agnello",
+          //   description: "Grilled lamb chops marinated in rosemary and thyme",
+          //   eng_description: "Grilled lamb chops marinated in rosemary and thyme",
+          //   price: "20.00"
+          // },
           {
             name: "Spigola arrosto",
             description: "Roasted Seabass",
             eng_description: "Roasted Seabass",
             price: "20.00"
           },
+          // {
+          //   name: "Salmone arrosto con salsa verde",
+          //   description: "Sliced veal Steak with Juniper Oil, Rocket salad and Rosemary",
+          //   eng_description: "Salmon steak with salsa verde",
+          //   price: "22.00"
+          // },
+          // {
+          //   name: "Baccalà impanato con crema di pomodori secchi",
+          //   description: "Saltcod with olives, capers, potatoes and chickpeas",
+          //   eng_description: "Breaded Cod with Sun-Dried Tomato Cream",
+          //   price: "22.00"
+          // },
           {
-            name: "Salmone arrosto con salsa verde",
-            description: "Sliced veal Steak with Juniper Oil, Rocket salad and Rosemary",
-            eng_description: "Salmon steak with salsa verde",
-            price: "22.00"
+            name: "Guanciale di Vitello Brasato al Sagrantino",
+            description: "Braised veal cheek with Sagrantino wine",
+            eng_description: "Braised veal cheek with Sagrantino wine",
+            price: "24.00"
           },
           {
-            name: "Baccalà impanato con crema di pomodori secchi",
-            description: "Saltcod with olives, capers, potatoes and chickpeas",
-            eng_description: "Breaded Cod with Sun-Dried Tomato Cream",
-            price: "22.00"
+            name: "Agnello Tartufato",
+            description: "Agnello con tartufo nero",
+            eng_description: "Lamb with black truffles",
+            price: "24.00"
           },
+          {
+            name: "Baccalà al Forno con Patate, Ceci e Pomodorini",
+            description: "Baccalà al forno con patate, ceci e pomodorini",
+            eng_description: "Baked salt cod with potatoes, chickpeas, and cherry tomatoes",
+            price: "22.00"
+          }
           // {
           //   name: "Faraona ripiena di cicoria, scamorza e funghi porcini",
           //   description: "Guinea fowl with smoked cheese porcini mushrooms and cicory",
@@ -166,6 +220,12 @@ export default {
             name: "Verdure arrosto (peperoni, melanzane e zucchine)",
             description: "Roasted vegetables",
             eng_description: "Roasted vegetables",
+            price: "6.00"
+          },
+          {
+            name: "Radicchio arrosto",
+            description: "Roasted Radicchio",
+            eng_description: "Roasted Radicchio",
             price: "6.00"
           },
           // {
@@ -200,10 +260,22 @@ export default {
             eng_description: "Vanilla Panna Cotta with Berries Cooked in Red Wine",
             price: "7.00"
           },
+          // {
+          //   name: "Semifreddo alle Mandorle e Cioccolato",
+          //   description: "Mint panna cotta with chocolate sauce",
+          //   eng_description: "Lemon and strawberry semifreddo with iced watermelon",
+          //   price: "7.00"
+          // }, 
           {
-            name: "Semifreddo al limone e fragole con anguria ghiacciata",
-            description: "Mint panna cotta with chocolate sauce",
-            eng_description: "Lemon and strawberry semifreddo with iced watermelon",
+            name: "Semifreddo alle Mandorle e Cioccolato",
+            description: "Semifreddo with Almonds and Chocolate",
+            eng_description: "Semifreddo with Almonds and Chocolate",
+            price: "7.00"
+          },
+          {
+            name: "Pandoro con Crema al Tiramisù",
+            description: "Pandoro with Tiramisù Cream",
+            eng_description: "Pandoro with Tiramisù Cream",
             price: "7.00"
           }
         ]
