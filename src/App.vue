@@ -10,6 +10,7 @@ import { store } from './store';
 
 export default {
   components: {
+
     Header,
     Home,
     Footer,

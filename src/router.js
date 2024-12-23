@@ -5,6 +5,7 @@ import Vini from './components/pages/Vini.vue';
 import SpecialMenus from './components/pages/SpecialMenus.vue';
 import School from './components/pages/School.vue';
 import Contacts from "./components/pages/Contacts.vue";
+import DishEdit from "./components/pages/DishEdit.vue";
 
 
 const router = createRouter({
@@ -39,6 +40,11 @@ const router = createRouter({
       path: '/contacts',
       name: 'contacts',
       component: Contacts,
+    },
+    {
+      path: '/edit',
+      name: 'DishEdit',
+      component: DishEdit
     }
   ],
   scrollBehavior(to, from, savedPosition) {
