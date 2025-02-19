@@ -15,7 +15,6 @@ export default {
 </script>
 
 <template>
-
   <div class="container">
     <h1 class="school-title">
       {{ $t('school.school_title') }}
@@ -26,6 +25,15 @@ export default {
     <p class="school-paragraph">
       {{ $t('school.school_para_2') }}
     </p>
+    <div class="container d-flex justify-content-center">
+      <div class="iframe-container">
+        <iframe src="https://www.youtube.com/embed/uVBl0CqQlTQ" title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
     <ul class="school-cards">
       <li class="cards_item">
         <div class="card">
@@ -134,10 +142,18 @@ export default {
   padding: 0px 10px 60px 10px;
   text-align: center;
 
+
+
   .school-title {
     font-size: 60px;
     color: var(--title-color);
     margin-top: 60px;
+  }
+
+  .school-title.video {
+    font-size: 2.5rem;
+    color: var(--title-color);
+    margin: 0;
   }
 
   .card {
@@ -226,11 +242,36 @@ export default {
       font-weight: 700;
     }
   }
+
+  .iframe-container {
+    max-width: 400px;
+    margin: 0 auto;
+    /* Evita che tocchi i bordi dello schermo */
+  }
 }
 
 @media screen and (min-width: 768px) {
-
   .container {
+
+    .iframe-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 800px;
+      height: auto;
+      /* Imposta l'altezza automaticamente */
+      aspect-ratio: 16 / 9;
+      /* Mantiene proporzioni */
+      margin: 20px auto;
+      /* Centra il contenitore */
+    }
+
+    .iframe-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      /* Evita bordi indesiderati */
+    }
 
     font-size: 18px;
 
