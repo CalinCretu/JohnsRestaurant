@@ -7,6 +7,11 @@ backend:
   repo: CalinCretu/JohnsRestaurant
   branch: main
 
+# Modifica in locale: quando il sito gira su localhost ed è attivo il proxy
+# `npx decap-server`, Decap legge/scrive direttamente i file su disco (niente GitHub).
+# In produzione (dominio Netlify) viene ignorato e si usa il backend github qui sopra.
+local_backend: true
+
 # Lingua dell'interfaccia del pannello
 locale: "it"
 

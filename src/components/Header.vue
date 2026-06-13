@@ -66,6 +66,9 @@ export default {
                     <li @click="closeModal">{{ $t('header.scuola_button') }}
                     </li>
                   </router-link>
+                  <a href="/admin/">
+                    <li @click="closeModal">Login</li>
+                  </a>
                   <li @click="closeModal" class="btn-close">
                     <a type="button"><font-awesome-icon icon="xmark" /></a>
                   </li>
@@ -104,6 +107,10 @@ export default {
       <li>
         <a href="https://www.facebook.com/johnpatersonchef/"><font-awesome-icon icon="fa-brands fa-square-facebook" />
         </a>
+      </li>
+      <li class="login-item">
+        <!--PULSANTE LOGIN (area riservata / gestione menù via Decap CMS)-->
+        <a href="/admin/" title="Gestione menù (area riservata)">Login</a>
       </li>
       <li class="lang">
         <!--PULSANTE LINGUA-->
@@ -240,6 +247,19 @@ export default {
     gap: 20px;
     font-size: 30px;
     color: var(--title-color);
+
+    .login-item {
+      display: flex;
+      align-items: center;
+
+      a {
+        font-size: 1.4rem;
+        border: 1px solid var(--title-color);
+        border-radius: 6px;
+        padding: 2px 10px;
+        white-space: nowrap;
+      }
+    }
 
     .lang {
       display: flex;

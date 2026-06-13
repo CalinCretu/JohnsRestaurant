@@ -7,6 +7,21 @@ qui annoterò le modifiche effettuate per tenere traccia del lavoro svolto.
 
 <!-- Le voci più recenti vanno in cima -->
 
+## 2026-06-13 — Pulsante Login in navbar + modifica in locale
+
+**Modifiche:**
+- `src/components/Header.vue`: aggiunto pulsante **Login** nella barra di navigazione
+  (desktop + menu mobile) che apre il pannello `/admin/` (Decap). Link con slash finale
+  `/admin/` per servire la pagina statica e non finire sul router della SPA.
+- `public/admin/config.yml`: abilitato `local_backend: true` per modificare piatti e vini
+  **in locale** senza GitHub (richiede `npx decap-server` attivo; ignorato in produzione).
+
+**Note d'uso (locale):** avviare `npx decap-server` + `npm run dev`, aprire
+`http://localhost:5173/admin/`. In questa modalità "Pubblica" scrive direttamente nei
+file `src/data/*.json` su disco (nessun push, nessun deploy, clienti non coinvolti).
+
+---
+
 ## 2026-06-13 — Editor self-service menù e vini (Decap CMS)
 
 **Obiettivo:** permettere al cuoco di modificare piatti e vini senza database, con
