@@ -1,225 +1,177 @@
 <script>
 export default {
   name: 'ContactsAndHours',
+  data() {
+    return {
+      mapsUrl:
+        'https://www.google.it/maps/place/John%E2%80%99s+Restaurant/@42.7834422,12.4249516,16.42z/data=!4m6!3m5!1s0x132ec190cb6c3913:0xab80f6745af94a36!8m2!3d42.7835275!4d12.4260127!16s%2Fg%2F11jvpn05d4?entry=ttu',
+    };
+  },
   methods: {
-    toggleLanguage() {
-      const newLocale = this.$i18n.locale === 'it' ? 'en' : 'it';
-      this.$i18n.locale = newLocale;
-    },
     makeCall(phoneNumber) {
       window.location.href = phoneNumber;
     },
     sendEmail(emailAddress) {
       window.location.href = emailAddress;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <template>
-  <div class="container-lg">
-    <ul class="cards">
-      <li>
-        <div>
-          <router-link :to="{ name: 'contacts' }"><button class="mappe-button">{{ $t('buttons.prenotazioni')
-              }}</button></router-link>
+  <section class="visit">
+    <div class="container">
+      <div class="visit__head" data-aos="fade-up">
+        <p class="eyebrow">{{ $t('home.reserve_eyebrow') }}</p>
+        <h2 class="section-title">{{ $t('home.reserve_title') }}</h2>
+        <hr class="rule" />
+      </div>
+
+      <div class="visit__grid">
+        <div class="info" data-aos="fade-up">
+          <font-awesome-icon icon="phone" class="info__icon" />
+          <h3 class="info__title">{{ $t('contatti.title') }}</h3>
+          <button class="info__line" @click="makeCall('tel:3408184775')">+(39) 340 8184775</button>
+          <button class="info__line" @click="makeCall('tel:0758506684')">+(39) 075 8506684</button>
+          <button class="info__line" @click="sendEmail('mailto:johncheftodi@gmail.com')">
+            johncheftodi@gmail.com
+          </button>
         </div>
-      </li>
-      <li class="contacts-card">
-        <div class="title">
-          {{ $t('contatti.title') }}
+
+        <div class="info" data-aos="fade-up" data-aos-delay="100">
+          <font-awesome-icon icon="calendar-days" class="info__icon" />
+          <h3 class="info__title">{{ $t('orari.title') }}</h3>
+          <p class="info__line info__line--static">{{ $t('orari.days') }}</p>
+          <p class="info__hours">12:30 – 14:30</p>
+          <p class="info__hours">19:30 – 21:30</p>
+          <p class="info__note">{{ $t('orari.paragraph') }}</p>
         </div>
-        <div>
-          <div class="description" @click="makeCall('tel: 3408184775')">
-            <p class="d-none">
-              <a class="icon" href="tel: 3408184775"><font-awesome-icon icon="phone" /></a>
-            </p>
-            <p>
-              +(39) 340 8184775
-            </p>
-          </div>
-          <div class="description" @click="makeCall('tel: 0758506684')">
-            <p class="d-none">
-              <a class="icon" href="tel: 0758506684"><font-awesome-icon icon="phone" /></a>
-            </p>
-            <p>
-              +(39) 075 8506684
-            </p>
-          </div>
-          <div class="description" @click="sendEmail('mailto:johncheftodi@gmail.com')">
-            <p class="d-none">
-              <a class="icon" href="mailto: johncheftodi@gmail.com"><font-awesome-icon icon="envelope" /></a>
-            </p>
-            <p>
-              johncheftodi@gmail.com
-            </p>
-          </div>
+
+        <div class="info" data-aos="fade-up" data-aos-delay="200">
+          <font-awesome-icon icon="location-dot" class="info__icon" />
+          <h3 class="info__title">{{ $t('mappe.title') }}</h3>
+          <p class="info__line info__line--static">{{ $t('mappe.paragraph') }}</p>
+          <a class="info__maps" :href="mapsUrl" target="_blank" rel="noopener">Google Maps</a>
         </div>
-      </li>
-      <li class="hours-card">
-        <div class="title">
-          {{ $t('orari.title') }}
-        </div>
-        <p>{{ $t('orari.paragraph') }}</p>
-        <p>
-          {{ $t('orari.days') }}
-        </p>
-        <p>12:30 am - 2:30 pm</p>
-        <p>7:30 pm - 9:30 pm</p>
-      </li>
-      <li class="location-card">
-        <div class="title">
-          {{ $t('mappe.title') }}
-        </div>
-        <p>
-          {{ $t('mappe.paragraph') }}
-        </p>
-        <p>
-          <a
-            href="https://www.google.it/maps/place/John%E2%80%99s+Restaurant/@42.7834422,12.4249516,16.42z/data=!4m6!3m5!1s0x132ec190cb6c3913:0xab80f6745af94a36!8m2!3d42.7835275!4d12.4260127!16s%2Fg%2F11jvpn05d4?entry=ttu">
-            <button class="mappe-button">
-              Maps
-            </button>
-          </a>
-        </p>
-      </li>
-    </ul>
-  </div>
+      </div>
+
+      <div class="visit__cta" data-aos="fade-up">
+        <router-link class="btn btn--solid" :to="{ name: 'contacts' }">
+          {{ $t('buttons.prenotazioni') }}
+        </router-link>
+      </div>
+    </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
-.container-lg {
-  margin-bottom: 50px;
-  display: flex;
-  justify-content: center;
+.visit {
+  padding: clamp(4rem, 9vw, 8rem) 0;
+  background: var(--bg-alt);
 
-  ul,
-  ol,
-  li {
-    list-style: none;
+  &__head {
+    text-align: center;
+    margin-bottom: 3.5rem;
+
+    .eyebrow {
+      margin-bottom: 0.8rem;
+    }
+
+    .rule {
+      margin: 1.4rem auto 0;
+    }
   }
 
-  .cards {
+  &__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    font-size: 20px;
-    max-width: 1000px;
-    gap: 60px;
-
-    .icon {
-      margin-right: 35px;
-    }
-
-    p {
-      color: var(--content-color);
-    }
-
-    .title {
-      color: var(--title-color);
-      font-size: 25px;
-      margin-bottom: 20px;
-    }
-
-    .description {
-      display: flex;
-      justify-content: space-between;
-      max-width: 220px;
-      margin-bottom: 5px;
-      cursor: pointer;
-      font-size: 22px;
-    }
-
-    .contacts-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: start;
-
-      :hover {
-        color: black;
-      }
-    }
-
-    .hours-card {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .location-card {
-      border: none;
-    }
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
 
-  .mappe-button {
-    appearance: none;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    padding: 15px 25px;
-    background-color: var(--content-color);
-    border-radius: 8px;
-    margin-top: 20px;
-    color: #FFF;
-    font-size: 18px;
-    font-weight: 700;
-    box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
-    transition: 0.2s ease-out;
+  &__cta {
+    text-align: center;
+    margin-top: 3.5rem;
+  }
+}
+
+.info {
+  text-align: center;
+  padding: 2.4rem 1.5rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+  }
+
+  &__icon {
+    color: var(--gold);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    margin-bottom: 1.2rem;
+  }
+
+  &__line {
+    display: block;
+    width: 100%;
+    margin: 0.35rem 0;
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    color: var(--muted);
+    transition: color 0.3s var(--ease);
 
     &:hover {
-      box-shadow: 6px 6px rgba(0, 0, 0, 0.6);
+      color: var(--gold-dark);
     }
 
-    &:active {
-      box-shadow: none;
+    &--static {
+      cursor: default;
+
+      &:hover {
+        color: var(--muted);
+      }
     }
   }
 
-  .mappe-button:hover {
-    color: white;
-    background-color: black;
+  &__hours {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--ink);
+    margin: 0.2rem 0;
   }
 
-  .mappe-button:active {
-    transform: scale(0.95);
+  &__note {
+    margin-top: 1rem;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+
+  &__maps {
+    display: inline-block;
+    margin-top: 1rem;
+    font-family: var(--font-ui);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.72rem;
+    color: var(--gold-dark);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 4px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .container-lg {
-    .d-none {
-      display: none;
-    }
-
-    padding: 10px 20px;
-
-    .cards {
-      font-size: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-
-      .contacts-card {
-        margin: 0px;
-        padding: 0px;
-      }
-
-      .location-card {
-        grid-column: span 2; // Center the third card under the first two
-        justify-self: center;
-        max-width: 200px;
-      }
-
-      .icon {
-        margin: 0px;
-      }
-
-      .description {
-        font-size: 18px;
-        align-items: center;
-        flex-direction: column;
-      }
-    }
-
+  .visit__grid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
   }
 }
 </style>

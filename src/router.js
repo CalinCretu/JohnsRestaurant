@@ -5,7 +5,7 @@ import Vini from './components/pages/Vini.vue';
 import SpecialMenus from './components/pages/SpecialMenus.vue';
 import School from './components/pages/School.vue';
 import Contacts from "./components/pages/Contacts.vue";
-import DishEdit from "./components/pages/DishEdit.vue";
+import NotFound from "./components/pages/NotFound.vue";
 
 
 const router = createRouter({
@@ -42,9 +42,10 @@ const router = createRouter({
       component: Contacts,
     },
     {
-      path: '/edit',
-      name: 'DishEdit',
-      component: DishEdit
+      // Catch-all: pagina 404
+      path: '/:pathMatch(.*)*',
+      name: 'notfound',
+      component: NotFound,
     }
   ],
   scrollBehavior(to, from, savedPosition) {

@@ -7,6 +7,42 @@ qui annoterò le modifiche effettuate per tenere traccia del lavoro svolto.
 
 <!-- Le voci più recenti vanno in cima -->
 
+## 2026-06-13 — Restyling grafico completo + modernizzazione + recensioni
+
+**Redesign grafico (tutto il sito)**
+- Nuovo **design system**: variabili CSS in `App.vue` (palette avorio/oro/vino), token
+  SCSS in `_variables.scss`, utility in `general.scss` (`.container`, `.btn`, `.eyebrow`…).
+- **Tipografia**: Cormorant Garamond (display), EB Garamond (corpo), Jost (UI). `index.html`.
+- **AOS** per animazioni allo scroll (rispetta `prefers-reduced-motion`).
+- Riscritti tutti i componenti: `Header` (navbar + menu mobile laterale "vetro liquido"),
+  `Welcome` (hero a tutto schermo), `OurStory`, `Hero` (galleria), `Cards`,
+  `ContactsAndHours`, `Footer`, e le pagine `Menu`, `Vini`, `School`, `SpecialMenus`,
+  `Contacts` (con mappa interattiva).
+- `SpecialMenus`: le foto aprono una **lightbox/carousel** (Swiper) con zoom pinch/doppio-tap.
+
+**Recensioni**
+- Nuova sezione `Testimonials.vue`: **carousel** con **20 recensioni Google reali a 5★**
+  (testo curato, omessi i refusi e l'unico accenno critico).
+
+**Modernizzazione**
+- **Immagini** ottimizzate (`scripts/optimize-images.mjs`, sharp): **−67%** (20→6.6 MB).
+- **SEO**: `lang="it"`, title/description, **Open Graph + Twitter** (`og-image.jpg`),
+  **Schema.org Restaurant**, favicon corretta + `apple-touch-icon`. Dominio reale
+  `johnpatersontodi.com` negli URL assoluti.
+- **PWA** installabile (`vite-plugin-pwa`): manifest + service worker (esclude `/admin`).
+- **Pagina 404** (`NotFound.vue`) con rotta catch-all.
+- **Analytics**: snippet Plausible pronto e commentato in `index.html`.
+
+**Pulizia**
+- Rimossi: `/edit` + `DishEdit`/`DishForm`/`DishList`, `db.js`, `dishService.js`,
+  `store.js`, `db.json`, `Rights.vue`; dipendenze `dexie`/`axios`/`vue3-carousel`.
+
+**Pannello CMS**
+- Tema brand al pannello Decap (`config.yml` `logo_url`, CSS in `admin/index.html`).
+- Login navbar → `/admin/index.html` (funziona sia in dev che online).
+
+---
+
 ## 2026-06-13 — Pulsante Login in navbar + modifica in locale
 
 **Modifiche:**

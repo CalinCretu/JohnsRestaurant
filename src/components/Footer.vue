@@ -3,162 +3,189 @@ export default {
   name: 'Footer',
   data() {
     return {
-
-    }
+      mapsUrl:
+        'https://www.google.it/maps/place/John%E2%80%99s+Restaurant/@42.7834422,12.4249516,16.42z/data=!4m6!3m5!1s0x132ec190cb6c3913:0xab80f6745af94a36!8m2!3d42.7835275!4d12.4260127!16s%2Fg%2F11jvpn05d4?entry=ttu',
+    };
+  },
+  computed: {
+    year() {
+      return new Date().getFullYear();
+    },
   },
   methods: {
-    toggleLanguage() {
-      const newLocale = this.$i18n.locale === 'it' ? 'en' : 'it';
-      this.$i18n.locale = newLocale;
-    },
     makeCall(phoneNumber) {
       window.location.href = phoneNumber;
     },
     sendEmail(emailAddress) {
       window.location.href = emailAddress;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <template>
-  <div class="footer-content">
-    <div class="footer-section contacts">
-      <div class="cards">
-        <div class="footer-title">
-          {{ $t('contatti.title') }}
-        </div>
-        <div>
-          <div class="description" @click="makeCall('tel: 3408184775')">
-            <p>
-              +(39) 340 8184775
-            </p>
-          </div>
-          <div class="description" @click="makeCall('tel: 0758506684')">
-            <p>
-              +(39) 075 8506684
-            </p>
-          </div>
-          <div class="description" @click="sendEmail('mailto:johncheftodi@gmail.com')">
-            <p>
-              johncheftodi@gmail.com
-            </p>
-          </div>
+  <div class="foot">
+    <div class="foot__main container">
+      <div class="foot__brand">
+        <h2 class="foot__name">John's Restaurant</h2>
+        <p class="foot__tag">Todi · Umbria</p>
+        <div class="foot__social">
+          <a href="https://www.instagram.com/chef.johnpaterson/?hl=en" target="_blank" rel="noopener" aria-label="Instagram">
+            <font-awesome-icon icon="fa-brands fa-instagram" />
+          </a>
+          <a href="https://www.facebook.com/johnpatersonchef/" target="_blank" rel="noopener" aria-label="Facebook">
+            <font-awesome-icon icon="fa-brands fa-square-facebook" />
+          </a>
+          <a :href="mapsUrl" target="_blank" rel="noopener" aria-label="Maps">
+            <font-awesome-icon icon="location-dot" />
+          </a>
         </div>
       </div>
-    </div>
-    <div class="footer-section location">
-      <div class="footer-title">
-        {{ $t('mappe.title') }}
+
+      <div class="foot__col">
+        <h3 class="foot__col-title">{{ $t('contatti.title') }}</h3>
+        <button class="foot__line" @click="makeCall('tel:3408184775')">+(39) 340 8184775</button>
+        <button class="foot__line" @click="makeCall('tel:0758506684')">+(39) 075 8506684</button>
+        <button class="foot__line" @click="sendEmail('mailto:johncheftodi@gmail.com')">
+          johncheftodi@gmail.com
+        </button>
       </div>
-      <p>
-        {{ $t('mappe.paragraph') }}
-      </p>
-      <p>
-        <a
-          href="https://www.google.it/maps/place/John%E2%80%99s+Restaurant/@42.7834422,12.4249516,16.42z/data=!4m6!3m5!1s0x132ec190cb6c3913:0xab80f6745af94a36!8m2!3d42.7835275!4d12.4260127!16s%2Fg%2F11jvpn05d4?entry=ttu">
-          <button class="mappe-button">
-            Maps
-          </button>
-        </a>
-      </p>
+
+      <div class="foot__col">
+        <h3 class="foot__col-title">{{ $t('orari.title') }}</h3>
+        <p class="foot__line foot__line--static">{{ $t('orari.days') }}</p>
+        <p class="foot__line foot__line--static">12:30 – 14:30 · 19:30 – 21:30</p>
+        <p class="foot__line foot__line--static">{{ $t('orari.paragraph') }}</p>
+      </div>
+
+      <div class="foot__col">
+        <h3 class="foot__col-title">{{ $t('mappe.title') }}</h3>
+        <a class="foot__line" :href="mapsUrl" target="_blank" rel="noopener">{{ $t('mappe.paragraph') }}</a>
+        <a class="foot__maps-btn" :href="mapsUrl" target="_blank" rel="noopener">Google Maps</a>
+      </div>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; John's Restaurant. All rights reserved.</p>
+
+    <div class="foot__bottom">
+      <p>&copy; {{ year }} John's Restaurant — All rights reserved.</p>
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.footer-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding: 2rem 2rem;
-  border-top: 1px solid #ccc;
-}
+.foot {
+  background: var(--dark);
+  color: #cabfa9;
 
-.footer-section {
-  flex: 1;
-  text-align: center;
-}
-
-.footer-title {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.cards {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.contacts-card {
-  margin-bottom: 1rem;
-}
-
-.description {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-  cursor: pointer;
-}
-
-.description p {
-  margin: 0;
-  padding: 0 0.5rem;
-}
-
-.icon {
-  font-size: 1.5rem;
-  margin-right: 0.5rem;
-}
-
-.footer-bottom {
-  background-color: #333;
-  color: #fff;
-  padding: 1rem 0;
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.footer-bottom p {
-  margin: 0;
-}
-
-.mappe-button {
-  appearance: none;
-  outline: none;
-  border: none;
-  cursor: pointer;
-
-  padding: 15px 25px;
-  background-color: var(--content-color);
-  border-radius: 8px;
-  margin-top: 20px;
-
-  color: #FFF;
-  font-size: 14px;
-  font-weight: 700;
-
-  box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
-  transition: 0.2s ease-out;
-
-  &:hover {
-    box-shadow: 6px 6px rgba(0, 0, 0, 0.6);
+  &__main {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 2.5rem;
+    padding: clamp(3rem, 6vw, 5rem) 0 3rem;
   }
 
-  &:active {
-    box-shadow: none;
+  &__name {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  &__tag {
+    font-family: var(--font-ui);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 0.72rem;
+    color: var(--gold);
+    margin-top: 0.5rem;
+  }
+
+  &__social {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 1.6rem;
+    font-size: 1.4rem;
+
+    a {
+      color: #cabfa9;
+      transition: color 0.3s var(--ease), transform 0.3s var(--ease);
+
+      &:hover {
+        color: var(--gold);
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  &__col-title {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 1.2rem;
+  }
+
+  &__line {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin: 0.4rem 0;
+    color: #cabfa9;
+    font-family: var(--font-body);
+    font-size: 1.02rem;
+    transition: color 0.3s var(--ease);
+
+    &:hover {
+      color: var(--gold);
+    }
+
+    &--static:hover {
+      color: #cabfa9;
+    }
+  }
+
+  &__maps-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    font-family: var(--font-ui);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.7rem;
+    color: var(--gold);
+    border: 1px solid rgba(176, 141, 87, 0.5);
+    padding: 0.6rem 1.2rem;
+    border-radius: 2px;
+    transition: all 0.3s var(--ease);
+
+    &:hover {
+      background: var(--gold);
+      color: #fff;
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.6rem 0;
+    text-align: center;
+
+    p {
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: rgba(202, 191, 169, 0.7);
+    }
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
+  .foot__main {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    text-align: left;
+  }
+}
 
-  .footer-section .contacts {}
-
+@media screen and (max-width: 480px) {
+  .foot__main {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

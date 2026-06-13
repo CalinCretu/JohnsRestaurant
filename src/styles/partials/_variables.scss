@@ -1,0 +1,36 @@
+// ============================================================
+//  Design tokens (SCSS) — John's Restaurant
+//  I colori/tipi sono esposti anche come CSS custom properties
+//  in App.vue (:root), così sono usabili in tutti i componenti.
+// ============================================================
+
+// Palette
+$bg:        #FAF6EC; // avorio caldo
+$bg-alt:    #EFE7D4; // crema più scura (sezioni alternate)
+$dark:      #211D17; // sezioni scure
+$ink:       #2A2520; // testo principale
+$muted:     #756B5C; // testo secondario
+$gold:      #B08D57; // accento (oro/ottone)
+$gold-dark: #8F6E3E;
+$wine:      #6E2B2B; // accento secondario (vino)
+
+// Tipografia
+$font-display: "Cormorant Garamond", Georgia, serif;
+$font-body:    "EB Garamond", Georgia, serif;
+$font-ui:      "Jost", "Helvetica Neue", Arial, sans-serif;
+
+// Layout
+$maxw:   1240px;
+$radius: 6px;
+$ease:   cubic-bezier(.22, 1, .36, 1);
+
+// Breakpoint
+$bp-md: 768px;
+$bp-lg: 1024px;
+
+@mixin up($bp) {
+  @media screen and (min-width: $bp) { @content; }
+}
+@mixin down($bp) {
+  @media screen and (max-width: $bp - 1px) { @content; }
+}

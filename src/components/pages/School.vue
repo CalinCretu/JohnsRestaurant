@@ -1,373 +1,248 @@
 <script>
 export default {
-
+  name: 'School',
   data() {
     return {
-    }
+      cards: [
+        {
+          img: '/imgs/scuola/ScuolaGruppi2.png',
+          price: '100',
+          note: 'school.note_1',
+          title: 'school.card_title_1',
+          sub: 'school.card_subtitle_1',
+          hours: '12:30 – 16:30',
+          text: 'school.card_text_1',
+        },
+        {
+          img: '/imgs/scuola/ScuolaPer2.png',
+          price: '150',
+          note: 'school.note_2',
+          title: 'school.card_title_2',
+          sub: 'school.card_subtitle_2',
+          hours: '9:00 – 12:00',
+          text: 'school.card_text_2',
+        },
+        {
+          img: '/imgs/scuola/ScuolaGruppi8Persone.png',
+          price: '200',
+          note: 'school.note_3',
+          title: 'school.card_title_3',
+          sub: 'school.card_subtitle_3',
+          hours: '9:00 – 13:00',
+          text: 'school.card_text_3',
+        },
+      ],
+    };
   },
-  methods: {
-    toggleLanguage() {
-      const newLocale = this.$i18n.locale === 'it' ? 'en' : 'it';
-      this.$i18n.locale = newLocale;
-    }
-  }
-}
+};
 </script>
 
 <template>
-  <div class="container">
-    <h1 class="school-title">
-      {{ $t('school.school_title') }}
-    </h1>
-    <p class="school-paragraph">
-      {{ $t('school.school_para_1') }}
-    </p>
-    <p class="school-paragraph">
-      {{ $t('school.school_para_2') }}
-    </p>
-    <div class="container d-flex justify-content-center">
-      <div class="iframe-container">
-        <iframe src="https://www.youtube.com/embed/uVBl0CqQlTQ" title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
+  <section class="school">
+    <header class="school__head container-narrow" data-aos="fade-up">
+      <p class="eyebrow">Cooking School</p>
+      <h1 class="school__title">{{ $t('school.school_title') }}</h1>
+      <hr class="rule school__rule" />
+      <p class="school__lead">{{ $t('school.school_para_1') }}</p>
+      <p class="school__lead">{{ $t('school.school_para_2') }}</p>
+    </header>
+
+    <div class="school__video" data-aos="fade-up">
+      <iframe
+        src="https://www.youtube.com/embed/uVBl0CqQlTQ"
+        title="Cooking School"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </div>
 
-    <ul class="school-cards">
-      <li class="cards_item">
-        <div class="card">
-          <div class="card_image">
-            <span class="note">
-              {{ $t('school.note_1') }}
-            </span>
-            <img class="group-img" src="../../../public/imgs/scuola/ScuolaGruppi2.png" alt="Group Cooking School" />
-            <span class="card_price">
-              <span>&euro; 100</span>
-              <p class="price-suffix">{{ $t('school.price') }}</p>
-            </span>
-          </div>
-          <div class="card_content">
-            <h2 class="card_title">
-              {{ $t('school.card_title_1') }}
-            </h2>
-            <h3>
-              {{ $t('school.card_subtitle_1') }}
-            </h3>
-            <div class="card_text">
-              <p>12:30 - 16:30
-              </p>
-              <hr />
-              <p>
-                {{ $t('school.card_text_1') }}
-              </p>
-            </div>
-          </div>
+    <div class="school__cards container">
+      <article
+        class="ecard"
+        v-for="(card, i) in cards"
+        :key="i"
+        data-aos="fade-up"
+        :data-aos-delay="i * 120"
+      >
+        <div class="ecard__media">
+          <span class="ecard__note">{{ $t(card.note) }}</span>
+          <img :src="card.img" :alt="$t(card.title)" />
+          <span class="ecard__price">
+            <strong>&euro; {{ card.price }}</strong>
+            <em>{{ $t('school.price') }}</em>
+          </span>
         </div>
-      </li>
-
-      <li class="cards_item">
-        <div class="card">
-          <div class="card_image">
-            <span class="note">
-              {{ $t('school.note_2') }}
-            </span>
-            <img src="../../../public/imgs/scuola/ScuolaPer2.png" alt="Scuola di Cucina per 2 Persone" />
-            <span class="card_price">
-              <span>&euro; 150</span>
-              <p class="price-suffix">{{ $t('school.price') }}</p>
-            </span>
-          </div>
-          <div class="card_content">
-            <h2 class="card_title">
-              {{ $t('school.card_title_2') }}
-            </h2>
-            <h3>
-              {{ $t('school.card_subtitle_2') }}
-            </h3>
-            <div class="card_text">
-              <p>9:00 - 12:00</p>
-              <hr />
-              <p>
-                {{ $t('school.card_text_2') }}
-              </p>
-            </div>
-          </div>
+        <div class="ecard__body">
+          <h2 class="ecard__title">{{ $t(card.title) }}</h2>
+          <p class="ecard__sub">{{ $t(card.sub) }}</p>
+          <p class="ecard__hours">{{ card.hours }}</p>
+          <hr class="rule ecard__rule" />
+          <p class="ecard__text">{{ $t(card.text) }}</p>
         </div>
-      </li>
-
-      <li class="cards_item">
-        <div class="card">
-          <div class="card_image">
-            <span class="note">
-              {{ $t('school.note_3') }}
-            </span>
-            <img src="../../../public/imgs/scuola/ScuolaGruppi8Persone.png"
-              alt="A side view of a plate of figs and berries." />
-            <span class="card_price">
-              <span>&euro; 200</span>
-              <p class="price-suffix">{{ $t('school.price') }}</p>
-            </span>
-          </div>
-          <div class="card_content">
-            <h2 class="card_title">
-              {{ $t('school.card_title_3') }}
-            </h2>
-            <h3>
-              {{ $t('school.card_subtitle_3') }}
-            </h3>
-            <div class="card_text">
-              <p>9:00 - 13:00
-              </p>
-              <hr />
-              <p>
-                {{ $t('school.card_text_3') }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </div>
-
+      </article>
+    </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
-.container {
+.school {
+  background: var(--bg);
+  padding: clamp(2.5rem, 6vw, 5rem) 0 5rem;
+
+  &__head {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 500;
+    margin-top: 0.6rem;
+  }
+
+  &__rule {
+    margin: 1.4rem auto;
+  }
+
+  &__lead {
+    color: var(--muted);
+    font-size: 1.12rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  &__video {
+    width: min(820px, 100% - 3rem);
+    margin: 0 auto 4rem;
+    aspect-ratio: 16 / 9;
+    box-shadow: var(--shadow);
+    border-radius: 2px;
+    overflow: hidden;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+.ecard {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  padding: 0px 10px 60px 10px;
-  text-align: center;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
 
-
-
-  .school-title {
-    font-size: 60px;
-    color: var(--title-color);
-    margin-top: 60px;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
   }
 
-  .school-title.video {
-    font-size: 2.5rem;
-    color: var(--title-color);
-    margin: 0;
-  }
+  &__media {
+    position: relative;
+    height: 220px;
 
-  .card {
-    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
-  }
-
-  .school-paragraph {
-    color: var(--title-color);
-    text-align: center;
-    font-size: 20px;
-  }
-
-  .school-cards {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 40px;
-
-    .card_content {
-      background-color: white;
-      padding: 5px;
-    }
-
-    .card_text p {
-      margin: 10px 0px;
-      font-size: 18px;
-    }
-
-    .cards_item {
-      display: flex;
-    }
-
-    .card_image {
-      position: relative;
-      max-height: 290px;
-
-      .group-img {
-        height: 200px;
-      }
-
-    }
-
-    .card_image img {
+    img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+  }
 
-    .card_price {
-      position: absolute;
-      bottom: 8px;
-      right: 8px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 60px;
-      height: 40px;
-      border-radius: 0.25rem;
-      background-color: #c89b3f;
-      font-size: 18px;
-      font-weight: 700;
+  &__note,
+  &__price {
+    position: absolute;
+    background: var(--gold);
+    color: #fff;
+    font-family: var(--font-ui);
+  }
+
+  &__note {
+    top: 12px;
+    left: 12px;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    border-radius: 2px;
+  }
+
+  &__price {
+    right: 12px;
+    bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.4rem 0.7rem;
+    border-radius: 2px;
+    line-height: 1.1;
+
+    strong {
+      font-size: 1rem;
     }
 
-    .card_price span {
-      font-size: 16px;
-      font-weight: 700;
-      margin-top: -2px;
-    }
-
-    .price-suffix {
-      font-size: 12px;
-      font-weight: 500;
-    }
-
-    .note {
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      padding: 4px 8px;
-      border-radius: 0.25rem;
-      background-color: #c89b3f;
-      font-size: 14px;
-      font-weight: 700;
+    em {
+      font-style: normal;
+      font-size: 0.6rem;
+      opacity: 0.9;
     }
   }
 
-  .iframe-container {
-    max-width: 400px;
-    margin: 0 auto;
-    /* Evita che tocchi i bordi dello schermo */
+  &__body {
+    padding: 1.8rem 1.5rem;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  &__sub {
+    color: var(--gold-dark);
+    font-style: italic;
+    margin-top: 0.4rem;
+  }
+
+  &__hours {
+    font-family: var(--font-ui);
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.8rem;
+  }
+
+  &__rule {
+    margin: 1.2rem auto;
+  }
+
+  &__text {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.7;
   }
 }
 
-@media screen and (min-width: 768px) {
-  .container {
-
-    .iframe-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 800px;
-      height: auto;
-      /* Imposta l'altezza automaticamente */
-      aspect-ratio: 16 / 9;
-      /* Mantiene proporzioni */
-      margin: 20px auto;
-      /* Centra il contenitore */
-    }
-
-    .iframe-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      /* Evita bordi indesiderati */
-    }
-
-    font-size: 18px;
-
-    .school-paragraph {
-      font-size: 22px;
-    }
-
-    .card {
-      background-color: white;
-      border-radius: 0.25rem;
-      box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-
-      .note {
-        font-size: 18px;
-      }
-
-      .card_title {
-        font-size: 28px;
-      }
-
-      .card_price {
-        font-size: 20px;
-      }
-
-      .card_image {
-        max-height: 200px;
-      }
-    }
-
-    .school-cards {
-      padding: 30px 0px;
-      max-width: 1200px;
-      display: flex;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .card_content {
-      position: relative;
-      padding: 16px 12px 32px 24px;
-      margin: 16px 8px 8px 0;
-
-      .card_text p {
-        font-size: 18px;
-      }
-    }
-
-    .card_content::-webkit-scrollbar-track {
-      box-shadow: 0;
-      border-radius: 0;
-    }
-
-    .card_content::-webkit-scrollbar-thumb {
-      background: #c89b3f;
-      border-radius: 15px;
-    }
-
-    .card_title {
-      position: relative;
-      margin: 0 0 24px;
-      padding-bottom: 10px;
-      text-align: center;
-      font-size: 20px;
-      font-weight: 700;
-    }
-
-    .card_title::after {
-      position: absolute;
-      display: block;
-      width: 50px;
-      height: 2px;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #c89b3f;
-      content: "";
-    }
-
-    hr {
-      margin: 24px auto;
-      width: 50px;
-      border-top: 2px solid #c89b3f;
-    }
-
-    .card_text p {
-      margin: 0 0 24px;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .card_text p:last-child {
-      margin: 0;
-    }
+@media screen and (max-width: 900px) {
+  .school__cards {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+    margin-inline: auto;
   }
 }
 </style>

@@ -1,69 +1,134 @@
 <script>
 export default {
   name: 'OurStory',
-  methods: {
-    toggleLanguage() {
-      const newLocale = this.$i18n.locale === 'it' ? 'en' : 'it';
-      this.$i18n.locale = newLocale;
-    }
-  }
-}
+};
 </script>
 
 <template>
-  <div class="container-md">
-    <div class="title">
-      {{ $t('storia.title') }}
-    </div>
-    <div class="cards">
-      <div class="text-card">
-        <p v-html="$t('storia.paragraph')"></p>
+  <section class="story">
+    <div class="story__grid container">
+      <div class="story__media" data-aos="fade-right">
+        <img src="/imgs/photos/RestaurantFoto.jpeg" alt="John's Restaurant, Todi" />
+        <div class="story__badge">
+          <span>Est.</span>
+          <strong>Todi</strong>
+        </div>
+      </div>
+
+      <div class="story__content" data-aos="fade-left">
+        <p class="eyebrow">Chef John Paterson</p>
+        <h2 class="section-title">{{ $t('storia.title') }}</h2>
+        <hr class="rule story__rule" />
+        <p class="story__text" v-html="$t('storia.paragraph')"></p>
+        <p class="story__sign">John Paterson</p>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
-.container-md {
-  padding-top: -30px;
-  color: black;
-  text-transform: none;
-  font-size: 25px;
+.story {
+  padding: clamp(4rem, 9vw, 8rem) 0;
+  background: var(--bg);
 
-  .cards {
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+  }
 
-    font-size: 20px;
-    margin-top: 30px;
+  &__media {
+    position: relative;
 
-    .text-card {
-      text-align: center;
-    }
-
-    .text-card p {
-      color: var(--title-color);
-      margin-bottom: 15px;
+    img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      border-radius: 2px;
+      box-shadow: var(--shadow);
     }
   }
 
-  .title {
-    color: var(--title-color);
+  &__badge {
+    position: absolute;
+    bottom: -28px;
+    right: -22px;
+    background: var(--gold);
+    color: #fff;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+
+    span {
+      font-family: var(--font-ui);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.65rem;
+    }
+
+    strong {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 500;
+    }
   }
 
-  @media screen and (max-width: 768px) {
-    .title {
-      font-size: 30px;
+  &__content {
+    .eyebrow {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__rule {
+    margin: 1.6rem 0;
+  }
+
+  &__text {
+    color: var(--muted);
+    font-size: 1.18rem;
+    line-height: 1.85;
+    text-align: justify;
+  }
+
+  &__sign {
+    margin-top: 1.6rem;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 2rem;
+    color: var(--ink);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .story {
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
     }
 
-    .container-md {
-      font-size: 18px;
+    &__media img {
+      height: 380px;
     }
 
-    .cards {
+    &__badge {
+      width: 92px;
+      height: 92px;
+      right: 16px;
+      bottom: -20px;
 
-      .text-card {
-        text-align: justify;
-        margin-bottom: 20px;
+      strong {
+        font-size: 1.3rem;
       }
+    }
+
+    &__text {
+      text-align: left;
     }
   }
 }

@@ -4,280 +4,227 @@ import menuData from '../../data/menu.json';
 export default {
   data() {
     return {
-      menuData
+      menuData,
+      sections: [
+        { key: 'antipasti', label: 'Antipasti' },
+        { key: 'primi', label: 'Primi Piatti' },
+        { key: 'secondi', label: 'Secondi Piatti' },
+        { key: 'contorni', label: 'Contorni' },
+        { key: 'dolci', label: 'Dolci' },
+      ],
     };
-  }
+  },
 };
 </script>
 
 <template>
-  <!--Titolo pagina-->
-  <div class="container-lg container-print" v-if="menuData">
-    <div class="title">
-      Menù
-    </div>
-    <div class="container-md welcome-print">
-      <div>
-        <h1>{{ $t('menu.title') }}</h1>
-        <div class="ita">
-          <p>
-            {{ $t('menu.paragraph') }}
-          </p>
-          <h3>
-            {{ $t('menu.secondTitle') }}
-          </h3>
-          <p>
-            {{ $t('menu.secondParagraph') }}
-          </p>
-        </div>
-        <p class="grazie">
-          Grazie, Chef John Paterson
-        </p>
+  <div class="menu container-print" v-if="menuData">
+    <!-- Intestazione pagina -->
+    <header class="menu__head" data-aos="fade-up">
+      <p class="eyebrow">John's Restaurant</p>
+      <h1 class="menu__title">Menù</h1>
+      <hr class="rule menu__rule" />
+      <p class="menu__intro">{{ $t('menu.paragraph') }}</p>
+      <div class="menu__celiac">
+        <h3>{{ $t('menu.secondTitle') }}</h3>
+        <p>{{ $t('menu.secondParagraph') }}</p>
       </div>
-      <!--Contenuto pagina-->
-    </div>
-    <div class="container-sm">
-      <ul>
-        <li class="sections">
-          <h1 class="groups">Antipasti</h1>
-        <li class="dishes dishes-print" v-for="antipasto in menuData.antipasti" :key="antipasto.it">
-          <div class="name-desc name-desc-print">
-            <h3>{{ antipasto.it }}</h3>
-            <p>{{ antipasto.en }}</p>
-          </div>
-          <div class="price price-print">
-            {{ antipasto.price }} &euro;
-          </div>
-        </li>
-        </li>
-        <li class="sections dark-bg">
-          <h1 class="groups">Primi Piatti</h1>
-        <li class="dishes dishes-print" v-for="primo in menuData.primi" :key="primo.it">
-          <div class="name-desc name-desc-print">
-            <h3>{{ primo.it }}</h3>
-            <p>{{ primo.en }}</p>
-          </div>
-          <div class="price price-print">
-            {{ primo.price }} &euro;
-          </div>
-        </li>
-        </li>
-        <li class="sections">
-          <h1 class="groups">Secondi Piatti</h1>
-        <li class="dishes dishes-print" v-for="secondo in menuData.secondi" :key="secondo.it">
-          <div class="name-desc name-desc-print">
-            <h3>{{ secondo.it }}</h3>
-            <p>{{ secondo.en }}</p>
-          </div>
-          <div class="price price-print">
-            {{ secondo.price }} &euro;
-          </div>
-        </li>
-        </li>
-        <li class="sections dark-bg">
-          <h1 class="groups">Contorni</h1>
-        <li class="dishes dishes-print" v-for="contorno in menuData.contorni" :key="contorno.it">
-          <div class="name-desc name-desc-print">
-            <h3>{{ contorno.it }}</h3>
-            <p>{{ contorno.en }}</p>
-          </div>
-          <div class="price price-print">
-            {{ contorno.price }} &euro;
-          </div>
-        </li>
-        </li>
-        <li class="sections">
-          <h1 class="groups">Dolci</h1>
-        <li class="dishes dishes-print" v-for="dolce in menuData.dolci" :key="dolce.it">
-          <div class="name-desc name-desc-print">
-            <h3>{{ dolce.it }}</h3>
-            <p>{{ dolce.en }}</p>
-          </div>
-          <div class="price price-print">
-            {{ dolce.price }} &euro;
-          </div>
-        </li>
-        </li>
-        <li class="vini-button no-print">
-          <p class="no-print"><router-link :to="{ name: 'vini' }">{{ $t('header.vini') }}</router-link></p>
-        </li>
-      </ul>
+      <p class="menu__sign">Grazie, Chef John Paterson</p>
+    </header>
+
+    <!-- Portate -->
+    <div class="menu__body container-narrow">
+      <section
+        class="course"
+        v-for="sec in sections"
+        :key="sec.key"
+        data-aos="fade-up"
+      >
+        <h2 class="course__title">{{ sec.label }}</h2>
+        <ul class="course__list">
+          <li class="dish dishes-print" v-for="dish in menuData[sec.key]" :key="dish.it">
+            <div class="dish__info name-desc-print">
+              <h3 class="dish__name">{{ dish.it }}</h3>
+              <p class="dish__en">{{ dish.en }}</p>
+            </div>
+            <span class="dish__dots" aria-hidden="true"></span>
+            <span class="dish__price price-print">{{ dish.price }} &euro;</span>
+          </li>
+        </ul>
+      </section>
+
+      <div class="menu__more no-print">
+        <router-link class="btn btn--ghost" :to="{ name: 'vini' }">{{ $t('header.vini') }}</router-link>
+      </div>
     </div>
   </div>
-  <div v-else>
-    <div class="container-sm">
-      <div class="loading">
-        <p>Caricamento...</p>
-        <img src="/public/imgs/logos/Logo_Johns.jpg" alt="">
-      </div>
-    </div>
+
+  <div v-else class="loading">
+    <p>Caricamento...</p>
+    <img src="/imgs/logos/Logo_Johns.jpg" alt="" />
   </div>
 </template>
 
 <style lang="scss" scoped>
-.container-lg {
-  .container-md {
-    padding: 40px 10px;
+.menu {
+  background: var(--bg);
+  padding-bottom: 5rem;
 
-    .ita {
-      padding-bottom: 30px;
-      color: var(--title-color);
-      ;
-    }
+  &__head {
+    text-align: center;
+    padding: clamp(2.5rem, 6vw, 5rem) 1.5rem 2rem;
+    max-width: 760px;
+    margin: 0 auto;
+  }
 
-    h1 {
-      color: var(--title-color);
+  &__title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 500;
+    margin-top: 0.6rem;
+  }
+
+  &__rule {
+    margin: 1.4rem auto;
+  }
+
+  &__intro {
+    color: var(--muted);
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  &__celiac {
+    margin-top: 1.6rem;
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--ink);
     }
 
     p {
-      text-transform: none;
-      color: var(--title-color);
-      font-size: 1.5rem;
-    }
-
-    .grazie {
-      font-size: 22px;
+      color: var(--muted);
+      font-style: italic;
+      font-size: 0.98rem;
     }
   }
 
-  .vini-button {
-    color: var(--title-color);
+  &__sign {
+    margin-top: 1.8rem;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--gold-dark);
+  }
+
+  &__more {
+    text-align: center;
+    margin-top: 3rem;
+  }
+}
+
+.course {
+  margin-top: 3.5rem;
+
+  &__title {
+    text-align: center;
+    font-family: var(--font-display);
     font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    transition: 0.3s ease;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 1.8rem;
+    position: relative;
 
-    p {
-      background-color: var(--dark-bg-color);
-      width: 120px;
-      border: 1px solid var(--title-color);
-      border-radius: 8px;
-
-      &:hover {
-        box-shadow: 6px 6px rgba(0, 0, 0, 0.6);
-      }
-
-      &:active {
-        box-shadow: none;
-      }
-    }
-  }
-
-  .title {
-    color: var(--title-color);
-    font-size: 60px;
-    text-transform: none;
-  }
-
-  .groups {
-    font-size: 40px;
-  }
-
-  .dishes {
-    margin: 8px 0px;
-    padding: 5px 0px;
-    text-transform: none;
-    text-align: justify;
-    color: var(--title-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 2.5rem;
-
-    .name-desc {
-      color: var(--title-color);
-      font-size: 22px;
-    }
-
-    .price {
-      color: var(--title-color);
-      font-size: 22px;
-      white-space: nowrap
-    }
-  }
-
-  .container-sm {
-    max-width: 100%;
-    height: 100%;
-
-    .dark-bg {
-      background-color: var(--dark-bg-color);
-    }
-
-    .sections {
-      margin: 10px 0px;
-      padding: 0px 10px;
-
-      h1 {
-        color: var(--title-color);
-        padding: 10px 0px;
-        font-size: 30px;
-      }
+    &::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0.8rem auto 0;
     }
   }
 }
 
-.container-sm {
-  height: 100vh;
-  // padding: 30px 10px;
+.dish {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--line);
 
-  .loading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 50px;
-    max-width: 100vw;
-    gap: 30px;
-
-    img {
-      width: 300px;
-      border-radius: 50%;
-      animation: rotateClockwise 6s infinite linear;
-    }
+  &__info {
+    flex-shrink: 1;
   }
 
-  @keyframes rotateClockwise {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
+  &__name {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.2;
   }
 
-  @media screen and (max-width: 768px) {
-    .vini-button {
-      padding-top: 20px;
+  &__en {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 0.98rem;
+    margin-top: 0.2rem;
+  }
+
+  &__dots {
+    flex: 1;
+    border-bottom: 1px dotted var(--line);
+    transform: translateY(-4px);
+    min-width: 1.5rem;
+  }
+
+  &__price {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    color: var(--gold-dark);
+    white-space: nowrap;
+  }
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 5rem 1rem;
+  min-height: 60vh;
+
+  p {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--muted);
+  }
+
+  img {
+    width: 200px;
+    border-radius: 50%;
+    animation: spin 6s infinite linear;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .dish {
+    flex-wrap: wrap;
+
+    &__dots {
+      display: none;
     }
 
-    .dishes {
-      gap: 20px;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      align-items: center;
-
-      .name-desc {
-        font-size: 22px;
-      }
-
-      .price {
-        text-align: center;
-        justify-content: center;
-        font-size: 22px;
-        color: var(--title-color);
-      }
-    }
-
-    .loading {
-      padding-top: 50px;
-      max-width: 100vw;
-
-      img {
-        max-width: 150px;
-      }
+    &__price {
+      margin-left: auto;
     }
   }
 }
@@ -287,26 +234,12 @@ export default {
     display: none;
   }
 
-  .welcome-print {
-    margin: 60px 0px;
+  .menu__head {
+    padding-top: 1rem;
   }
 
-  .container-print {
-    margin-top: -20%;
-  }
-
-  .dishes-print {
-    display: flex;
-    justify-content: space-between;
-    gap: 2.5rem;
-  }
-
-  .name-desc-print {
-    flex-grow: 1;
-  }
-
-  .price-print {
-    white-space: nowrap
+  .dish {
+    break-inside: avoid;
   }
 }
 </style>

@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { createI18n } from 'vue-i18n'
 import { router } from './router'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faUserSecret, faExpand, faCircleXmark, faDrum, faCompactDisc, faHeadphones, faMusic, faCloud, faGuitar, faRocket, faTrophy, faCalendarDays, faPhone, faEnvelope, faLocationDot, faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
@@ -14,6 +16,24 @@ const messages = {
   it: {
     buttons: {
       prenotazioni: "Prenota Ora"
+    },
+    home: {
+      gallery_eyebrow: "Galleria",
+      gallery_title: "Le nostre specialità",
+      cuisine_eyebrow: "La nostra cucina",
+      cuisine_title: "Menù & Cantina",
+      cuisine_text: "Piatti della tradizione umbra e italiana, materie prime locali e una selezione di vini del territorio.",
+      reserve_eyebrow: "Vi aspettiamo",
+      reserve_title: "Prenota un tavolo"
+    },
+    notfound: {
+      title: "Pagina non trovata",
+      text: "La pagina che cerchi non esiste o è stata spostata.",
+      button: "Torna alla Home"
+    },
+    testimonials: {
+      eyebrow: "Dicono di noi",
+      title: "Le voci dei nostri ospiti"
     },
     header: {
       home: "Home",
@@ -80,6 +100,24 @@ const messages = {
   en: {
     buttons: {
       prenotazioni: "Book Now"
+    },
+    home: {
+      gallery_eyebrow: "Gallery",
+      gallery_title: "Our Specialties",
+      cuisine_eyebrow: "Our Cuisine",
+      cuisine_title: "Menu & Wine",
+      cuisine_text: "Umbrian and Italian classics made with local produce, paired with a curated selection of regional wines.",
+      reserve_eyebrow: "We await you",
+      reserve_title: "Book a table"
+    },
+    notfound: {
+      title: "Page not found",
+      text: "The page you're looking for doesn't exist or has been moved.",
+      button: "Back to Home"
+    },
+    testimonials: {
+      eyebrow: "Testimonials",
+      title: "What our guests say"
     },
     header: {
       home: "Home",
@@ -152,6 +190,16 @@ const i18n = createI18n({
   messages, // set locale messages
 });
 
+
+// Animazioni allo scroll (fade/slide-up eleganti)
+// Disattivate se l'utente preferisce ridurre il movimento (accessibilità)
+AOS.init({
+  duration: 800,
+  easing: 'ease-out-cubic',
+  once: true,
+  offset: 80,
+  disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+});
 
 createApp(App)
   .use(router)

@@ -1,12 +1,40 @@
-* {
+// ============================================================
+//  Stili globali — base, tipografia, utility, bottoni
+// ============================================================
+@use './partials/variables' as *;
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Oswald', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  font-family: $font-body;
+  color: var(--ink);
+  background-color: var(--bg);
+  line-height: 1.65;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 img {
   max-width: 100%;
+  display: block;
 }
 
 ul,
@@ -16,63 +44,119 @@ menu {
 }
 
 a {
-  color: currentColor;
+  color: inherit;
   text-decoration: none;
+  transition: color 0.3s $ease;
 }
 
-.container-sm {
-  width: 900px;
-  margin: 0 auto;
-  padding-bottom: 60px;
-  color: white;
-  text-transform: uppercase;
-}
-
-.container-md {
-  max-width: 1360px;
-  margin: 0 auto;
-  text-align: center;
-  color: white;
-  text-transform: uppercase;
-  padding: 80px 0;
-}
-
-.container-lg {
-  position: relative;
-  max-width: 1800px;
-  margin: 0 auto;
-  color: white;
-  text-align: center;
-}
-
-.title {
-  font-weight: 500;
-  font-size: 60px;
-  text-transform: uppercase;
-}
-
-.title-hero {
-  font-weight: 500;
-  font-size: 70px;
-  text-transform: uppercase;
-}
-
-.second-title {
-  color: #F2870C;
-  font-size: 25px;
-  margin-bottom: 20px;
-}
-
-.button {
-  border: 1px solid rgb(244, 135, 11, 0.6);
-  padding: 12px 50px;
-  background-color: transparent;
-  color: white;
-  font-size: 15px;
-}
-
-.button:hover {
+button {
+  font-family: inherit;
   cursor: pointer;
-  background-color: rgb(244, 135, 11);
-  border: 1px solid rgb(244, 135, 11);
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-display;
+  font-weight: 500;
+  line-height: 1.12;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+
+// ---------- Utility ----------
+.container {
+  width: min(#{$maxw}, 100% - 3rem);
+  margin-inline: auto;
+}
+
+.container-narrow {
+  width: min(820px, 100% - 3rem);
+  margin-inline: auto;
+}
+
+// Etichetta sopra ai titoli (kicker)
+.eyebrow {
+  display: inline-block;
+  font-family: $font-ui;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--gold-dark);
+}
+
+.section-title {
+  font-family: $font-display;
+  font-weight: 500;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  color: var(--ink);
+}
+
+// Filetto decorativo
+.rule {
+  width: 64px;
+  height: 2px;
+  border: 0;
+  background: var(--gold);
+}
+
+// ---------- Bottoni ----------
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: $font-ui;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.95rem 2rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.4s $ease;
+}
+
+.btn--solid {
+  background: var(--gold);
+  color: #fff;
+
+  &:hover {
+    background: var(--gold-dark);
+    transform: translateY(-2px);
+  }
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+
+  &:hover {
+    background: var(--ink);
+    color: var(--bg);
+  }
+}
+
+.btn--light {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+
+  &:hover {
+    background: #fff;
+    color: var(--ink);
+  }
+}
+
+// ---------- Stampa ----------
+@media print {
+  .no-print {
+    display: none !important;
+  }
 }

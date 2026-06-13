@@ -6,6 +6,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
   <title>John's Restaurant — Gestione Menù</title>
+
+  <!-- Font del brand -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Tema brand per il pannello Decap (best-effort: Decap usa classi dinamiche) -->
+  <style>
+    :root {
+      --brand-bg: #FAF6EC;
+      --brand-bg-alt: #EFE7D4;
+      --brand-ink: #2A2520;
+      --brand-muted: #756B5C;
+      --brand-gold: #B08D57;
+      --brand-gold-dark: #8F6E3E;
+    }
+
+    /* Sfondo + tipografia generali */
+    html,
+    body,
+    #nc-root,
+    [class*="AppRoot"],
+    [class*="AppMainContainer"],
+    [class*="PageContainer"],
+    [class*="EditorContainer"] {
+      background-color: var(--brand-bg) !important;
+    }
+
+    body,
+    input,
+    select,
+    textarea,
+    button {
+      font-family: 'Jost', 'Helvetica Neue', Arial, sans-serif !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    [class*="CollectionTopHeading"],
+    [class*="CardHeading"] {
+      font-family: 'Cormorant Garamond', Georgia, serif !important;
+      letter-spacing: 0.01em;
+    }
+
+    /* Barra superiore scura come il footer del sito */
+    [class*="AppHeader"] {
+      background: var(--brand-ink) !important;
+      background-image: none !important;
+    }
+
+    /* Pulsanti primari (Login / Publish / Salva) in oro */
+    [class*="LoginButton"],
+    [class*="ButtonPrimary"],
+    button[class*="rimary"],
+    [class*="PublishButton"] {
+      background-color: var(--brand-gold) !important;
+      background-image: none !important;
+      border-radius: 3px !important;
+      letter-spacing: 0.06em;
+    }
+
+    [class*="LoginButton"]:hover,
+    [class*="ButtonPrimary"]:hover,
+    button[class*="rimary"]:hover,
+    [class*="PublishButton"]:hover {
+      background-color: var(--brand-gold-dark) !important;
+    }
+
+    /* Accenti link */
+    a,
+    [class*="NavLink"][class*="active"] {
+      color: var(--brand-gold-dark);
+    }
+
+    /* Schermata di login: card chiara, logo tondo come sul sito */
+    [class*="LoginPageLogoImage"],
+    [class*="LoginPage"] img {
+      border-radius: 50%;
+      max-width: 120px;
+      border: 1px solid var(--brand-gold);
+    }
+  </style>
 </head>
 
 <body>

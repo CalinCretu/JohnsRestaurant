@@ -1,12 +1,9 @@
 <script>
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Autoplay, Pagination, Navigation, EffectCreative } from 'swiper/modules';
-import { store } from '../store';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import 'swiper/css/effect-creative';
+
 export default {
   name: 'Hero',
   components: {
@@ -15,9 +12,8 @@ export default {
   },
   data() {
     return {
-      slidesPerView: 8, // valore iniziale
-      store: store,
-      modules: [Autoplay, Pagination, Navigation, EffectCreative],
+      slidesPerView: 4,
+      modules: [Autoplay],
       photos: [
         '/imgs/photos/Tagliata_2.jpg',
         '/imgs/photos/Melone.jpg',
@@ -34,76 +30,94 @@ export default {
         '/imgs/photos/TortiniDolceCuore.jpg',
         '/imgs/photos/Scoglio.jpg',
         '/imgs/photos/RisottoBaccala.jpg',
-        '/imgs/photos/InsalataDiMare.png'
-      ]
-    }
+        '/imgs/photos/InsalataDiMare.png',
+      ],
+    };
   },
   mounted() {
-    // Listen to window resize event to update slides per view
     window.addEventListener('resize', this.updateSlidesPerView);
-    // Initial update
     this.updateSlidesPerView();
   },
-  beforeDestroy() {
-    // Remove event listener when component is destroyed
+  beforeUnmount() {
     window.removeEventListener('resize', this.updateSlidesPerView);
   },
   methods: {
     updateSlidesPerView() {
-      // Adjust slides per view based on screen width
-      if (window.innerWidth <= 768) {
-        this.slidesPerView = 2;
-      } else {
-        this.slidesPerView = 8;
-      }
-    }
-  }
-}
+      const w = window.innerWidth;
+      if (w <= 768) this.slidesPerView = 1.4;
+      else if (w <= 1100) this.slidesPerView = 2.5;
+      else this.slidesPerView = 4;
+    },
+  },
+};
 </script>
 
 <template>
-  <div class="container-lg">
-    <Swiper :slides-per-view="slidesPerView" :grabCursor="true" :loop="true"
-      :autoplay="{ delay: 2000, disableOnInteraction: false, }" :modules="modules">
-      <SwiperSlide v-for=" photo  in  photos " :key="photo">
-        <div class="slide-wrapper">
-          <img class="hero-image" :src="photo" alt="Immagine Piatto">
-        </div>
-      </SwiperSlide>
-    </Swiper>
-  </div>
+  <section class="gallery">
+    <div class="gallery__head container" data-aos="fade-up">
+      <p class="eyebrow">{{ $t('home.gallery_eyebrow') }}</p>
+      <h2 class="section-title">{{ $t('home.gallery_title') }}</h2>
+      <hr class="rule" />
+    </div>
+
+    <div class="gallery__slider" data-aos="fade-up">
+      <Swiper
+        :slides-per-view="slidesPerView"
+        :space-between="18"
+        :grab-cursor="true"
+        :loop="true"
+        :autoplay="{ delay: 2400, disableOnInteraction: false }"
+        :modules="modules"
+      >
+        <SwiperSlide v-for="photo in photos" :key="photo">
+          <div class="gallery__slide">
+            <img :src="photo" alt="Specialità di John's Restaurant" loading="lazy" />
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
-.container-lg {
-  text-transform: uppercase;
+.gallery {
+  padding: clamp(3.5rem, 8vw, 7rem) 0;
+  background: var(--bg-alt);
+  overflow: hidden;
 
-  Swiper {
-    z-index: 1;
+  &__head {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    .eyebrow {
+      margin-bottom: 0.8rem;
+    }
+
+    .rule {
+      margin: 1.4rem auto 0;
+    }
   }
 
-  .slide-wrapper {
-    /* Set fixed width and height for uniform size */
-    width: 225px;
-    height: 150px;
+  &__slider {
+    padding: 0 clamp(1rem, 4vw, 3rem);
   }
 
-  .hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  &__slide {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: 2px;
+    box-shadow: var(--shadow-sm);
 
-  .absolute {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-  }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.2s var(--ease);
+    }
 
-  .title-hero {
-    margin-bottom: 30px;
+    &:hover img {
+      transform: scale(1.08);
+    }
   }
 }
 </style>

@@ -2,9 +2,10 @@
 import Hero from './Hero.vue';
 import Cards from './Cards.vue';
 import ContactsAndHours from './ContactsAndHours.vue';
-import { store } from '../store';
 import Welcome from './Welcome.vue';
 import OurStory from './OurStory.vue';
+import Testimonials from './Testimonials.vue';
+
 export default {
   name: 'Home',
   components: {
@@ -13,40 +14,24 @@ export default {
     ContactsAndHours,
     OurStory,
     Welcome,
+    Testimonials,
   },
-  data() {
-    return {
-      store: store,
-    }
-  }
-}
+};
 </script>
 
 <template>
-  <div>
+  <div class="home">
     <Welcome />
-  </div>
-  <div>
+    <OurStory />
+    <Hero />
+    <Cards />
+    <Testimonials />
     <ContactsAndHours />
   </div>
-  <div>
-    <Hero />
-  </div>
-  <div class="paddingX cards">
-    <Cards />
-  </div>
-  <div class="paddingX">
-    <OurStory />
-  </div>
-
 </template>
 
 <style lang="scss" scoped>
-.cards {
-  background-color: var((--dark-bg-color));
-}
-
-.paddingX {
-  padding: 0px 10px;
+.home {
+  background-color: var(--bg);
 }
 </style>

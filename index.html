@@ -1,21 +1,92 @@
 <!doctype html>
-<html lang="en">
+<html lang="it">
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" href="/public/imgs/logos/Logo_Johns_ico.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,600;1,400;1,600&family=Open+Sans:wght@400;700&family=Oswald:wght@300;400;500;600;700&family=Roboto:ital,wght@0,500;1,300;1,700&family=Salsa&display=swap"
-    rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>John's Restaurant Todi</title>
+
+  <!-- Favicon & icone -->
+  <link rel="icon" href="/imgs/logos/Logo_Johns_ico.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#FAF6EC" />
+
+  <!-- SEO -->
+  <title>John's Restaurant · Todi — Cucina italiana e umbra dello Chef John Paterson</title>
+  <meta name="description"
+    content="John's Restaurant a Todi (Umbria): cucina italiana e umbra dello Chef John Paterson. Menù, carta dei vini, menù speciali e scuola di cucina." />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:site_name" content="John's Restaurant" />
+  <meta property="og:url" content="https://johnpatersontodi.com/" />
+  <meta property="og:title" content="John's Restaurant · Todi" />
+  <meta property="og:description"
+    content="Cucina italiana e umbra dello Chef John Paterson a Todi. Menù, vini e scuola di cucina." />
+  <meta property="og:image" content="https://johnpatersontodi.com/imgs/og-image.jpg" />
+  <meta property="og:locale" content="it_IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="John's Restaurant · Todi" />
+  <meta name="twitter:description" content="Cucina italiana e umbra dello Chef John Paterson a Todi." />
+  <meta name="twitter:image" content="https://johnpatersontodi.com/imgs/og-image.jpg" />
+
+  <!-- Font: Cormorant Garamond (display) · EB Garamond (corpo) · Jost (UI) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400..700;1,400..600&family=Jost:wght@300;400;500;600&display=swap"
     rel="stylesheet">
+
+  <!-- Analytics (opzionale): Plausible è privacy-friendly e SENZA cookie (nessun banner
+       richiesto). Per attivarlo: togli il commento e metti il tuo dominio in data-domain.
+       In alternativa, per Google Analytics serve un banner cookie (consenso UE). -->
+  <!--
+  <script defer data-domain="iltuodominio.it" src="https://plausible.io/js/script.js"></script>
+  -->
+
+  <!-- Dati strutturati Schema.org (local SEO / Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "John's Restaurant",
+    "url": "https://johnpatersontodi.com",
+    "servesCuisine": ["Italian", "Umbrian"],
+    "priceRange": "€€",
+    "telephone": "+39 340 8184775",
+    "email": "johncheftodi@gmail.com",
+    "image": "https://johnpatersontodi.com/imgs/og-image.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Todi",
+      "addressRegion": "PG",
+      "postalCode": "06059",
+      "addressCountry": "IT"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 42.7835275,
+      "longitude": 12.4260127
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "12:30",
+        "closes": "14:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "19:30",
+        "closes": "21:30"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/chef.johnpaterson/",
+      "https://www.facebook.com/johnpatersonchef/"
+    ]
+  }
+  </script>
 </head>
 
 <body>
