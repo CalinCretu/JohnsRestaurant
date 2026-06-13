@@ -1,1 +1,5 @@
-/* /index.html 200
+# Pannello CMS: servito come file statici, mai dirottato sulla SPA
+/admin/*  /admin/:splat  200
+
+# Fallback SPA per tutte le altre rotte client-side
+/*  /index.html  200

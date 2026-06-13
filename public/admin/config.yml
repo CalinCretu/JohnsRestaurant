@@ -1,0 +1,147 @@
+# Configurazione Decap CMS — gestione menù e vini di John's Restaurant
+# Login tramite GitHub; ogni salvataggio crea un commit sul repository,
+# Netlify ricostruisce il sito e i clienti vedono subito le modifiche.
+
+backend:
+  name: github
+  repo: CalinCretu/JohnsRestaurant
+  branch: main
+
+# Lingua dell'interfaccia del pannello
+locale: "it"
+
+# Cartella immagini (riusa quella esistente del sito)
+media_folder: "public/imgs"
+public_folder: "/imgs"
+
+collections:
+  # ---------------------------------------------------------------------------
+  # MENÙ
+  # ---------------------------------------------------------------------------
+  - name: "menu"
+    label: "Menù"
+    description: "Piatti del menù alla carta (italiano + inglese)."
+    files:
+      - name: "menu_data"
+        label: "Menù del Ristorante"
+        file: "src/data/menu.json"
+        description: "Aggiungi, modifica o elimina i piatti di ogni portata."
+        fields:
+          - label: "Antipasti"
+            name: "antipasti"
+            widget: "list"
+            label_singular: "Antipasto"
+            summary: "{{fields.it}} — € {{fields.price}}"
+            fields:
+              - { label: "Nome (Italiano)", name: "it", widget: "string" }
+              - { label: "Descrizione (Inglese)", name: "en", widget: "string" }
+              - { label: "Prezzo (€)", name: "price", widget: "string", hint: "Esempio: 18.00" }
+          - label: "Primi Piatti"
+            name: "primi"
+            widget: "list"
+            label_singular: "Primo"
+            summary: "{{fields.it}} — € {{fields.price}}"
+            fields:
+              - { label: "Nome (Italiano)", name: "it", widget: "string" }
+              - { label: "Descrizione (Inglese)", name: "en", widget: "string" }
+              - { label: "Prezzo (€)", name: "price", widget: "string", hint: "Esempio: 16.00" }
+          - label: "Secondi Piatti"
+            name: "secondi"
+            widget: "list"
+            label_singular: "Secondo"
+            summary: "{{fields.it}} — € {{fields.price}}"
+            fields:
+              - { label: "Nome (Italiano)", name: "it", widget: "string" }
+              - { label: "Descrizione (Inglese)", name: "en", widget: "string" }
+              - { label: "Prezzo (€)", name: "price", widget: "string", hint: "Esempio: 24.00" }
+          - label: "Contorni"
+            name: "contorni"
+            widget: "list"
+            label_singular: "Contorno"
+            summary: "{{fields.it}} — € {{fields.price}}"
+            fields:
+              - { label: "Nome (Italiano)", name: "it", widget: "string" }
+              - { label: "Descrizione (Inglese)", name: "en", widget: "string" }
+              - { label: "Prezzo (€)", name: "price", widget: "string", hint: "Esempio: 6.00" }
+          - label: "Dolci"
+            name: "dolci"
+            widget: "list"
+            label_singular: "Dolce"
+            summary: "{{fields.it}} — € {{fields.price}}"
+            fields:
+              - { label: "Nome (Italiano)", name: "it", widget: "string" }
+              - { label: "Descrizione (Inglese)", name: "en", widget: "string" }
+              - { label: "Prezzo (€)", name: "price", widget: "string", hint: "Esempio: 7.00" }
+
+  # ---------------------------------------------------------------------------
+  # VINI E BEVANDE
+  # ---------------------------------------------------------------------------
+  - name: "vini"
+    label: "Vini e Bevande"
+    description: "Carta dei vini, birre e bevande."
+    files:
+      - name: "vini_data"
+        label: "Carta dei Vini"
+        file: "src/data/vini.json"
+        description: "Per i vini compila la Cantina (produttore): i vini con la stessa cantina vengono raggruppati."
+        fields:
+          - label: "Vini al Calice"
+            name: "al_calice"
+            widget: "list"
+            label_singular: "Vino al calice"
+            summary: "{{fields.name}} — € {{fields.price}}"
+            fields:
+              - { label: "Nome", name: "name", widget: "string" }
+              - { label: "Prezzo (€)", name: "price", widget: "string", hint: "Esempio: 6.00" }
+          - label: "Vini Rossi"
+            name: "vini_rossi"
+            widget: "list"
+            label_singular: "Vino rosso"
+            summary: "{{fields.cantina}} — {{fields.name}} (€ {{fields.price}})"
+            fields:
+              - { label: "Cantina (produttore)", name: "cantina", widget: "string" }
+              - { label: "Nome del vino", name: "name", widget: "string" }
+              - { label: "Prezzo (€)", name: "price", widget: "string", hint: "Esempio: 40.00" }
+          - label: "Vini Rosati"
+            name: "vini_rosati"
+            widget: "list"
+            label_singular: "Vino rosato"
+            summary: "{{fields.cantina}} — {{fields.name}} (€ {{fields.price}})"
+            fields:
+              - { label: "Cantina (produttore)", name: "cantina", widget: "string" }
+              - { label: "Nome del vino", name: "name", widget: "string" }
+              - { label: "Prezzo (€)", name: "price", widget: "string", hint: "Esempio: 25.00" }
+          - label: "Vini Bianchi"
+            name: "vini_bianchi"
+            widget: "list"
+            label_singular: "Vino bianco"
+            summary: "{{fields.cantina}} — {{fields.name}} (€ {{fields.price}})"
+            fields:
+              - { label: "Cantina (produttore)", name: "cantina", widget: "string" }
+              - { label: "Nome del vino", name: "name", widget: "string" }
+              - { label: "Prezzo (€)", name: "price", widget: "string", hint: "Esempio: 30.00" }
+          - label: "Prosecco e Spumante"
+            name: "prosecco_e_spumante"
+            widget: "list"
+            label_singular: "Prosecco / Spumante"
+            summary: "{{fields.cantina}} — {{fields.name}} (€ {{fields.price}})"
+            fields:
+              - { label: "Cantina (produttore)", name: "cantina", widget: "string" }
+              - { label: "Nome del vino", name: "name", widget: "string" }
+              - { label: "Prezzo (€)", name: "price", widget: "string", hint: "Esempio: 20.00" }
+          - label: "Birre"
+            name: "birra"
+            widget: "list"
+            label_singular: "Birra"
+            summary: "{{fields.name}} — € {{fields.price}}"
+            fields:
+              - { label: "Nome", name: "name", widget: "string" }
+              - { label: "Prezzo (€)", name: "price", widget: "string", hint: "Esempio: 7.00" }
+          - label: "Bevande"
+            name: "bevande"
+            widget: "list"
+            label_singular: "Bevanda"
+            summary: "{{fields.name}} — € {{fields.price}}"
+            fields:
+              - { label: "Nome", name: "name", widget: "string" }
+              - { label: "Prezzo (€)", name: "price", widget: "string", hint: "Esempio: 3.50" }
