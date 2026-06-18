@@ -40,9 +40,25 @@ export default {
         :key="sec.key"
         data-aos="fade-up"
       >
-        <h2 class="course__title">{{ sec.label }}</h2>
+        <!-- Titolo + primo piatto restano sempre insieme: in stampa il titolo
+             non si separa mai dai suoi piatti (es. "Dolci") -->
+        <div class="course__lead">
+          <h2 class="course__title">{{ sec.label }}</h2>
+          <ul class="course__list">
+            <li class="dish dishes-print">
+              <div class="dish__info name-desc-print">
+                <h3 class="dish__name">{{ menuData[sec.key][0].it }}</h3>
+                <p class="dish__en">{{ menuData[sec.key][0].en }}</p>
+              </div>
+              <span class="dish__dots" aria-hidden="true"></span>
+              <span class="dish__price price-print">{{ menuData[sec.key][0].price }} &euro;</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Piatti restanti della portata (possono continuare a pagina nuova) -->
         <ul class="course__list">
-          <li class="dish dishes-print" v-for="dish in menuData[sec.key]" :key="dish.it">
+          <li class="dish dishes-print" v-for="dish in menuData[sec.key].slice(1)" :key="dish.it">
             <div class="dish__info name-desc-print">
               <h3 class="dish__name">{{ dish.it }}</h3>
               <p class="dish__en">{{ dish.en }}</p>
@@ -234,11 +250,37 @@ export default {
     display: none;
   }
 
-  .menu__head {
-    padding-top: 1rem;
+  // Sfondo bianco; il margine della pagina lo dà @page (general.scss)
+  .menu {
+    background: #fff;
+    padding: 0;
   }
 
+  .menu__head {
+    padding: 0 0 0.5rem;
+  }
+
+  // Spaziatura compattata per la stampa
+  // I gruppi di portate POSSONO spezzarsi tra le pagine (così gli Antipasti
+  // partono già nella prima pagina di presentazione)...
+  .course {
+    margin-top: 1.6rem;
+  }
+
+  .course__title {
+    margin-bottom: 1rem;
+  }
+
+  // ...ma il titolo non si separa MAI dal suo primo piatto (break-inside è
+  // rispettato dai browser, a differenza di break-after)
+  .course__lead {
+    break-inside: avoid;
+  }
+
+  // ...e ogni singolo piatto resta intero (nome IT + traduzione EN + prezzo
+  // mai separati tra due pagine)
   .dish {
+    padding: 0.45rem 0;
     break-inside: avoid;
   }
 }

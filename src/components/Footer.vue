@@ -11,6 +11,15 @@ export default {
     year() {
       return new Date().getFullYear();
     },
+    // Il pulsante di stampa compare solo nelle pagine Menù e Vini
+    isPrintable() {
+      return ['menu', 'vini'].includes(this.$route.name);
+    },
+    printLabel() {
+      return this.$route.name === 'vini'
+        ? 'Scarica lista vini (PDF)'
+        : 'Scarica menù (PDF)';
+    },
   },
   methods: {
     makeCall(phoneNumber) {
@@ -18,6 +27,10 @@ export default {
     },
     sendEmail(emailAddress) {
       window.location.href = emailAddress;
+    },
+    // Apre la stampa del browser: i camerieri salvano in PDF / stampano
+    stampaPdf() {
+      window.print();
     },
   },
 };
@@ -66,6 +79,21 @@ export default {
     </div>
 
     <div class="foot__bottom">
+      <button
+        v-if="isPrintable"
+        class="foot__print"
+        type="button"
+        @click="stampaPdf"
+      >
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 6 2 18 2 18 9" />
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+          <rect x="6" y="14" width="12" height="8" />
+        </svg>
+        {{ printLabel }}
+      </button>
       <p>&copy; {{ year }} John's Restaurant — All rights reserved.</p>
     </div>
   </div>
@@ -171,6 +199,27 @@ export default {
       font-size: 0.78rem;
       letter-spacing: 0.08em;
       color: rgba(202, 191, 169, 0.7);
+    }
+  }
+
+  &__print {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+    font-family: var(--font-ui);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.7rem;
+    color: var(--gold);
+    border: 1px solid rgba(176, 141, 87, 0.5);
+    padding: 0.6rem 1.2rem;
+    border-radius: 2px;
+    transition: all 0.3s var(--ease);
+
+    &:hover {
+      background: var(--gold);
+      color: #fff;
     }
   }
 }

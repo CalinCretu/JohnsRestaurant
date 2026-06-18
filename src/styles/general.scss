@@ -155,8 +155,27 @@ h4 {
 }
 
 // ---------- Stampa ----------
+// Margine applicato a OGNI pagina stampata (non solo la prima): così il
+// testo ha sempre spazio in alto/ai lati. Nota: con un margine impostato il
+// browser potrebbe mostrare intestazione/piè di pagina (URL, data, n° pagina);
+// si tolgono una volta sola deselezionando "Intestazioni e piè di pagina"
+// nella finestra di stampa.
+@page {
+  margin: 18mm 16mm;
+}
+
 @media print {
   .no-print {
     display: none !important;
+  }
+
+  // AOS tiene gli elementi a opacity:0 finché non entrano in viewport:
+  // in stampa li rendiamo tutti visibili, altrimenti spariscono piatti/vini
+  // e restano pagine bianche.
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
   }
 }

@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# PDF generati/di lavoro salvati nella cartella dati (non vanno nel repo)
+src/data/*.pdf

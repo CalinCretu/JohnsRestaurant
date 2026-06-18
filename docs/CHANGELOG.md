@@ -7,6 +7,36 @@ qui annoterò le modifiche effettuate per tenere traccia del lavoro svolto.
 
 <!-- Le voci più recenti vanno in cima -->
 
+## 2026-06-18 — Stampa PDF menù/vini, layout di stampa e privacy recensioni
+
+**Pulsante "Scarica PDF" (menù e vini)**
+- Stampa nativa del browser (`window.print()` → "Salva come PDF"): nessuna libreria
+  aggiunta. Pulsante spostato nel **footer**, visibile solo su `/menu` e `/vini`
+  (`Footer.vue`); etichetta dinamica ("Scarica menù (PDF)" / "Scarica lista vini (PDF)").
+
+**Stile di stampa (`general.scss` + `Menu.vue` + `Vini.vue`)**
+- `@media print`: sfondo bianco, navbar/footer/pulsante nascosti.
+- Fix **AOS**: in stampa tutti gli elementi `[data-aos]` forzati visibili (prima
+  sparivano piatti/vini non ancora scrollati → pagine bianche).
+- `@page { margin: 18mm 16mm }`: margine su ogni pagina (serve deselezionare
+  "Intestazioni e piè di pagina" nella finestra di stampa per togliere URL/data/n° pagina).
+- **Menù**: i gruppi di portate possono spezzarsi tra pagine (così gli Antipasti
+  partono già in prima pagina), ma titolo+1° piatto restano uniti (`course__lead`,
+  `break-inside: avoid`) e ogni piatto resta intero.
+- **Vini**: vini raggruppati per cantina in blocchi che non si spezzano
+  (`cantina-group`); spaziatura compattata.
+- `Vini.vue`: il vino senza prezzo non mostra più un "€" orfano.
+
+**Recensioni (`Testimonials.vue`)**
+- Autori mostrati con il **solo nome di battesimo** (no cognomi) per ridurre il
+  profilo privacy/GDPR sulle recensioni Google ripubblicate.
+
+**Pulizia**
+- Rimosso il PDF sorgente da `src/data/`; aggiunta regola `.gitignore`
+  (`src/data/*.pdf`) per non committare PDF generati/di lavoro.
+
+---
+
 ## 2026-06-18 — Fix build Netlify (crypto is not defined)
 
 **Problema:** il deploy su Netlify falliva con `ReferenceError: crypto is not defined`

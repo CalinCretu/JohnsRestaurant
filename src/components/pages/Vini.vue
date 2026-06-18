@@ -16,6 +16,22 @@ export default {
         { title: 'Prosecco e Spumante', key: 'prosecco_e_spumante' },
       ];
     },
+    // Stesse sezioni, ma con i vini raggruppati per cantina (consecutivi).
+    // Serve per tenere ogni blocco-cantina unito e non spezzarlo in stampa.
+    groupedSections() {
+      return this.wineSections.map((sec) => {
+        const groups = [];
+        (this.viniData[sec.key] || []).forEach((vino) => {
+          const last = groups[groups.length - 1];
+          if (last && last.cantina === vino.cantina) {
+            last.wines.push(vino);
+          } else {
+            groups.push({ cantina: vino.cantina, wines: [vino] });
+          }
+        });
+        return { ...sec, groups };
+      });
+    },
   },
 };
 </script>
@@ -42,21 +58,16 @@ export default {
       </section>
 
       <!-- Vini raggruppati per cantina -->
-      <section class="course" v-for="sec in wineSections" :key="sec.key" data-aos="fade-up">
+      <section class="course" v-for="sec in groupedSections" :key="sec.key" data-aos="fade-up">
         <h2 class="course__title">{{ sec.title }}</h2>
-        <template v-for="(vino, i) in viniData[sec.key]" :key="sec.key + '-' + i">
-          <h3
-            class="cantina"
-            v-if="i === 0 || viniData[sec.key][i - 1].cantina !== vino.cantina"
-          >
-            {{ vino.cantina }}
-          </h3>
-          <div class="wrow">
+        <div class="cantina-group" v-for="(g, gi) in sec.groups" :key="sec.key + '-' + gi">
+          <h3 class="cantina">{{ g.cantina }}</h3>
+          <div class="wrow" v-for="(vino, vi) in g.wines" :key="sec.key + '-' + gi + '-' + vi">
             <span class="wrow__name">{{ vino.name }}</span>
             <span class="wrow__dots" aria-hidden="true"></span>
-            <span class="wrow__price">{{ vino.price }} &euro;</span>
+            <span class="wrow__price" v-if="vino.price">{{ vino.price }} &euro;</span>
           </div>
-        </template>
+        </div>
       </section>
 
       <!-- Birre -->
@@ -111,6 +122,7 @@ export default {
   &__rule {
     margin: 1.4rem auto 0;
   }
+
 }
 
 .course {
@@ -210,6 +222,47 @@ export default {
     &__price {
       margin-left: auto;
     }
+  }
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+
+  // Sfondo bianco; il margine della pagina lo dà @page (general.scss)
+  .wine {
+    background: #fff;
+    padding: 0;
+  }
+
+  .wine__head {
+    padding: 0 0 0.5rem;
+  }
+
+  // Spaziatura compattata per la stampa: più vini per pagina, meno spreco
+  .course {
+    margin-top: 1.4rem;
+  }
+
+  .course__title {
+    margin-bottom: 0.8rem;
+    break-after: avoid; // il titolo sezione non resta orfano a fine pagina
+  }
+
+  // Ogni blocco-cantina (intestazione + suoi vini) resta tutto in una pagina
+  .cantina-group {
+    break-inside: avoid;
+  }
+
+  .cantina {
+    margin-top: 1rem;
+    break-after: avoid;
+  }
+
+  .wrow {
+    padding: 0.32rem 0;
+    break-inside: avoid;
   }
 }
 </style>
