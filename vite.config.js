@@ -1,3 +1,12 @@
+import { webcrypto } from 'node:crypto'
+
+// Polyfill di crypto per il build: alcuni plugin (terser → serialize-javascript)
+// usano la globale `crypto`, assente su Node < 20. Su Node 20+ è già definita
+// (e read-only), quindi la guardia evita di sovrascriverla.
+if (typeof globalThis.crypto === 'undefined') {
+  globalThis.crypto = webcrypto
+}
+
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { VitePWA } from 'vite-plugin-pwa'

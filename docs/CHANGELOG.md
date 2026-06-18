@@ -7,6 +7,25 @@ qui annoterò le modifiche effettuate per tenere traccia del lavoro svolto.
 
 <!-- Le voci più recenti vanno in cima -->
 
+## 2026-06-18 — Fix build Netlify (crypto is not defined)
+
+**Problema:** il deploy su Netlify falliva con `ReferenceError: crypto is not defined`
+(stack: `serialize-javascript` ← `@rollup/plugin-terser`, fase di minify). Causa: Netlify
+usava **Node 18** (`Now using node v18.20.8`), dove la globale `crypto` non esiste; è
+disponibile solo da **Node 20**. Il codice del sito non c'entra.
+
+**Modifiche:**
+- `netlify.toml` (nuovo): fissa `NODE_VERSION = "20"`; `command`/`publish` invariati
+  rispetto alla UI Netlify (`npm run build` → `dist`). Risolve la causa alla radice.
+- `vite.config.js`: aggiunto polyfill di `crypto` per il build (cintura di sicurezza,
+  funziona anche se Netlify ignorasse `NODE_VERSION`). Guardia
+  `if (typeof globalThis.crypto === 'undefined')` → su Node 20+ (dove è read-only) non
+  tocca nulla.
+
+**Verifica:** `npm run build` ok in locale.
+
+---
+
 ## 2026-06-13 — Restyling grafico completo + modernizzazione + recensioni
 
 **Redesign grafico (tutto il sito)**
