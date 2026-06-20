@@ -3,7 +3,7 @@
     {
       "it": "Antipasto Misto della Valle (salumi locali, bruschette e formaggi)",
       "en": "Local mixed Appetizer (local cured meat, bruschetta and mixed cheese)",
-      "price": "18.00"
+      "price": "20.00"
     },
     {
       "it": "Tris di Mare",
@@ -30,17 +30,17 @@
     {
       "it": "La nostra cacio e pepe con tartufo",
       "en": "World Famous “Tagliolini cacio e pepe” black truffles, black pepper, sheep’s cheese",
-      "price": "19.00"
+      "price": "20.00"
     },
     {
       "it": "Cuori ripieni di Burrata al tartufo di Norcia e Parmigiano Reggiano",
       "en": "Heart shaped ravioli filled with burrata cheese in a cream truffle and parmesan sauce",
-      "price": "19.00"
+      "price": "20.00"
     },
     {
       "it": "Tagliolini al Tartufo Nero di Norcia",
       "en": "Tagliolini with local black truffles",
-      "price": "19.00"
+      "price": "20.00"
     },
     {
       "it": "Strangozzi con Porcini e Salsicce Locali",
@@ -53,40 +53,35 @@
       "price": "16.00"
     },
     {
-      "it": "Gnocchi al Ragù di Cinghiale",
-      "en": "Gnocchi with wild boar ragù",
-      "price": "16.00"
+      "it": "Gnocchetti al Pomodoro fresco e Basilico",
+      "price": "16.00",
+      "en": "Gnocchetti with Fresh Tomato and Basil"
     }
   ],
   "secondi": [
     {
       "it": "Tagliata di Manzo con Rucola, Olio di Ginepro e Rosmarino",
       "en": "Sliced veal Steak with Juniper Oil, Rocket salad and Rosemary",
-      "price": "24.00"
+      "price": "26.00"
+    },
+    {
+      "it": "Tagliata al Tartufo",
+      "en": "Sliced Veal with black truffle",
+      "price": "30.00"
     },
     {
       "it": "Filetto di Maiale con rucola e gorgonzola",
       "en": "Fillet of pork with gorgonzola and rocket salad",
-      "price": "18.00"
+      "price": "20.00"
     },
     {
       "it": "Spigola arrosto",
       "en": "Roasted Seabass",
-      "price": "20.00"
+      "price": "22.00"
     },
     {
-      "it": "Guanciale di Vitello Brasato al Sagrantino",
-      "en": "Braised veal cheek with Sagrantino wine",
-      "price": "24.00"
-    },
-    {
-      "it": "Agnello Tartufato",
-      "en": "Lamb with black truffles",
-      "price": "24.00"
-    },
-    {
-      "it": "Baccalà al Forno con Patate, Ceci e Pomodorini",
-      "en": "Baked salt cod with potatoes, chickpeas, and cherry tomatoes",
+      "it": "Scottadito di Agnello",
+      "en": "Grilled Lamb Chops",
       "price": "22.00"
     }
   ],
@@ -110,11 +105,6 @@
       "it": "Verdure arrosto (peperoni, melanzane e zucchine)",
       "en": "Roasted vegetables",
       "price": "6.00"
-    },
-    {
-      "it": "Radicchio arrosto",
-      "en": "Roasted Radicchio",
-      "price": "6.00"
     }
   ],
   "dolci": [
@@ -131,16 +121,6 @@
     {
       "it": "Panna cotta alla Vaniglia con frutti di bosco cotti al Vino Rosso",
       "en": "Vanilla Panna Cotta with Berries Cooked in Red Wine",
-      "price": "7.00"
-    },
-    {
-      "it": "Semifreddo alle Mandorle e Cioccolato",
-      "en": "Semifreddo with Almonds and Chocolate",
-      "price": "7.00"
-    },
-    {
-      "it": "Pandoro con Crema al Tiramisù",
-      "en": "Pandoro with Tiramisù Cream",
       "price": "7.00"
     }
   ]
