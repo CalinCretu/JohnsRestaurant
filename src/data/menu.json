@@ -8,7 +8,7 @@
     {
       "it": "Bruschetta con Pomodorini Arrosto, Stracciatella Bufala e Basilico fresco",
       "price": "16.00",
-      "en": "Bruschetta with Roasted Cherry Tomatoes, Buffalo Stracciatella, and Fresh Basil"
+      "en": "Bruschetta with Roasted Cherry Tomatoes, Bufala Stracciatella, and Fresh Basil"
     },
     {
       "it": "Carpaccio di Angus al Limone, Rucola e Grana",
@@ -18,6 +18,11 @@
     {
       "it": "Involtino di Salmone affumicato con Peperoni in agrodolce e Salsa Tonnata",
       "en": "Smoked Salmon Roll with sweet and sour Peppers and Tuna fish sauce",
+      "price": "16.00"
+    },
+    {
+      "it": "Prosciutto crudo con tartare di pesca e melone",
+      "en": "Prosciutto with Peach & Melon Tartare",
       "price": "16.00"
     }
   ],
