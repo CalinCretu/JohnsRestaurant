@@ -5,23 +5,29 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/zoom';
 
+import { srcset } from '../../utils/img';
+
 export default {
   name: 'SpecialMenus',
   components: { Swiper, SwiperSlide },
   data() {
     return {
+      // Per ogni menu servono anche le dimensioni reali dell'immagine: senza,
+      // il browser non sa quanto spazio riservare e la griglia "salta" mentre le
+      // foto arrivano. Con w/h l'altezza della cella e' corretta fin da subito.
+      // L'alt descrive l'occasione: prima erano tutti "Menù speciale".
       menus: [
-        '/imgs/menus/Capodanno2024.png',
-        '/imgs/menus/CapodannoCena2024.png',
-        '/imgs/menus/MenuAsporto24Dic.png',
-        '/imgs/menus/MenuPasqua.png',
-        '/imgs/menus/MenuSanValentino.png',
-        '/imgs/menus/MenuVigilia.png',
-        '/imgs/menus/PranzoNatale.png',
-        '/imgs/menus/SanVale.png',
-        '/imgs/menus/CenaCapodanno.png',
-        '/imgs/menus/MenuAsporto31Dic.png',
-        '/imgs/menus/MenuAsportoCapodanno.png',
+        { src: '/imgs/menus/Capodanno2024.webp', w: 694, h: 872, alt: 'Menù di Capodanno 2024' },
+        { src: '/imgs/menus/CapodannoCena2024.webp', w: 694, h: 870, alt: 'Cena di Capodanno 2024' },
+        { src: '/imgs/menus/MenuAsporto24Dic.webp', w: 695, h: 870, alt: "Menù d'asporto del 24 dicembre" },
+        { src: '/imgs/menus/MenuPasqua.webp', w: 694, h: 872, alt: 'Menù di Pasqua' },
+        { src: '/imgs/menus/MenuSanValentino.webp', w: 695, h: 870, alt: 'Menù di San Valentino' },
+        { src: '/imgs/menus/MenuVigilia.webp', w: 697, h: 871, alt: 'Menù della Vigilia di Natale' },
+        { src: '/imgs/menus/PranzoNatale.webp', w: 697, h: 870, alt: 'Pranzo di Natale' },
+        { src: '/imgs/menus/SanVale.webp', w: 695, h: 871, alt: 'Menù di San Valentino, seconda proposta' },
+        { src: '/imgs/menus/CenaCapodanno.webp', w: 871, h: 870, alt: 'Cena di Capodanno' },
+        { src: '/imgs/menus/MenuAsporto31Dic.webp', w: 870, h: 872, alt: "Menù d'asporto del 31 dicembre" },
+        { src: '/imgs/menus/MenuAsportoCapodanno.webp', w: 869, h: 872, alt: "Menù d'asporto di Capodanno" },
       ],
       lightboxOpen: false,
       activeIndex: 0,
@@ -41,6 +47,7 @@ export default {
     window.removeEventListener('keydown', this.onKey);
   },
   methods: {
+    srcset,
     openLightbox(i) {
       this.activeIndex = i;
       this.currentIndex = i;
@@ -78,7 +85,16 @@ export default {
         data-aos="fade-up"
         :data-aos-delay="(i % 3) * 100"
       >
-        <img :src="menu" alt="Menù speciale" loading="lazy" />
+        <img
+          :src="menu.src"
+          :srcset="srcset(menu.src, menu.w)"
+          sizes="(max-width: 900px) 95vw, 400px"
+          :alt="menu.alt"
+          :width="menu.w"
+          :height="menu.h"
+          loading="lazy"
+          decoding="async"
+        />
         <span class="mcard__zoom"><font-awesome-icon icon="expand" /></span>
       </button>
     </div>
@@ -90,7 +106,7 @@ export default {
           <!-- Barra superiore: contatore + chiudi -->
           <div class="lightbox__bar">
             <span class="lightbox__counter">{{ currentIndex + 1 }} / {{ menus.length }}</span>
-            <button class="lightbox__close" @click="closeLightbox" aria-label="Chiudi">
+            <button class="lightbox__close" @click="closeLightbox" :aria-label="$t('a11y.close')">
               <font-awesome-icon icon="xmark" />
             </button>
           </div>
@@ -110,14 +126,14 @@ export default {
             <SwiperSlide v-for="(menu, i) in menus" :key="i">
               <div class="lightbox__slide">
                 <div class="swiper-zoom-container">
-                  <img :src="menu" alt="Menù speciale" />
+                  <img :src="menu.src" :alt="menu.alt" :width="menu.w" :height="menu.h" />
                 </div>
               </div>
             </SwiperSlide>
           </Swiper>
 
           <p class="lightbox__hint">
-            <font-awesome-icon icon="expand" /> Tocca due volte o pizzica per ingrandire
+            <font-awesome-icon icon="expand" /> {{ $t('speciali.zoom_hint') }}
           </p>
         </div>
       </transition>

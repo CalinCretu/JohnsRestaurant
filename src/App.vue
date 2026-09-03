@@ -2,6 +2,7 @@
 import AOS from 'aos';
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
+import { updateHead } from './utils/head';
 
 export default {
   name: 'App',
@@ -17,16 +18,27 @@ export default {
   watch: {
     // Ad ogni cambio pagina ricalcola le animazioni sui nuovi elementi
     $route() {
+      this.refreshHead();
       this.$nextTick(() => AOS.refresh());
+    },
+    // Cambiando lingua devono cambiare anche titolo, descrizione e attributo lang
+    '$i18n.locale'() {
+      this.refreshHead();
     },
   },
   mounted() {
+    this.refreshHead();
     window.addEventListener('scroll', this.handleScroll, { passive: true });
   },
   unmounted() {
     window.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
+    // Titolo, descrizione, canonical e tag social della pagina corrente.
+    // La funzione di traduzione va passata in una arrow per non perdere il this.
+    refreshHead() {
+      updateHead(this.$route, (key) => this.$t(key), this.$i18n.locale);
+    },
     handleScroll() {
       this.isHeaderSmall = window.scrollY > 20;
     },

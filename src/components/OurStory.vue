@@ -1,6 +1,9 @@
 <script>
+import { srcset } from '../utils/img';
+
 export default {
   name: 'OurStory',
+  methods: { srcset },
 };
 </script>
 
@@ -8,7 +11,14 @@ export default {
   <section class="story">
     <div class="story__grid container">
       <div class="story__media" data-aos="fade-right">
-        <img src="/imgs/photos/RestaurantFoto.jpeg" alt="John's Restaurant, Todi" />
+        <img
+          src="/imgs/photos/RestaurantFoto.webp"
+          :srcset="srcset('/imgs/photos/RestaurantFoto.webp', 1024)"
+          sizes="(max-width: 900px) 95vw, 580px"
+          alt="John's Restaurant, Todi"
+          loading="lazy"
+          decoding="async"
+        />
         <div class="story__badge">
           <span>Est.</span>
           <strong>Todi</strong>

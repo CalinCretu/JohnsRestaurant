@@ -7,6 +7,140 @@ qui annoterò le modifiche effettuate per tenere traccia del lavoro svolto.
 
 <!-- Le voci più recenti vanno in cima -->
 
+## 2026-09-03 — Immagini WebP, SEO per pagina, form di prenotazione
+
+**Immagini convertite in WebP (`scripts/optimize-images.mjs`)**
+- Lo script ora lavora in **due fasi**: (1) ricompressione in-place di `logos/` e
+  dell'immagine social, che devono restare JPG/PNG perché da lì si generano favicon,
+  icone PWA e anteprime dei link; (2) conversione in **WebP** di `photos/`, `menus/`
+  e `scuola/`. Molte di quelle foto erano salvate in PNG — un formato pensato per la
+  grafica, non per le fotografie — e pesavano diverse volte tanto.
+- Qualità più alta per i menù (84 contro 80): sono fotografie di testo stampato e
+  devono restare leggibili quando il cliente ingrandisce.
+- `makeIcons()` e `makeOgImage()` spostati **prima** della conversione, perché leggono
+  gli originali che la fase WebP rimuove; `makeOgImage()` ora accetta sia
+  `PanoramaTodi.png` sia `.webp`, così è rieseguibile.
+- `sharp.cache(false)`: su Windows la cache teneva aperto il file e impediva di
+  cancellare l'originale.
+- Nuovo flag: `npm run optimize-images -- --keep` converte senza rimuovere gli originali.
+- **33 immagini convertite**, riferimenti aggiornati in `Cards.vue`, `Hero.vue`,
+  `OurStory.vue`, `Welcome.vue`, `School.vue`, `SpecialMenus.vue`. Rimossi
+  `Maps.png`, `ScuolaGruppi.png` e `ScuolaPer8.png`: non erano usati da nessuna parte.
+- `public/imgs`: **6,6 MB → 2,6 MB** (−61%).
+
+**SEO: titolo e descrizione per ogni pagina (`src/utils/head.js`, nuovo)**
+- Problema: il sito è una single-page application, quindi `/menu`, `/vini` e `/school`
+  mostravano tutti **titolo e descrizione della home**, sia nei risultati di ricerca
+  sia nell'anteprima dei link condivisi su WhatsApp e social.
+- `updateHead()` riscrive a ogni cambio pagina: `<title>`, `description`, `canonical`,
+  `og:title`/`og:description`/`og:url`/`og:locale`, `twitter:title`/`twitter:description`
+  e l'attributo `lang` di `<html>` (conta per i motori di ricerca e per la pronuncia
+  degli screen reader). I tag vengono creati se mancano e poi solo aggiornati: nessun
+  duplicato a furia di navigare.
+- Testi in `main.js` sotto la chiave `seo` (**IT ed EN**), una coppia titolo/descrizione
+  per ognuna delle 7 rotte; quelli della home ripetono `index.html` così non cambiano
+  al primo caricamento.
+- `router.js`: ogni rotta ha `meta: { titleKey, descKey }`.
+- `App.vue`: `refreshHead()` richiamata al mount, a ogni cambio rotta e **a ogni cambio
+  lingua** (prima il titolo sarebbe rimasto in italiano passando a inglese).
+- Aggiunto `<meta name="robots">`: `noindex, follow` sulla pagina 404, `index, follow`
+  altrove. Serve perché il server della SPA risponde 200 anche su URL inesistenti e
+  Google potrebbe indicizzarli.
+
+**Form di prenotazione (`Contacts.vue`)**
+- Testi portati su i18n (nuova sezione `form`, IT/EN). Il messaggio WhatsApp resta in
+  italiano: lo legge il ristorante, non il cliente.
+- **Fix data**: `toISOString()` restituisce la data in UTC, quindi dopo mezzanotte
+  proponeva il giorno precedente. Ora si usa la data locale, e `min` impedisce di
+  scegliere una data già passata.
+- Rimossa la validazione con `alert()` (bloccante e sgradevole), sostituita da
+  `type="number"` con `min`/`max`/`step`. Il campo telefono usa `inputmode="tel"`:
+  apre il tastierino sui cellulari ma continua ad accettare "+" e spazi.
+- Accessibilità: `label for`/`id` su ogni campo, `autocomplete`, `role="status"` sul
+  messaggio di conferma. Aggiunto `noopener` all'apertura di WhatsApp.
+
+**Alleggerimento del caricamento**
+- `main.js`: le icone Font Awesome importate erano **28, quelle usate 8** — le altre
+  (chitarre, batteria, Spotify, YouTube…) erano rimaste dal template di partenza.
+  Tenute solo quelle usate: bundle JS −12 KB.
+- `router.js`: le pagine interne (menù, vini, speciali, scuola, contatti, 404) ora si
+  caricano **solo quando servono**. Chi apre la home non scarica più anche il loro
+  codice: **JS 421 → 371 KB, CSS 73 → 57 KB** (−17 KB gzip). Sulla home restano Vue,
+  i18n, AOS e Swiper, che serve alle recensioni.
+
+**Revisione generale: peso, SEO tecnica, accessibilità**
+
+*Favicon* — conteneva una sola immagine 256×256 in bitmap non compressa: **264 KB**,
+scaricati a ogni visita, più della foto di sfondo della home. Ora `optimize-images.mjs`
+genera un `.ico` con quattro PNG (16/32/48/64 px): **3 KB**. L'immagine è la stessa,
+verificata pixel per pixel contro quella precedente.
+
+*Logo* — nella barra si vede a 68 px ma si scaricava il file da 1457 px (28 KB su ogni
+pagina). Aggiunta una versione da 320 px: **5 KB**.
+
+*Immagini responsive* — le foto arrivavano sempre a piena risoluzione: da telefono si
+scaricava una foto da 1440 px per mostrarla in un riquadro da 240. Lo script genera ora
+una variante `-640.webp` per ogni immagine sopra i 640 px (30 file), e i componenti usano
+`srcset` + `sizes` (`src/utils/img.js`). Escluso il panorama dell'hero: è largo e basso
+(2000×384) e usato con `cover` in un riquadro alto, quindi ridotto verrebbe sgranato.
+Misurato su schermo da 390 px: home **1272 → 790 KB**, menù speciali **583 → 416 KB**,
+scuola **183 → 62 KB**. Verificato a densità 1×, 2× e 3×: dove serve più risoluzione il
+browser risale da solo all'originale, quindi la qualità non cala mai.
+
+*Salti di layout (CLS)* — le rotte caricate su richiesta facevano comparire prima header
+e footer e poi il contenuto: misurato **0,38 su /menu** (Google considera "scarso" oltre
+0,25). Risolto montando l'app dopo `router.isReady()` in `main.js`: la pagina appare tutta
+insieme. Sui menù speciali la griglia non riservava spazio perché le altezze dipendevano
+dalle immagini: aggiunti `width`/`height` reali a ogni menù (**0,32 → 0,00**).
+Valori finali su tutte le pagine: da 0,00 a 0,02.
+
+*Preload dell'immagine dell'hero* — è uno sfondo CSS, quindi il browser la scopriva solo
+dopo che Vue aveva creato l'elemento: partiva a **213 ms** invece di 15. Aggiunto un header
+`Link: rel=preload` in `netlify.toml` **solo per `/`**, così le altre pagine non la
+scaricano inutilmente. Aggiunta anche la cache lunga per `/assets/*` (file con hash nel
+nome, non cambiano mai).
+
+*robots.txt e sitemap.xml* (nuovi) — mancavano entrambi. La sitemap elenca le 6 pagine
+indicizzabili (verificato che corrispondano alle rotte del router); `robots.txt` esclude
+`/admin/` e indica la sitemap.
+
+*Font* — si chiedevano a Google 15 varianti, ne servono 8: i pesi 300 e 600 non compaiono
+in nessun punto del progetto. Il foglio di stile dei font, che blocca il rendering, passa
+da **27,6 a 14,5 KB**. Aggiunto invece il peso 700 di Jost, che mancava: i prezzi della
+scuola (`<strong>`) venivano ingrossati artificialmente dal browser.
+
+*Testi alternativi* — le 16 foto della galleria avevano tutte lo stesso `alt` ("Specialità
+di John's Restaurant") e gli 11 menù speciali "Menù speciale". Ora ognuna ha la propria
+descrizione, scritta guardando le immagini una per una.
+
+*Accessibilità e traduzioni* — il menu mobile ora si chiude con **Esc** (come già faceva la
+lightbox) e dichiara `aria-expanded`/`aria-controls`; le etichette "Chiudi" e "Apri il menu"
+e il suggerimento "tocca due volte per ingrandire" erano in italiano fisso anche in inglese,
+ora sono tradotti; nel menù l'avviso celiachia usava un `<h3>` subito dopo l'`<h1>`,
+saltando un livello (ora `<h2>`, resa grafica identica).
+
+**Verifiche di questa revisione:** fotografia completa delle 7 pagine prima e dopo
+(titolo, descrizione, canonical, robots, lingua, testo, intestazioni, link, immagini,
+errori) con confronto riga per riga: **le uniche differenze sono quelle volute**. Inoltre:
+CLS misurato pagina per pagina a cache fredda e calda; risoluzione delle immagini scelte a
+densità 1×/2×/3×; apertura e chiusura con Esc di menu mobile e lightbox (confermate anche
+con screenshot); stampa PDF di menù e vini rigenerata (4 e 7 pagine, solo testo, senza
+navbar né footer); `robots.txt` e `sitemap.xml` serviti correttamente; `netlify.toml`
+validato con un parser TOML.
+
+**Restano aperti (non fatti):** le pagine in inglese non hanno URL propri, quindi Google
+indicizza solo la versione italiana — risolverlo richiede URL tipo `/en/menu` con
+`hreflang`. Inoltre in `Vini.vue` e `Menu.vue` alcune intestazioni ("Lista dei Vini",
+"Al Calice", "Birre", "Bevande", "Caricamento...") sono in italiano fisso e non seguono il
+cambio lingua.
+
+
+**Verifiche:** `npm run build` ok; controllo in Chrome headless di tutte le rotte
+(titolo, descrizione, canonical, robots, `lang`) in italiano e in inglese, del cambio
+lingua a pagina aperta e della navigazione successiva.
+
+---
+
 ## 2026-06-18 — Stampa PDF menù/vini, layout di stampa e privacy recensioni
 
 **Pulsante "Scarica PDF" (menù e vini)**

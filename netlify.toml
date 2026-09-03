@@ -4,3 +4,19 @@
 
 [build.environment]
   NODE_VERSION = "20"
+
+# L'immagine di sfondo della home è dichiarata nel CSS, quindi il browser la scopre
+# solo dopo che Vue ha creato l'elemento: misurata, partiva a 213 ms invece che a 15 ms.
+# Questo header la fa partire subito, prima ancora che l'HTML venga letto.
+# Vale solo per "/": sulle altre pagine l'immagine non serve e non va scaricata.
+[[headers]]
+  for = "/"
+  [headers.values]
+    Link = "</imgs/photos/PanoramaTodi.webp>; rel=preload; as=image"
+
+# I file con hash nel nome (assets/index-a1b2c3.js) non cambiano mai contenuto:
+# possono restare in cache per sempre. Netlify di suo usa una cache più prudente.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

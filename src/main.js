@@ -6,14 +6,33 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faUserSecret, faExpand, faCircleXmark, faDrum, faCompactDisc, faHeadphones, faMusic, faCloud, faGuitar, faRocket, faTrophy, faCalendarDays, faPhone, faEnvelope, faLocationDot, faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
-import { faUser, faHeart, faCirclePlay, } from '@fortawesome/free-regular-svg-icons'
-import { faOpencart, faSpotify, faYoutube, faSafari, faInstagram, faFacebook, faTwitter, faSquareFacebook } from '@fortawesome/free-brands-svg-icons'
-library.add(faUserSecret, faUser, faHeart, faOpencart, faExpand, faCircleXmark, faCirclePlay, faDrum, faCompactDisc, faHeadphones, faSpotify, faYoutube, faSafari, faMusic, faCloud, faGuitar, faRocket, faTrophy, faCalendarDays, faInstagram, faFacebook, faTwitter, faPhone, faEnvelope, faLocationDot, faBars, faSquareFacebook, faXmark)
+import { faExpand, faCalendarDays, faPhone, faLocationDot, faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 
+import { faInstagram, faSquareFacebook } from '@fortawesome/free-brands-svg-icons'
+library.add(faExpand, faCalendarDays, faPhone, faLocationDot, faBars, faXmark, faInstagram, faSquareFacebook)
 
 const messages = {
   it: {
+    // Titolo e descrizione di ogni pagina: il sito e' una single-page application,
+    // quindi il <head> viene riscritto lato client da src/utils/head.js.
+    // Il testo di "home" ripete quello di index.html: cosi' non cambia
+    // al primo caricamento.
+    seo: {
+      home_title: "John's Restaurant · Todi — Cucina italiana e umbra dello Chef John Paterson",
+      home_desc: "John's Restaurant a Todi (Umbria): cucina italiana e umbra dello Chef John Paterson. Menù, carta dei vini, menù speciali e scuola di cucina.",
+      menu_title: "Menù · John's Restaurant, Todi",
+      menu_desc: "Il menù di John's Restaurant a Todi: antipasti, primi, secondi e dolci della tradizione umbra e italiana, con materie prime del territorio.",
+      vini_title: "Carta dei vini · John's Restaurant, Todi",
+      vini_desc: "La carta dei vini di John's Restaurant a Todi: etichette dell'Umbria e del resto d'Italia, scelte per accompagnare i piatti dello Chef.",
+      speciali_title: "Menù speciali · John's Restaurant, Todi",
+      speciali_desc: "I menù per eventi e ricorrenze di John's Restaurant a Todi: Natale, Capodanno, Pasqua, San Valentino e proposte d'asporto.",
+      school_title: "Scuola di cucina · John's Restaurant, Todi",
+      school_desc: "Lezioni di cucina a Todi con lo Chef John Paterson: corsi per gruppi, per due persone o tra amici, con degustazione dei piatti preparati.",
+      contacts_title: "Contatti e prenotazioni · John's Restaurant, Todi",
+      contacts_desc: "Prenota un tavolo da John's Restaurant a Todi: modulo di prenotazione via WhatsApp, telefono, email, indirizzo e mappa.",
+      notfound_title: "Pagina non trovata · John's Restaurant, Todi",
+      notfound_desc: "La pagina che cerchi non esiste o è stata spostata. Torna alla home di John's Restaurant, Todi."
+    },
     buttons: {
       prenotazioni: "Prenota Ora"
     },
@@ -46,6 +65,20 @@ const messages = {
     benvenuti: {
       title: "Benvenuti"
     },
+    form: {
+      title: "Prenota un Tavolo",
+      lead: "Compila il modulo: verrai reindirizzato su WhatsApp con la richiesta già pronta.",
+      name: "Nome",
+      name_ph: "Il tuo nome",
+      phone: "Telefono",
+      phone_ph: "+39 340 000 0000",
+      date: "Data",
+      time: "Ora",
+      guests: "Numero di persone",
+      guests_ph: "Es. 2",
+      submit: "Prenota",
+      sent: "Ti abbiamo reindirizzato su WhatsApp per completare la prenotazione. A presto!"
+    },
     contatti: {
       title: "Contatti"
     },
@@ -71,7 +104,13 @@ const messages = {
     speciali: {
       title: "Menù Speciali",
       subtitle: "(Solo per eventi)",
-      paragraph: "Benvenuto nella nostra sezione dedicata agli esempi di menù per eventi speciali! Qui potrai trovare ispirazione per creare il menu perfetto per qualsiasi occasione."
+      paragraph: "Benvenuto nella nostra sezione dedicata agli esempi di menù per eventi speciali! Qui potrai trovare ispirazione per creare il menu perfetto per qualsiasi occasione.",
+      zoom_hint: "Tocca due volte o pizzica per ingrandire"
+    },
+    // Etichette lette solo dagli screen reader o mostrate al posto di un'icona.
+    a11y: {
+      close: "Chiudi",
+      open_menu: "Apri il menu di navigazione"
     },
     cards: {
       menu: "Menù",
@@ -98,6 +137,22 @@ const messages = {
     }
   },
   en: {
+    seo: {
+      home_title: "John's Restaurant · Todi — Italian and Umbrian cooking by Chef John Paterson",
+      home_desc: "John's Restaurant in Todi (Umbria): Italian and Umbrian cooking by Chef John Paterson. Menu, wine list, special menus and cooking school.",
+      menu_title: "Menu · John's Restaurant, Todi",
+      menu_desc: "The menu at John's Restaurant in Todi: starters, first and main courses and desserts from the Umbrian and Italian tradition, with local produce.",
+      vini_title: "Wine list · John's Restaurant, Todi",
+      vini_desc: "The wine list at John's Restaurant in Todi: labels from Umbria and the rest of Italy, chosen to match the Chef's dishes.",
+      speciali_title: "Special menus · John's Restaurant, Todi",
+      speciali_desc: "Menus for events and celebrations at John's Restaurant in Todi: Christmas, New Year's Eve, Easter, Valentine's Day and takeaway.",
+      school_title: "Cooking school · John's Restaurant, Todi",
+      school_desc: "Cooking lessons in Todi with Chef John Paterson: courses for groups, for two, or among friends, with a tasting of the dishes prepared.",
+      contacts_title: "Contacts and bookings · John's Restaurant, Todi",
+      contacts_desc: "Book a table at John's Restaurant in Todi: booking form via WhatsApp, phone, email, address and map.",
+      notfound_title: "Page not found · John's Restaurant, Todi",
+      notfound_desc: "The page you are looking for does not exist or has been moved. Go back to the John's Restaurant home page, Todi."
+    },
     buttons: {
       prenotazioni: "Book Now"
     },
@@ -130,6 +185,20 @@ const messages = {
     benvenuti: {
       title: "Welcome"
     },
+    form: {
+      title: "Book a Table",
+      lead: "Fill in the form: you will be redirected to WhatsApp with your request ready to send.",
+      name: "Name",
+      name_ph: "Your name",
+      phone: "Phone",
+      phone_ph: "+39 340 000 0000",
+      date: "Date",
+      time: "Time",
+      guests: "Number of guests",
+      guests_ph: "e.g. 2",
+      submit: "Book",
+      sent: "We have redirected you to WhatsApp to complete your booking. See you soon!"
+    },
     contatti: {
       title: "Contacts"
     },
@@ -155,7 +224,12 @@ const messages = {
     speciali: {
       title: "Special Menus",
       subtitle: "(Only for events)",
-      paragraph: "Welcome to our page dedicated to sample menus for special events! Here you can find inspiration for creating the perfect menu for any occasion."
+      paragraph: "Welcome to our page dedicated to sample menus for special events! Here you can find inspiration for creating the perfect menu for any occasion.",
+      zoom_hint: "Double-tap or pinch to zoom"
+    },
+    a11y: {
+      close: "Close",
+      open_menu: "Open the navigation menu"
     },
     cards: {
       menu: "Menu",
@@ -201,8 +275,12 @@ AOS.init({
   disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
 });
 
-createApp(App)
+const app = createApp(App)
   .use(router)
   .use(i18n)
   .component('font-awesome-icon', FontAwesomeIcon)
-  .mount('#app')
+
+// Le pagine si caricano su richiesta (vedi router.js). Montando subito, comparirebbero
+// prima header e footer e solo dopo il contenuto, con un salto visibile della pagina.
+// Aspettando che il router abbia risolto la rotta iniziale, tutto appare insieme.
+router.isReady().then(() => app.mount('#app'))

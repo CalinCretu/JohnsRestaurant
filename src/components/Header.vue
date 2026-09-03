@@ -3,7 +3,9 @@ export default {
   name: 'Header',
   data() {
     return {
-      logo: '/imgs/logos/Logo_Johns.jpg',
+      // Il logo si vede a 68 px nella barra: basta la versione da 320 px
+      // (5 KB invece di 28, su ogni pagina).
+      logo: '/imgs/logos/Logo_Johns-320.jpg',
       isModalOpen: false,
     };
   },
@@ -11,10 +13,15 @@ export default {
     // Blocca lo scroll della pagina mentre il menu mobile è aperto
     isModalOpen(open) {
       document.body.style.overflow = open ? 'hidden' : '';
+      // Esc chiude il pannello: è quello che ci si aspetta da un pannello a
+      // scomparsa, e la lightbox dei menù speciali si comporta già così.
+      if (open) window.addEventListener('keydown', this.onKey);
+      else window.removeEventListener('keydown', this.onKey);
     },
   },
   unmounted() {
     document.body.style.overflow = '';
+    window.removeEventListener('keydown', this.onKey);
   },
   methods: {
     toggleLanguage() {
@@ -25,6 +32,9 @@ export default {
     },
     closeModal() {
       this.isModalOpen = false;
+    },
+    onKey(e) {
+      if (e.key === 'Escape') this.closeModal();
     },
   },
 };
@@ -61,16 +71,22 @@ export default {
     </div>
 
     <!-- Burger mobile -->
-    <button class="bar__burger" @click="openModal" aria-label="Menu">
+    <button
+      class="bar__burger"
+      @click="openModal"
+      :aria-label="$t('a11y.open_menu')"
+      aria-controls="menu-mobile"
+      :aria-expanded="isModalOpen ? 'true' : 'false'"
+    >
       <font-awesome-icon icon="bars" />
     </button>
 
     <!-- Pannello mobile laterale, vetro liquido (Teleport nel body: esce dall'header con backdrop-filter) -->
     <Teleport to="body">
-      <div class="m-menu" :class="{ show: isModalOpen }">
+      <div id="menu-mobile" class="m-menu" :class="{ show: isModalOpen }">
         <div class="m-menu__backdrop" @click="closeModal"></div>
         <aside class="m-menu__panel">
-          <button class="m-menu__close" @click="closeModal" aria-label="Chiudi">
+          <button class="m-menu__close" @click="closeModal" :aria-label="$t('a11y.close')">
             <font-awesome-icon icon="xmark" />
           </button>
           <nav class="m-menu__nav">

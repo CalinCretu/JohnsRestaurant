@@ -1,30 +1,52 @@
 <script>
 export default {
+  name: 'Contacts',
   data() {
     return {
       reservation: {
         name: '',
         phone: '',
-        date: new Date().toISOString().substr(0, 10),
-        time: new Date().toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }),
-        guests: '',
+        date: '',
+        time: '20:00',
+        guests: '2',
       },
       messageVisible: false,
     };
   },
-  methods: {
-    submitReservation() {
-      const message = `Buongiorno! Vorrei prenotare un tavolo presso il vostro ristorante. Ecco i dettagli:\n\nNome: ${this.reservation.name}\nTelefono: ${this.reservation.phone}\nData: ${this.reservation.date}\nOra: ${this.reservation.time}\nNumero di Persone: ${this.reservation.guests}\n\nGrazie!`;
-      const whatsappUrl = `https://api.whatsapp.com/send?phone=393408184775&text=${encodeURIComponent(message)}`;
-      window.open(whatsappUrl, '_blank');
-      this.messageVisible = true;
+  computed: {
+    // Impedisce di selezionare una data gia' passata.
+    today() {
+      return this.toDateInput(new Date());
     },
-    validateNumber(event) {
-      const value = event.target.value;
-      if (isNaN(value)) {
-        alert('Inserisci un numero');
-        event.target.value = '';
-      }
+  },
+  created() {
+    this.reservation.date = this.toDateInput(new Date());
+  },
+  methods: {
+    // toISOString() restituisce la data in UTC: in Italia, dopo mezzanotte,
+    // proporrebbe il giorno precedente. Qui si usa la data locale.
+    toDateInput(d) {
+      const pad = (n) => String(n).padStart(2, '0');
+      return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+    },
+    submitReservation() {
+      const r = this.reservation;
+      // Il messaggio resta in italiano: lo legge il ristorante, non il cliente.
+      // Template literal su piu' righe: il messaggio arriva su WhatsApp
+      // gia' formattato, senza sequenze di escape.
+      const message = `Buongiorno! Vorrei prenotare un tavolo presso il vostro ristorante. Ecco i dettagli:
+
+Nome: ${r.name}
+Telefono: ${r.phone}
+Data: ${r.date}
+Ora: ${r.time}
+Numero di Persone: ${r.guests}
+
+Grazie!`;
+      const whatsappUrl =
+        'https://api.whatsapp.com/send?phone=393408184775&text=' + encodeURIComponent(message);
+      window.open(whatsappUrl, '_blank', 'noopener');
+      this.messageVisible = true;
     },
   },
 };
@@ -34,41 +56,45 @@ export default {
   <section class="reserve">
     <div class="reserve__card" data-aos="fade-up">
       <p class="eyebrow">{{ $t('contatti.title') }}</p>
-      <h1 class="reserve__title">Prenota un Tavolo</h1>
+      <h1 class="reserve__title">{{ $t('form.title') }}</h1>
       <hr class="rule reserve__rule" />
       <p class="reserve__lead">
-        Compila il modulo: verrai reindirizzato su WhatsApp con la richiesta già pronta.
+        {{ $t('form.lead') }}
       </p>
 
       <form class="reserve__form" @submit.prevent="submitReservation">
         <div class="field">
-          <label>Nome</label>
-          <input type="text" v-model="reservation.name" placeholder="Il tuo nome" required />
+          <label for="res-name">{{ $t('form.name') }}</label>
+          <input id="res-name" type="text" v-model.trim="reservation.name"
+            :placeholder="$t('form.name_ph')" autocomplete="name" required />
         </div>
         <div class="field">
-          <label>Telefono</label>
-          <input type="tel" v-model="reservation.phone" placeholder="Numero di telefono" @input="validateNumber" required />
+          <label for="res-phone">{{ $t('form.phone') }}</label>
+          <!-- inputmode apre il tastierino sui telefoni ma accetta "+" e spazi -->
+          <input id="res-phone" type="tel" inputmode="tel" v-model.trim="reservation.phone"
+            :placeholder="$t('form.phone_ph')" autocomplete="tel" required />
         </div>
         <div class="field field--half">
-          <label>Data</label>
-          <input type="date" v-model="reservation.date" required />
+          <label for="res-date">{{ $t('form.date') }}</label>
+          <input id="res-date" type="date" v-model="reservation.date" :min="today" required />
         </div>
         <div class="field field--half">
-          <label>Ora</label>
-          <input type="time" v-model="reservation.time" required />
+          <label for="res-time">{{ $t('form.time') }}</label>
+          <input id="res-time" type="time" v-model="reservation.time" required />
         </div>
         <div class="field">
-          <label>Numero di persone</label>
-          <input type="number" min="1" v-model="reservation.guests" placeholder="Es. 2" @input="validateNumber" required />
+          <label for="res-guests">{{ $t('form.guests') }}</label>
+          <input id="res-guests" type="number" min="1" max="60" step="1"
+            v-model="reservation.guests" :placeholder="$t('form.guests_ph')" required />
         </div>
         <button class="btn btn--solid reserve__submit" type="submit">
-          Prenota
+          {{ $t('form.submit') }}
         </button>
       </form>
 
       <transition name="fade">
-        <p v-if="messageVisible" class="reserve__ok">
-          Ti abbiamo reindirizzato su WhatsApp per completare la prenotazione. A presto!
+        <p v-if="messageVisible" class="reserve__ok" role="status">
+          {{ $t('form.sent') }}
         </p>
       </transition>
     </div>
@@ -76,7 +102,7 @@ export default {
     <div class="reserve__map" data-aos="fade-up">
       <iframe
         src="https://maps.google.com/maps?q=42.7835275,12.4260127&z=16&hl=it&output=embed"
-        title="Mappa John's Restaurant Todi"
+        title="Mappa: John's Restaurant, Todi"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
         allowfullscreen

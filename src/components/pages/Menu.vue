@@ -26,7 +26,7 @@ export default {
       <hr class="rule menu__rule" />
       <p class="menu__intro">{{ $t('menu.paragraph') }}</p>
       <div class="menu__celiac">
-        <h3>{{ $t('menu.secondTitle') }}</h3>
+        <h2>{{ $t('menu.secondTitle') }}</h2>
         <p>{{ $t('menu.secondParagraph') }}</p>
       </div>
       <p class="menu__sign">Grazie, Chef John Paterson</p>
@@ -77,7 +77,7 @@ export default {
 
   <div v-else class="loading">
     <p>Caricamento...</p>
-    <img src="/imgs/logos/Logo_Johns.jpg" alt="" />
+    <img src="/imgs/logos/Logo_Johns-320.jpg" alt="" />
   </div>
 </template>
 
@@ -113,7 +113,7 @@ export default {
   &__celiac {
     margin-top: 1.6rem;
 
-    h3 {
+    h2 {
       font-family: var(--font-display);
       font-size: 1.4rem;
       color: var(--ink);

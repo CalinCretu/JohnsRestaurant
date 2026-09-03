@@ -98,7 +98,7 @@ export default {
 
   <div v-else class="loading">
     <p>Caricamento...</p>
-    <img src="/imgs/logos/Logo_Johns.jpg" alt="" />
+    <img src="/imgs/logos/Logo_Johns-320.jpg" alt="" />
   </div>
 </template>
 

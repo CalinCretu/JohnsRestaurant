@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Elenco delle pagine del sito per i motori di ricerca.
+  Il sito è una single-page application: senza questo file Google trova solo la home
+  e deve scoprire le altre pagine seguendo i link.
+
+  Se in futuro si aggiunge una pagina in src/router.js, va aggiunta anche qui.
+  Non si mette la 404: è marcata "noindex".
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://johnpatersontodi.com/</loc></url>
+  <url><loc>https://johnpatersontodi.com/menu</loc></url>
+  <url><loc>https://johnpatersontodi.com/vini</loc></url>
+  <url><loc>https://johnpatersontodi.com/specialmenus</loc></url>
+  <url><loc>https://johnpatersontodi.com/school</loc></url>
+  <url><loc>https://johnpatersontodi.com/contacts</loc></url>
+</urlset>

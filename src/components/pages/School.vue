@@ -1,11 +1,14 @@
 <script>
+import { srcset } from '../../utils/img';
+
 export default {
   name: 'School',
   data() {
     return {
       cards: [
         {
-          img: '/imgs/scuola/ScuolaGruppi2.png',
+          img: '/imgs/scuola/ScuolaGruppi2.webp',
+          w: 1173,
           price: '100',
           note: 'school.note_1',
           title: 'school.card_title_1',
@@ -14,7 +17,8 @@ export default {
           text: 'school.card_text_1',
         },
         {
-          img: '/imgs/scuola/ScuolaPer2.png',
+          img: '/imgs/scuola/ScuolaPer2.webp',
+          w: 930,
           price: '150',
           note: 'school.note_2',
           title: 'school.card_title_2',
@@ -23,7 +27,8 @@ export default {
           text: 'school.card_text_2',
         },
         {
-          img: '/imgs/scuola/ScuolaGruppi8Persone.png',
+          img: '/imgs/scuola/ScuolaGruppi8Persone.webp',
+          w: 1530,
           price: '200',
           note: 'school.note_3',
           title: 'school.card_title_3',
@@ -34,6 +39,7 @@ export default {
       ],
     };
   },
+  methods: { srcset },
 };
 </script>
 
@@ -48,9 +54,13 @@ export default {
     </header>
 
     <div class="school__video" data-aos="fade-up">
+      <!-- youtube-nocookie: stesso video, ma senza cookie di tracciamento finche' non si
+           preme play (evita il banner cookie). loading=lazy: il player pesa circa 1 MB e
+           non deve essere scaricato all'apertura della pagina. -->
       <iframe
-        src="https://www.youtube.com/embed/uVBl0CqQlTQ"
-        title="Cooking School"
+        src="https://www.youtube-nocookie.com/embed/uVBl0CqQlTQ"
+        title="La scuola di cucina dello Chef John Paterson a Todi"
+        loading="lazy"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
@@ -67,7 +77,14 @@ export default {
       >
         <div class="ecard__media">
           <span class="ecard__note">{{ $t(card.note) }}</span>
-          <img :src="card.img" :alt="$t(card.title)" />
+          <img
+            :src="card.img"
+            :srcset="srcset(card.img, card.w)"
+            sizes="(max-width: 900px) 95vw, 400px"
+            :alt="$t(card.title)"
+            loading="lazy"
+            decoding="async"
+          />
           <span class="ecard__price">
             <strong>&euro; {{ card.price }}</strong>
             <em>{{ $t('school.price') }}</em>

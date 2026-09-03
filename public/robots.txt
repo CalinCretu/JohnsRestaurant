@@ -1,0 +1,8 @@
+# Tutti i motori di ricerca possono visitare il sito.
+User-agent: *
+Allow: /
+
+# Il pannello di gestione menù non va indicizzato: è area riservata.
+Disallow: /admin/
+
+Sitemap: https://johnpatersontodi.com/sitemap.xml

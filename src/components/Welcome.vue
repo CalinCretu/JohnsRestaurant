@@ -45,7 +45,7 @@ export default {
   &__media {
     position: absolute;
     inset: 0;
-    background-image: url("/imgs/photos/PanoramaTodi.png");
+    background-image: url("/imgs/photos/PanoramaTodi.webp");
     background-size: cover;
     background-position: center;
     transform: scale(1.05);
@@ -178,7 +178,7 @@ export default {
     height: 90vh;
 
     &__media {
-      background-image: url("/imgs/photos/RestaurantFoto.jpeg");
+      background-image: url("/imgs/photos/RestaurantFoto.webp");
     }
   }
 }

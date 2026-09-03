@@ -1,6 +1,9 @@
 <script>
+import { srcset } from '../utils/img';
+
 export default {
   name: 'CuisineCards',
+  methods: { srcset },
 };
 </script>
 
@@ -15,7 +18,15 @@ export default {
 
       <div class="cuisine__cards">
         <router-link class="feature" :to="{ name: 'menu' }" data-aos="fade-up">
-          <img class="feature__img" src="/imgs/photos/TagliataAlSangue.png" alt="" />
+          <img
+            class="feature__img"
+            src="/imgs/photos/TagliataAlSangue.webp"
+            :srcset="srcset('/imgs/photos/TagliataAlSangue.webp', 902)"
+            sizes="(max-width: 900px) 95vw, 620px"
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
           <div class="feature__overlay"></div>
           <div class="feature__body">
             <h3 class="feature__title">{{ $t('cards.menu') }}</h3>
@@ -24,7 +35,15 @@ export default {
         </router-link>
 
         <router-link class="feature" :to="{ name: 'vini' }" data-aos="fade-up" data-aos-delay="120">
-          <img class="feature__img" src="/imgs/photos/Vineria.png" alt="" />
+          <img
+            class="feature__img"
+            src="/imgs/photos/Vineria.webp"
+            :srcset="srcset('/imgs/photos/Vineria.webp', 750)"
+            sizes="(max-width: 900px) 95vw, 620px"
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
           <div class="feature__overlay"></div>
           <div class="feature__body">
             <h3 class="feature__title">{{ $t('cards.vini') }}</h3>
