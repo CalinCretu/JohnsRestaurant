@@ -3,62 +3,62 @@
   "vini_rossi": [
     {
       "cantina": "Antinori",
-      "name": "Pinot Nero della Sala 2021 IGT Castello della Sala",
+      "name": "Pinot Nero della Sala IGT Castello della Sala",
       "price": "100.00"
     },
     {
       "cantina": "Antinori",
-      "name": "Pian delle Vigne 2019 DOCG Brunello di Montalcino",
+      "name": "Pian delle Vigne DOCG Brunello di Montalcino",
       "price": "90.00"
     },
     {
       "cantina": "Antinori",
-      "name": "Achelo 2022 DOC Syrah (La Braccesca)",
+      "name": "Achelo DOC Syrah (La Braccesca)",
       "price": "40.00"
     },
     {
       "cantina": "Antinori",
-      "name": "Pèppoli 2022 DOCG Chianti Classico",
+      "name": "Pèppoli DOCG Chianti Classico",
       "price": "40.00"
     },
     {
       "cantina": "Terre dei Capitani",
-      "name": "Montefalco Rosso Riserva 2021 DOC",
+      "name": "Montefalco Rosso Riserva DOC",
       "price": "40.00"
     },
     {
       "cantina": "Tenuta di Nozzole",
-      "name": "Nozzole 2021 DOC Chianti Classico",
+      "name": "Nozzole DOC Chianti Classico",
       "price": "40.00"
     },
     {
       "cantina": "Campo al Mare",
-      "name": "Bolgheri 2022 DOC Rosso",
+      "name": "Bolgheri DOC Rosso",
       "price": "40.00"
     },
     {
       "cantina": "Campo al Mare",
-      "name": "Baia al Vento 2017 DOCG Bolgheri Rosso",
+      "name": "Baia al Vento DOCG Bolgheri Rosso",
       "price": "100.00"
     },
     {
       "cantina": "Tudernum",
-      "name": "Fidenzio 2015 DOCG Montefalco Sagrantino",
+      "name": "Fidenzio DOCG Montefalco Sagrantino",
       "price": "40.00"
     },
     {
       "cantina": "Tudernum",
-      "name": "Rojano 2020 DOC Todi Rosso Superiore",
+      "name": "Rojano DOC Todi Rosso Superiore",
       "price": "30.00"
     },
     {
       "cantina": "Colle delle Querce",
-      "name": "Cabernet Sauvignon 2016",
+      "name": "Cabernet Sauvignon",
       "price": "40.00"
     },
     {
       "cantina": "Argillae",
-      "name": "Sinuoso 2023 IGT Umbria Rosso",
+      "name": "Sinuoso IGT Umbria Rosso",
       "price": "30.00"
     },
     {
@@ -68,22 +68,22 @@
     },
     {
       "cantina": "Peppucci",
-      "name": "L'Altro Io 2018 IGT Umbria Rosso",
+      "name": "L'Altro Io  IGT Umbria Rosso",
       "price": "45.00"
     },
     {
       "cantina": "Peppucci",
-      "name": "Petroro 4 2023 DOC Todi Rosso",
+      "name": "Petroro 4 DOC Todi Rosso",
       "price": "30.00"
     },
     {
       "cantina": "Tenuta Saragano",
-      "name": "Montefalco Rosso 2024 IGT",
+      "name": "Montefalco Rosso IGT",
       "price": "35.00"
     },
     {
       "cantina": "Tenuta Saragano",
-      "name": "Montefalco Sagrantino 2018 DOCG",
+      "name": "Montefalco Sagrantino DOCG",
       "price": "55.00"
     },
     {
@@ -93,72 +93,72 @@
     },
     {
       "cantina": "Tenuta Saragano",
-      "name": "Umbria 2024 IGT",
+      "name": "Umbria IGT",
       "price": "25.00"
     },
     {
       "cantina": "Zazzera",
-      "name": "Settepì 2022 IGP Cabernet Sauvignon",
+      "name": "Settepì IGP Cabernet Sauvignon",
       "price": "35.00"
     },
     {
       "cantina": "Zazzera",
-      "name": "Nerobacco 2022 IGP Merlot",
+      "name": "Nerobacco IGP Merlot",
       "price": "25.00"
     },
     {
       "cantina": "Tenuta La Fuga",
-      "name": "Brunello di Montalcino 2019 DOCG",
+      "name": "Brunello di Montalcino DOCG",
       "price": "80.00"
     },
     {
       "cantina": "Tenuta La Fuga",
-      "name": "Rosso di Montalcino 2023 DOC",
+      "name": "Rosso di Montalcino DOC",
       "price": "50.00"
     },
     {
       "cantina": "Concinnate",
-      "name": "Merlot 2021 Todi DOC",
+      "name": "Merlot Todi DOC",
       "price": "40.00"
     },
     {
       "cantina": "Concinnate",
-      "name": "Sangiovese 2021 Todi DOC",
+      "name": "Sangiovese  Todi DOC",
       "price": "40.00"
     },
     {
       "cantina": "Tenuta Affaitati",
-      "name": "Venantium 2019 IGT Umbria Rosso",
+      "name": "Venantium IGT Umbria Rosso",
       "price": "50.00"
     },
     {
       "cantina": "Tenuta Placidi",
-      "name": "Jagus 2019 IGT Umbria Rosso",
+      "name": "Jagus IGT Umbria Rosso",
       "price": "45.00"
     },
     {
       "cantina": "Tenuta Placidi",
-      "name": "Alias 2021 IGP Umbria Rosso",
+      "name": "Alias IGP Umbria Rosso",
       "price": "35.00"
     },
     {
       "cantina": "Villa Sobrano",
-      "name": "Bapta 2023 IGT Merlot",
+      "name": "Bapta IGT Merlot",
       "price": "25.00"
     },
     {
       "cantina": "Villa Sobrano",
-      "name": "Bartolomeo 2019 IGT Rosso Umbria",
+      "name": "Bartolomeo IGT Rosso Umbria",
       "price": "35.00"
     },
     {
       "cantina": "Benincasa",
-      "name": "I Notabili 2022 DOC Montefalco Rosso",
+      "name": "I Notabili DOC Montefalco Rosso",
       "price": "30.00"
     },
     {
       "cantina": "Benincasa",
-      "name": "I Notabili 2020 DOCG Montefalco Sagrantino",
+      "name": "I Notabili DOCG Montefalco Sagrantino",
       "price": "40.00"
     },
     {
@@ -168,32 +168,32 @@
     },
     {
       "cantina": "Fattoria Milziade Antano",
-      "name": "Montefalco Sagrantino 2024 DOCG",
+      "name": "Montefalco Sagrantino DOCG",
       "price": "55.00"
     },
     {
       "cantina": "Tenuta di Fabbrucciano",
-      "name": "Ciliegiolo 2024 IGT",
+      "name": "Ciliegiolo IGT",
       "price": "30.00"
     },
     {
       "cantina": "Paolo e Noemia d'Amico",
-      "name": "Notturno dei Calanchi 2024 Umbria IGP Pinot Nero",
+      "name": "Notturno dei Calanchi Umbria IGP Pinot Nero",
       "price": "50.00"
     },
     {
       "cantina": "Fina",
-      "name": "Nero d'Avola 2024 DOC Sicilia",
+      "name": "Nero d'Avola DOC Sicilia",
       "price": "25.00"
     },
     {
       "cantina": "San Marzano",
-      "name": "Talò 2023 DOP Primitivo di Manduria",
+      "name": "Talò DOP Primitivo di Manduria",
       "price": "35.00"
     },
     {
       "cantina": "Annesanti",
-      "name": "Valnero 2022 IGT Sangiovese",
+      "name": "Valnero IGT Sangiovese",
       "price": "40.00"
     }
   ],
@@ -217,102 +217,102 @@
   "vini_bianchi": [
     {
       "cantina": "Colle delle Querce",
-      "name": "Chardonnay 2024 IGT",
+      "name": "Chardonnay IGT",
       "price": "36.00"
     },
     {
       "cantina": "Peppucci",
-      "name": "Montorsolo 2023 DOC Grechetto di Todi",
+      "name": "Montorsolo  DOC Grechetto di Todi",
       "price": "28.00"
     },
     {
       "cantina": "Altùris",
-      "name": "Sauvignon 2024 IGP",
+      "name": "Sauvignon IGP",
       "price": "26.00"
     },
     {
       "cantina": "Altùris",
-      "name": "Muller Thurgau 2023 IGP",
+      "name": "Muller Thurgau IGP",
       "price": "26.00"
     },
     {
       "cantina": "Altùris",
-      "name": "Traminer Aromatico 2023 IGP",
+      "name": "Traminer Aromatico IGP",
       "price": "26.00"
     },
     {
       "cantina": "Altùris",
-      "name": "Ribolla Gialla 2023 IGP",
+      "name": "Ribolla Gialla IGP",
       "price": "26.00"
     },
     {
       "cantina": "Villa Sobrano",
-      "name": "Donna Sabina 2020 IGT Grechetto",
+      "name": "Donna Sabina IGT Grechetto",
       "price": "30.00"
     },
     {
       "cantina": "Argillae",
-      "name": "Mater Maris 2025 DOC Orvieto",
+      "name": "Mater Maris DOC Orvieto",
       "price": "30.00"
     },
     {
       "cantina": "Zazzera",
-      "name": "Barbadoro 2023 IGP Grechetto",
+      "name": "Barbadoro IGP Grechetto",
       "price": "25.00"
     },
     {
       "cantina": "Decugnano dei Barbi",
-      "name": "Casapica 2022 IGT Bianco Umbria",
+      "name": "Casapica IGT Bianco Umbria",
       "price": "25.00"
     },
     {
       "cantina": "Tenuta Saragano",
-      "name": "Montefalco Bianco 2023 DOC",
+      "name": "Montefalco Bianco DOC",
       "price": "35.00"
     },
     {
       "cantina": "Tenuta Affaitati",
-      "name": "Campo dei Meli 2023 IGT Umbria Bianco",
+      "name": "Campo dei Meli IGT Umbria Bianco",
       "price": "40.00"
     },
     {
       "cantina": "Campo al Mare",
-      "name": "Vermentino Toscana 2025 DOC Bolgheri",
+      "name": "Vermentino Toscana DOC Bolgheri",
       "price": "30.00"
     },
     {
       "cantina": "Tenuta Placidi",
-      "name": "T'ariì 2023 Sauvignon",
+      "name": "T'ariì Sauvignon",
       "price": "35.00"
     },
     {
       "cantina": "Tenuta Santori",
-      "name": "Pecorino 2024 DOCG",
+      "name": "Pecorino DOCG",
       "price": "30.00"
     },
     {
       "cantina": "Zafferami",
-      "name": "Stille di Bacco 2023 IGT Chardonnay",
+      "name": "Stille di Bacco IGT Chardonnay",
       "price": "30.00"
     },
     {
       "cantina": "Roccafiore",
-      "name": "Fiorfiore 2023 IGT Umbria Grechetto",
+      "name": "Fiorfiore IGT Umbria Grechetto",
       "price": "35.00"
     },
     {
       "cantina": "Tudernum",
-      "name": "Colle Nobile 2021 DOC Grechetto di Todi Superiore",
+      "name": "Colle Nobile DOC Grechetto di Todi Superiore",
       "price": "30.00"
     },
     {
       "cantina": "Tudernum",
-      "name": "Todi Bianco 2024 DOC",
+      "name": "Todi Bianco DOC",
       "price": "20.00"
     },
     {
       "cantina": "Tudernum",
-      "name": "TS. 396 2023 IGT Trebbiano",
+      "name": "TS. 396 IGT Trebbiano",
       "price": "25.00"
     },
     {
@@ -322,12 +322,12 @@
     },
     {
       "cantina": "Ronco dei Folo",
-      "name": "Collio 2025 DOC Friulano",
+      "name": "Collio DOC Friulano",
       "price": "35.00"
     },
     {
       "cantina": "Ronco dei Folo",
-      "name": "Collio 2025 DOC Pinot Bianco",
+      "name": "Collio DOC Pinot Bianco",
       "price": "35.00"
     },
     {
