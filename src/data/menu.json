@@ -6,13 +6,8 @@
       "price": "20.00"
     },
     {
-      "it": "Bruschetta con Pomodorini Arrosto, Stracciatella Bufala e Basilico fresco",
-      "price": "16.00",
-      "en": "Bruschetta with Roasted Cherry Tomatoes, Bufala Stracciatella, and Fresh Basil"
-    },
-    {
-      "it": "Carpaccio di Angus al Limone, Rucola e Grana",
-      "en": "Angus carpaccio with lemon, arugula and Grana cheese",
+      "it": "    Carpaccio di angus, tortino di funghi champignon e fonduta di parmigiano ",
+      "en": "Sliced marinated beef, champignon flan and parmisan fondue ",
       "price": "16.00"
     },
     {
@@ -21,8 +16,8 @@
       "price": "16.00"
     },
     {
-      "it": "Prosciutto crudo con tartare di pesca e melone",
-      "en": "Prosciutto with Peach and Melon Tartare",
+      "it": "Insalata di polpo e ceci ",
+      "en": "Octupus and cheakpeas salad",
       "price": "16.00"
     }
   ],
@@ -72,17 +67,17 @@
     {
       "it": "Filetto di Maiale con rucola e gorgonzola",
       "en": "Fillet of pork with gorgonzola and rocket salad",
-      "price": "20.00"
+      "price": "22.00"
     },
     {
       "it": "Spigola arrosto",
       "en": "Roasted Seabass",
-      "price": "22.00"
+      "price": "24.00"
     },
     {
       "it": "Scottadito di Agnello",
       "en": "Grilled Lamb Chops",
-      "price": "22.00"
+      "price": "24.00"
     }
   ],
   "contorni": [
