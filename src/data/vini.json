@@ -344,6 +344,16 @@
       "cantina": "Annesanti",
       "name": "Ninfa del N'era IGT",
       "price": "28.00"
+    },
+    {
+      "cantina": "Donnafugata",
+      "name": "Sul vulcano DOC Etna Bianco",
+      "price": "40.00"
+    },
+    {
+      "cantina": "Donnafugata",
+      "name": "Lighea DOC Zibibbo",
+      "price": "30.00"
     }
   ],
   "prosecco_e_spumante": [
