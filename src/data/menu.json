@@ -78,6 +78,11 @@
       "it": "Scottadito di Agnello",
       "en": "Grilled Lamb Chops",
       "price": "24.00"
+    },
+    {
+      "it": "Scaloppina di tacchino con funghi porcini e salvia  ",
+      "en": "Scalops of turkey breast with porcini mushoorms and sage",
+      "price": "22.00"
     }
   ],
   "contorni": [
@@ -119,8 +124,8 @@
       "price": "7.00"
     },
     {
-      "it": "Semifreddo al Pistacchio e Salsa di Cioccolato Bianco",
-      "en": "Pistachio Semifreddo with White Chocolate Sauce",
+      "it": "Pere cotte nel sagrantino con crema pasticcera ",
+      "en": " Pears cocked in sagrantino wine with pastry cream",
       "price": "7.00"
     }
   ]
