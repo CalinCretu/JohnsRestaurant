@@ -195,6 +195,16 @@
       "cantina": "Annesanti",
       "name": "Valnero IGT Sangiovese",
       "price": "40.00"
+    },
+    {
+      "cantina": "Donnafugata",
+      "name": "Sul Vulcano DOC Etna rosso ",
+      "price": "40.00"
+    },
+    {
+      "cantina": "Donnafugata",
+      "name": "Floramundi DOCG Cerasuolo di Vittoria",
+      "price": "35"
     }
   ],
   "vini_rosati": [
